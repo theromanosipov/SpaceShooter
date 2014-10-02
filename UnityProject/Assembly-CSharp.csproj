@@ -49,7 +49,7 @@
      <Compile Include="Assets\Scripts\Dock.cs" />
      <Compile Include="Assets\Scripts\Dockable.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\ScriptsForUnitySpaceShooterTutorial\BoostPowerUp.cs" />
+     <Compile Include="Assets\Scripts\PlayerTurretController.cs" />
      <Compile Include="Assets\Scripts\ScriptsForUnitySpaceShooterTutorial\DestroyByBoundary.cs" />
      <Compile Include="Assets\Scripts\ScriptsForUnitySpaceShooterTutorial\DestroyByContact.cs" />
      <Compile Include="Assets\Scripts\ScriptsForUnitySpaceShooterTutorial\DestroyByTime.cs" />

@@ -3,11 +3,12 @@ using System.Collections;
 
 public class Dockable : MonoBehaviour {
 
-	public GameObject turretForm;
+	public PlayerTurretController turretForm;
 	private PlayerController playerController;
 	
 	void Start() {
 		playerController = gameObject.GetComponent<PlayerController>();
+		turretForm.SetPlayerNumber( playerController.playerNumber);
 	}
 	
 	public GameObject SuggestEntry() {
@@ -17,5 +18,9 @@ public class Dockable : MonoBehaviour {
 		else {
 			return null;
 		}
+	}
+	
+	public int GetPlayerNumber() {
+		return playerController.playerNumber;
 	}
 }

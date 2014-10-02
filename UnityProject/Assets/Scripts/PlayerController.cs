@@ -8,7 +8,6 @@ public class Boundary {
 
 public class PlayerController : MonoBehaviour {
   public float speed;
-  public float tilt;
   public Boundary boundery;
   public int playerNumber;
   
@@ -21,7 +20,6 @@ public class PlayerController : MonoBehaviour {
 	if (Input.GetButton("Fire" + playerNumber) && Time.time > nextFire) {
 	  nextFire = Time.time + 1 / fireRate;
 	  Instantiate( shot, shotSpawn.position, shotSpawn.rotation);
-	  audio.Play();
     }
   }
   
@@ -36,17 +34,6 @@ public class PlayerController : MonoBehaviour {
 	  Mathf.Clamp( rigidbody.position.x, boundery.xMin, boundery.xMax),
       0.0f,
 	  Mathf.Clamp( rigidbody.position.z, boundery.zMin, boundery.zMax)
-    );   
-    
-    rigidbody.rotation = Quaternion.Euler( 0.0f, 0.0f, rigidbody.velocity.x * -tilt);
-  }
-  
-  public IEnumerator TimedSpeedMultiply( float shipSpeedMultiplyer, float fireRateMultiplier, float duration, GameObject caller) {
-    speed *= shipSpeedMultiplyer;
-    fireRate *= fireRateMultiplier;
-	yield return new WaitForSeconds( duration);
-	speed /= shipSpeedMultiplyer;
-    fireRate /= fireRateMultiplier;
-    Destroy( caller);
+    );  
   }
 }
