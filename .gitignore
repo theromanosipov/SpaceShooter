@@ -218,10 +218,10 @@ pip-log.txt
 # =============== #
 # Unity generated #
 # =============== #
-Temp/
-Obj/
-UnityGenerated/
-Library/
+UnityProject/Temp/
+UnityProject/Obj/
+UnityProject/UnityGenerated/
+UnityProject/Library/
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
