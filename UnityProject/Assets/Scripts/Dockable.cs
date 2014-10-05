@@ -13,7 +13,7 @@ public class Dockable : MonoBehaviour {
 	
 	public GameObject SuggestEntry() {
 		if( Input.GetButton("Dock" + playerController.playerNumber)) {
-			return turretForm;
+			return null;
 		}
 		else {
 			return null;
