@@ -157,16 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490609eb4d6b3104cae7ca2d422ebb2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  boundery:
-    xMin: -7
-    xMax: 7
-    zMin: -4
-    zMax: 4
-  playerNumber: 1
-  shot: {fileID: 0}
-  shotSpawn: {fileID: 0}
-  fireRate: 0
 --- !u!54 &306998420
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -361,7 +351,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83417ec8a2c5ac54e847ede75cd81bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretForm: {fileID: 0}
 --- !u!23 &1597915200
 Renderer:
   m_ObjectHideFlags: 0
@@ -424,16 +413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490609eb4d6b3104cae7ca2d422ebb2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  boundery:
-    xMin: -7
-    xMax: 7
-    zMin: -4
-    zMax: 4
-  playerNumber: 2
-  shot: {fileID: 0}
-  shotSpawn: {fileID: 0}
-  fireRate: 0
 --- !u!54 &1597915205
 Rigidbody:
   m_ObjectHideFlags: 0
