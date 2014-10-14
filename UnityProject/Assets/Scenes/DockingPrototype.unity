@@ -101,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 306998414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .434340656, y: 0, z: -1.99441195}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.46902406, y: .441191196, z: .735158205}
   m_Children:
   - {fileID: 1629936522}
@@ -154,9 +154,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 306998414}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 490609eb4d6b3104cae7ca2d422ebb2d, type: 3}
+  m_Script: {fileID: 11500000, guid: 71b2a4753455cca4cb1b08cef8f73979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  boundery:
+    xMin: -6
+    xMax: 6
+    zMin: -6
+    zMax: 6
+  playerNumber: 1
+  shot: {fileID: 0}
+  shotSpawn: {fileID: 0}
+  fireRate: 0
 --- !u!54 &306998420
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -333,6 +343,7 @@ GameObject:
   - 114: {fileID: 1597915199}
   - 114: {fileID: 1597915204}
   - 54: {fileID: 1597915205}
+  - 114: {fileID: 1597915206}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Dockable
@@ -397,7 +408,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1597915198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.15931416, y: -.122558594, z: -1.84962714}
+  m_LocalPosition: {x: 4, y: 0, z: 0}
   m_LocalScale: {x: .349999994, y: .349999994, z: .349999994}
   m_Children: []
   m_Father: {fileID: 0}
@@ -428,6 +439,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1597915206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1597915198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9d4e38e6fa71e5479f78c22935b00df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretForm: {fileID: 0}
 --- !u!1 &1629936521
 GameObject:
   m_ObjectHideFlags: 0
