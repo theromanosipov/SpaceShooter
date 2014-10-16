@@ -6,6 +6,7 @@ public class E_EnemyShipNr1 : MonoBehaviour {
 	public float speed1;
 	public float speed2;
 	public float Damage;
+	public float HitPoints;
 
 	void Start () {
 		rigidbody.velocity = -transform.forward * speed1;
@@ -29,6 +30,8 @@ public class E_EnemyShipNr1 : MonoBehaviour {
 		if (minDist <= range) {        Vector3 directionOfTravel = player_0.transform.position - currentPos;
 			directionOfTravel.Normalize();
 			rigidbody.velocity = directionOfTravel * speed2;
+			Quaternion _lookRotation = Quaternion.LookRotation(directionOfTravel);
+			rigidbody.rotation = _lookRotation;
 
 		} else{		rigidbody.velocity = -transform.forward * speed1;
 				}
