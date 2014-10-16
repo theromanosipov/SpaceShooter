@@ -502,7 +502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 10
   speed1: 2
-  speed2: 17
+  speed2: 5
   Damage: 0
   HitPoints: 0
 --- !u!54 &1904089059

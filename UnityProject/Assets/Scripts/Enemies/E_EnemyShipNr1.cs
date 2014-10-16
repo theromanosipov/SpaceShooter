@@ -33,7 +33,8 @@ public class E_EnemyShipNr1 : MonoBehaviour {
 			Quaternion _lookRotation = Quaternion.LookRotation(directionOfTravel);
 			rigidbody.rotation = _lookRotation;
 
-		} else{		rigidbody.velocity = -transform.forward * speed1;
+		} else{rigidbody.rotation =  Quaternion.identity;		
+			rigidbody.velocity = -transform.forward * speed1;
 				}
 	}
 
