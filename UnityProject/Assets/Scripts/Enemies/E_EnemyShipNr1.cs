@@ -9,7 +9,8 @@ public class E_EnemyShipNr1 : MonoBehaviour {
 	public float HitPoints;
 
 	void Start () {
-		rigidbody.velocity = -transform.forward * speed1;
+		rigidbody.rotation = new Quaternion(0f,180f,0f,0f);
+		rigidbody.velocity = transform.forward * speed1;
 	}
 
 	void Update () {		
@@ -33,8 +34,8 @@ public class E_EnemyShipNr1 : MonoBehaviour {
 			Quaternion _lookRotation = Quaternion.LookRotation(directionOfTravel);
 			rigidbody.rotation = _lookRotation;
 
-		} else{rigidbody.rotation =  Quaternion.identity;		
-			rigidbody.velocity = -transform.forward * speed1;
+		} else{//rigidbody.rotation =  Quaternion.identity;		
+			rigidbody.velocity = transform.forward * speed1;
 				}
 	}
 

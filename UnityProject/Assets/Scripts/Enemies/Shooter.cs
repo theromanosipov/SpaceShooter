@@ -10,11 +10,12 @@ public class Shooter : MonoBehaviour {
 	public int shotCount;
 	public float delayShotSpwan;
 	public float delayShotSeries;
+	public float firstShotDelay;
 	private float nextSeriesShoot;
 	
 	void Start() 
 	{
-		nextSeriesShoot = Time.time;
+		nextSeriesShoot = Time.time+firstShotDelay;
 		}
 
 	void Update () {
