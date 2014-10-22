@@ -9,16 +9,16 @@ public class GenericPlayerController : MonoBehaviour {
 	protected PlayerInfo player;
 	
 	public virtual void Update() {
-		RefreshPlayer();
-	}
-	
-	public void RefreshPlayer() {
-		PlayerInfo newPlayer = gameObject.GetComponent<PlayerInfo>();
-		if( newPlayer != null) {
-			player = newPlayer;
-		}
-		else {
-			Debug.Log( "Failed RefreshPlayer() no PlayerInfo found");
-		}
-	}
+        //Jei player == null gaunamas PlayerInfo iš PlayerInfoContainer
+        if( player == null) {
+            Debug.Log("Getting PlayerInfo");
+		    PlayerInfoContainer newPlayer = gameObject.GetComponent<PlayerInfoContainer>();
+            if( newPlayer == null) {
+                Debug.Log("Failed GenericControllerInfo Update Can't find PlayerInfoContainer");
+		    }
+		    else {
+                player = newPlayer.playerInfo;
+		    }
+	    }
+    }
 }
