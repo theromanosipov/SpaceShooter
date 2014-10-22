@@ -15,6 +15,7 @@ public class EMover : MonoBehaviour {
 	private float nextmove;
 	private float random;
 
+
 	void Start()
 	{
 		rigidbody.velocity = -speeddown*transform.forward;

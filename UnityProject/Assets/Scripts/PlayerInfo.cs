@@ -35,6 +35,7 @@ public class PlayerInfo : MonoBehaviour {
 	}
 
 	public float HitPoints;
+	public int ContactDamage;
 	
 	public void AddScore( long newScore) {
 		score += newScore;
@@ -45,5 +46,11 @@ public class PlayerInfo : MonoBehaviour {
 		if (HitPoints <= 0) {
 			Destroy(gameObject);
 		}
+	}
+	void OnTriggerEnter (Collider other) {
+		if (other.tag != "Enemy") {
+			return;
+		}
+		other.gameObject.BroadcastMessage("GetDamage", ContactDamage);
 	}
 }

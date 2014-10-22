@@ -88,7 +88,7 @@ GameObject:
   - 114: {fileID: 213610607}
   m_Layer: 0
   m_Name: Meele
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -595,6 +595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitPoints: 100
+  ContactDamage: 1000
 --- !u!1001 &567042656
 Prefab:
   m_ObjectHideFlags: 0
@@ -937,6 +938,26 @@ Prefab:
       propertyPath: meeleDamage
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: bfc94e2251dec264e8b0f2234ab0442b, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: bfc94e2251dec264e8b0f2234ab0442b, type: 2}
+      propertyPath: HitPoints
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: bfc94e2251dec264e8b0f2234ab0442b, type: 2}
+      propertyPath: ContactDamage
+      value: 99999
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300002, guid: bfc94e2251dec264e8b0f2234ab0442b, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500002, guid: bfc94e2251dec264e8b0f2234ab0442b, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bfc94e2251dec264e8b0f2234ab0442b, type: 2}
   m_RootGameObject: {fileID: 1292516047}
@@ -1124,6 +1145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerNumber: 1
+  HitPoints: 10000
+  ContactDamage: 99999
 --- !u!1 &1345123196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,6 +1358,14 @@ Prefab:
       propertyPath: HitPoints
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 442e46644bb3cc44199e724264881a8a, type: 2}
+      propertyPath: damage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 442e46644bb3cc44199e724264881a8a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 442e46644bb3cc44199e724264881a8a, type: 2}
   m_RootGameObject: {fileID: 2090136994}
@@ -1540,6 +1571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitPoints: 100
+  ContactDamage: 1000
 --- !u!1 &2031669197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1603,7 +1635,6 @@ MonoBehaviour:
   range: 10
   speed1: 2
   speed2: 5
-  Damage: 0
 --- !u!54 &2090136996
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1685,7 +1716,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5b4797b9272844b8fe4b7ffc1054ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPoints: 50
+  HitPoints: 999999
+  ContactDamage: 50
 --- !u!1 &2095324181
 GameObject:
   m_ObjectHideFlags: 0
