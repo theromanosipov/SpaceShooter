@@ -20,7 +20,7 @@ public class PlayerController : GenericPlayerController {
   	base.Update();
 	if (player.GetButtonPowerup() && Time.time > nextFire) {
 	  nextFire = Time.time + 1 / fireRate;
-	  Instantiate( shot, shotSpawn.position, shotSpawn.rotation);
+	  (Instantiate( shot, shotSpawn.position, shotSpawn.rotation) as GameObject).transform.parent=shotSpawn.transform;
     }
   }
   
