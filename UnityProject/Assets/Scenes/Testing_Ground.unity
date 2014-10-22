@@ -948,7 +948,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: bfc94e2251dec264e8b0f2234ab0442b, type: 2}
       propertyPath: ContactDamage
-      value: 99999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300002, guid: bfc94e2251dec264e8b0f2234ab0442b, type: 2}
       propertyPath: m_Enabled
@@ -1146,7 +1146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controllerNumber: 1
   HitPoints: 10000
-  ContactDamage: 99999
+  ContactDamage: 0
 --- !u!1 &1345123196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1716,7 +1716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5b4797b9272844b8fe4b7ffc1054ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPoints: 999999
+  HitPoints: 100
   ContactDamage: 50
 --- !u!1 &2095324181
 GameObject:
