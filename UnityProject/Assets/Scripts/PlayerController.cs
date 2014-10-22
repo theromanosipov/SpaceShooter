@@ -6,7 +6,7 @@ public class Boundary {
   public float xMin, xMax, zMin, zMax;
 }
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : GenericPlayerController {
   public float speed;
   public Boundary boundery;
   public int playerNumber;
@@ -16,19 +16,18 @@ public class PlayerController : MonoBehaviour {
   public float fireRate;
   private float nextFire;
   
-  void Update() {
-	if (Input.GetButton("Fire" + playerNumber) && Time.time > nextFire) {
+  public override void Update() {
+  	base.Update();
+	if (player.GetButtonPowerup() && Time.time > nextFire) {
 	  nextFire = Time.time + 1 / fireRate;
 	  Instantiate( shot, shotSpawn.position, shotSpawn.rotation);
     }
   }
   
   void FixedUpdate() {
-	float moveHorizontal = Input.GetAxis( "Horizontal" + playerNumber) * speed;
-	float moveVertical = Input.GetAxis( "Vertical" + playerNumber) * speed;
 
-    Vector3 movement = new Vector3( moveHorizontal, 0.0f, moveVertical);
-    rigidbody.velocity = movement;
+
+	rigidbody.velocity = new Vector3( player.GetAxisH() * speed, 0.0f, player.GetAxisV() * speed);
     
     rigidbody.position = new Vector3(
 	  Mathf.Clamp( rigidbody.position.x, boundery.xMin, boundery.xMax),
