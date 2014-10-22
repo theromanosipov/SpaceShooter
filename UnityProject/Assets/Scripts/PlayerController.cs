@@ -31,7 +31,7 @@ public class PlayerController : GenericPlayerController {
     
     rigidbody.position = new Vector3(
 	  Mathf.Clamp( rigidbody.position.x, boundery.xMin, boundery.xMax),
-      0.0f,
+       0.0f,
 	  Mathf.Clamp( rigidbody.position.z, boundery.zMin, boundery.zMax)
     );  
   }

@@ -82,10 +82,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2a0035618ced8546978789e4af1b716, type: 3}
+  m_Script: {fileID: 11500000, guid: f2df483cc4b6e2e4988957755eac39d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -10
+  speed: 7
+  damage: 10
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1

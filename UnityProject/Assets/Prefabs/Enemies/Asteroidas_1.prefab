@@ -13,6 +13,7 @@ GameObject:
   - 136: {fileID: 13600000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: Asteroidas_1
   m_TagString: Enemy
@@ -85,12 +86,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615be55dedf89bc43acf69d274850243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPoints: 1000
   speed:
   - 3
   - 8
   tumble: 20
   angle: 1
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5b4797b9272844b8fe4b7ffc1054ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitPoints: 100
+  ContactDamage: 75
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
