@@ -1,18 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Meele : MonoBehaviour {
+public class Meele : GenericPlayerController {
 	public int meeleDamage;
 	public float swingTime = 0.2f;
 	public float cooldown = 0.4f;
 	private PlayerInfo player;
 	private bool right = true;
 	private float pressStart = 0;
-
-	// Use this for initialization
-	void Start () {
-		player = gameObject.transform.parent.GetComponent<PlayerInfo> ();
-	}
 
 	void Update(){
 		if (player.GetButtonMelee () && Time.time - pressStart > cooldown + swingTime) {
