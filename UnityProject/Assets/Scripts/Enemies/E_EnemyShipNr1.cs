@@ -5,8 +5,7 @@ public class E_EnemyShipNr1 : MonoBehaviour {
 	public float range;
 	public float speed1;
 	public float speed2;
-	public float Damage;
-	public float HitPoints;
+	public float damage;
 
 	void Start () {
 		rigidbody.rotation = new Quaternion(0f,180f,0f,0f);
@@ -37,6 +36,13 @@ public class E_EnemyShipNr1 : MonoBehaviour {
 		} else{//rigidbody.rotation =  Quaternion.identity;		
 			rigidbody.velocity = transform.forward * speed1;
 				}
+	}
+	void OnTriggerEnter (Collider other) {
+		if (other.tag != "Player") {
+			return;
+		}
+		other.gameObject.BroadcastMessage("GetDamage", damage);
+		Destroy (gameObject);
 	}
 
 }

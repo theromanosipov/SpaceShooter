@@ -33,8 +33,17 @@ public class PlayerInfo : MonoBehaviour {
 	public long GetScore() {
 		return score;
 	}
+
+	public float HitPoints;
 	
 	public void AddScore( long newScore) {
 		score += newScore;
+	}
+	void GetDamage(int Damage)
+	{
+		HitPoints -= Damage;
+		if (HitPoints <= 0) {
+			Destroy(gameObject);
+		}
 	}
 }
