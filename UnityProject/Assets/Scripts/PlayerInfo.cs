@@ -48,9 +48,10 @@ public class PlayerInfo : MonoBehaviour {
 		}
 	}
 	void OnTriggerEnter (Collider other) {
-		if (other.tag != "Enemy") {
+		if (other.tag != "Enemy" || gameObject.tag != "Player") {
 			return;
 		}
+		Debug.Log ("collision");
 		other.gameObject.BroadcastMessage("GetDamage", ContactDamage);
 	}
 }

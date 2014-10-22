@@ -35,6 +35,7 @@ public class Meele : MonoBehaviour {
 		if (other.tag != "Enemy") {
 			return;
 				}
+		Debug.Log ("Meele hit");
 		other.gameObject.BroadcastMessage("GetDamage", meeleDamage);
 	}
 }

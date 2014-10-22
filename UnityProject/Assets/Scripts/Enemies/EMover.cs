@@ -48,7 +48,7 @@ public class EMover : MonoBehaviour {
 		s = transform.position.x;
 		p = 4*((s)*(s)*(s))/((xmax - xmin)*(xmax - xmin)*(xmax - xmin))+0.5f;
 		random = Random.Range (0f,1f);
-		Debug.Log (p);
+//		Debug.Log (p);
 		//Debug.Log (random);
 		if (random < p) {rigidbody.velocity += new Vector3(-hspeed,0f,0f);}
 		else {rigidbody.velocity += new Vector3(hspeed,0f,0f);}
