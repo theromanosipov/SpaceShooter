@@ -26,8 +26,8 @@ public class Shooter : MonoBehaviour {
 		for (int i=0; i <shotCount; i++) 
 		{
 			foreach(Transform shotspawn in shotSpawns)
-			{
-				Instantiate(shot, shotspawn.position, shotspawn.rotation);
+			{ 
+				(Instantiate(shot, shotspawn.position, shotspawn.rotation) as GameObject).transform.parent=shotspawn;
 			}
 			yield return new WaitForSeconds(delayShotSpwan);
 		}		
