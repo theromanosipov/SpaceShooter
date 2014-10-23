@@ -15,7 +15,7 @@ public class PlayerController : GenericPlayerController {
   public float fireRate;
   private float nextFire;
   
-  public void Update() {
+  public override void Update() {
   	base.Update();
 	if (player.GetButtonPowerup() && Time.time > nextFire) {
 	  nextFire = Time.time + 1 / fireRate;

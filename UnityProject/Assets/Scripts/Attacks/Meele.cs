@@ -5,11 +5,12 @@ public class Meele : GenericPlayerController {
 	public int meeleDamage;
 	public float swingTime = 0.2f;
 	public float cooldown = 0.4f;
-	private PlayerInfo player;
+
 	private bool right = true;
 	private float pressStart = 0;
 
-	void Update(){
+	public override void Update(){
+        base.Update();
 		if (player.GetButtonMelee () && Time.time - pressStart > cooldown + swingTime) {
 			right = !right;
 			pressStart = Time.time;
