@@ -14,8 +14,8 @@ public class PlayerInfo {
 	public int controllerNumber;
 	private long score = 0;
 	
-	public float hitPoints; // ?
-	public int contactDamage; // ?
+	//public float hitPoints; // ?
+	//public int contactDamage; // ?
 	
 	public float GetAxisH() {
 		return Input.GetAxis( "Horizontal" + controllerNumber);

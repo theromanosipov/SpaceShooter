@@ -9,11 +9,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400002}
   - 54: {fileID: 5400000}
   - 136: {fileID: 13600000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
-  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: Asteroidas_1
   m_TagString: Enemy
