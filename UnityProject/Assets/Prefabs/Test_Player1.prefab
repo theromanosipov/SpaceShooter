@@ -203,7 +203,6 @@ MonoBehaviour:
     xMax: 10
     zMin: -10
     zMax: 10
-  playerNumber: 1
   shot: {fileID: 100000, guid: fbf1d1e1b1dfd394ba01f7786b57502f, type: 2}
   shotSpawn: {fileID: 400000}
   fireRate: 5
@@ -218,9 +217,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af981650d049774da3126515797b804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meeleDamage: 0
-  swingTime: .200000003
-  cooldown: 0
+  meeleDamage: 20
+  swingTime: .000500000024
+  cooldown: .000500000024
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -229,10 +228,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5f9b265d2c81494eb529714dc81f997, type: 3}
+  m_Script: {fileID: 11500000, guid: 19a08c230503ad74194e9a4152b1ea19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controllerNumber: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
