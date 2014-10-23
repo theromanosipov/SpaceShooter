@@ -4,6 +4,6 @@ using System.Collections;
 public class DestroyLeaving : MonoBehaviour {
 
 	void OnTriggerExit (Collider other) {
-		Destroy(other.gameObject);
+		if(other.tag=="Untagged"){Destroy(other.gameObject);}
 	}
 }
