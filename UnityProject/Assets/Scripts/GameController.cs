@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour {
         for (int i = 0; i < shipsToSpawnAtStart.Length; i++) {
             GameObject playerShip = Instantiate(shipsToSpawnAtStart[i]) as GameObject;
             //Naujai sukurtam žaidėjo laivui duoda PlayerInfo, kad šis galėtų būti valdomas
-            playerShip.GetComponent<PlayerInfoContainer>().playerInfo = player[i];
+            playerShip.GetComponent<PlayerInfoContainer>().SetPlayerInfo( player[i]);
         }
 	}
 

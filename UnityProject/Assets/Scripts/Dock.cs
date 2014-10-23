@@ -6,7 +6,7 @@ using System.Collections;
 /// </summary>
 public class Dock : MonoBehaviour {
 
-	private PlayerInfo player;
+	private PlayerInfoContainer player;
     private GameObject turret;
 	
 	private bool isDockEmpty = true;
@@ -21,7 +21,7 @@ public class Dock : MonoBehaviour {
             Dockable dockable = turret.GetComponent<Dockable>();
 
             GameObject ship = Instantiate(dockable.otherForm, transform.position, Quaternion.identity) as GameObject;
-            ship.GetComponent<PlayerInfoContainer>().playerInfo = player;
+			ship.GetComponent<PlayerInfoContainer>().SetPlayerInfo( player.GetPlayerInfo());
 
             isDockEmpty = true;
 			Debug.Log( "Dock kinda works");
@@ -31,7 +31,7 @@ public class Dock : MonoBehaviour {
 	void OnTriggerStay( Collider other) {
 		if( other.tag == "Dockable" && isDockEmpty && Time.time > dockPause) {
 			Dockable dockable = other.gameObject.GetComponent <Dockable>();
-			player = other.gameObject.GetComponent <PlayerInfoContainer>().playerInfo;
+			player.SetPlayerInfo( other.gameObject.GetComponent <PlayerInfoContainer>().GetPlayerInfo());
 
             //Čia visi veiksmai, kurie atliekami, kai laivas gali ir nori prisijungti
 			if ( player.GetButtonDock()) {
@@ -39,7 +39,7 @@ public class Dock : MonoBehaviour {
                 dockPause = Time.time + 0.5f;
 				Destroy( other.gameObject);
                 turret = Instantiate(dockable.otherForm, transform.position, Quaternion.identity) as GameObject;
-                turret.GetComponent<PlayerInfoContainer>().playerInfo = player;
+                turret.GetComponent<PlayerInfoContainer>().SetPlayerInfo( player.GetPlayerInfo());
 
 				Debug.Log( "You got docked boy");
 			}
