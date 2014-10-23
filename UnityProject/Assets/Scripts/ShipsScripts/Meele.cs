@@ -18,17 +18,16 @@ public class Meele : GenericPlayerController {
 
 		float swangle = (Time.time - pressStart) / swingTime * 120;
 		if(right){
-
-			transform.rotation = Quaternion.Euler(0,Mathf.Clamp(60f + swangle, 60f, 120f),0);
+			transform.parent.rotation = Quaternion.Euler(0,Mathf.Clamp(60f + swangle, 60f, 120f),0);
 				}
 		else{
-			transform.rotation = Quaternion.Euler(0,Mathf.Clamp(120f - swangle, 60f, 120f),0);
+			transform.parent.rotation = Quaternion.Euler(0,Mathf.Clamp(120f - swangle, 60f, 120f),0);
 		}
 		
 	}
 
 	void OnTriggerEnter (Collider other) {
-		if (other.tag != "Enemy") {
+		if (other.tag != "Enemy" || Time.time - pressStart > swingTime) {
 			return;
 				}
 		Debug.Log ("Meele hit");
