@@ -147,8 +147,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speeddown: .5
   hspeed: 3
-  xmin: -10
-  xmax: 10
+  xmin: -18
+  xmax: 18
   wait: 2.4000001
   mtime: 2
 --- !u!114 &11400004

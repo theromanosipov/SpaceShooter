@@ -9,20 +9,7 @@ public class Boundary {
 public class PlayerController : GenericPlayerController {
   public float speed;
   public Boundary boundery;
-  
-  public GameObject shot;
-  public Transform shotSpawn;
-  public float fireRate;
-  private float nextFire;
-  
-  public override void Update() {
-  	base.Update();
-	if (player.GetButtonPowerup() && Time.time > nextFire) {
-	  nextFire = Time.time + 1 / fireRate;
-	  Instantiate( shot, shotSpawn.position, shotSpawn.rotation);
-    }
-  }
-  
+
   void FixedUpdate() {
 
 	rigidbody.velocity = new Vector3( player.GetAxisH() * speed, 0.0f, player.GetAxisV() * speed);
