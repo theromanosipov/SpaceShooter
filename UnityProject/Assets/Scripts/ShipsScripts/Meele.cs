@@ -10,7 +10,11 @@ public class Meele : GenericPlayerController {
 
 	public override void Update(){
         base.Update();
+		if (Time.time - pressStart > swingTime) {
+			gameObject.renderer.enabled = false;
+				}
 		if (player.GetButtonMelee () && Time.time - pressStart > cooldown + swingTime) {
+			gameObject.renderer.enabled = true;
 			pressStart = Time.time;
 		}
 
