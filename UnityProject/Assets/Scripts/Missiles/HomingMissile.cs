@@ -52,7 +52,7 @@ public class HomingMissile : MonoBehaviour
 			} else{//rigidbody.rotation =  Quaternion.identity;	
 				direction=rigidbody.velocity;
 				direction.Normalize();
-				rigidbody.velocity = direction * speed1;
+				rigidbody.velocity = direction * speed2;
 			}
 				}
 		}
