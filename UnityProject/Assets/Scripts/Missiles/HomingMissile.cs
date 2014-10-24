@@ -20,7 +20,7 @@ public class HomingMissile : MonoBehaviour
 			activator = Time.time + delay; 
 			
 		}
-		void Update ()
+		void FixedUpdate ()
 		{
 			if (Time.time >= activator && timer == false) {
 			//Debug.Log ("aaa");
