@@ -255,11 +255,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6e558f737a8424cbf66543e400baed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shot: {fileID: 100000, guid: 8e6355e4660d5d3479d3b8fddc46db35, type: 2}
+  shot: {fileID: 100000, guid: 317c24aa81610654783bb2ae205a0f58, type: 2}
   shotSpawns:
   - {fileID: 400006}
   - {fileID: 400000}
-  fireRate: 3
+  fireRate: 8
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -287,8 +287,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   boundery:
-    xMin: -10
-    xMax: 10
+    xMin: -18
+    xMax: 18
     zMin: -10
     zMax: 10
 --- !u!114 &11400006

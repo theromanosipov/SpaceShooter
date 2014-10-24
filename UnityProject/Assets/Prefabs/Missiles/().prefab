@@ -14,7 +14,7 @@ GameObject:
   - 54: {fileID: 5400000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Homing missiles
+  m_Name: ()
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,8 +27,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: -30.8467369, y: 114.457031, z: -25.2487526}
-  m_LocalScale: {x: .200000003, y: .600000024, z: .600000024}
+  m_LocalPosition: {x: 4.04969454, y: 69.3322754, z: -6.84244537}
+  m_LocalScale: {x: .150000006, y: .300000012, z: .150000006}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,15 +82,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0a95183d4d24d241a3f2dd757a90124, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cbd0381b8ec71340b00ae83bae5de7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed1: 15
-  speed2: 20
-  range: 100
-  damage: 100
-  delay: .5
-  inertia: 10
+  speedVertical: 20
+  HorizontaloConst: 200
+  time0: 3
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
