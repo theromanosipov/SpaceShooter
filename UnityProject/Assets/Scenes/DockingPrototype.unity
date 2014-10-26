@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipsToSpawnAtStart:
-  - {fileID: 100000, guid: 69a7e1d7da439764a9e196db2d8950d7, type: 2}
+  - {fileID: 100008, guid: d3b232d5eb20d38458696747abf5c256, type: 2}
   - {fileID: 100000, guid: 150507edf6649e348bddb5c32ddcb485, type: 2}
 --- !u!4 &851019409
 Transform:
