@@ -31,7 +31,7 @@ public class Dock : MonoBehaviour {
 	void OnTriggerStay( Collider other) {
 		if( other.tag == "Dockable" && isDockEmpty && Time.time > dockPause) {
 			Dockable dockable = other.gameObject.GetComponent <Dockable>();
-			player.SetPlayerInfo( other.gameObject.GetComponent <PlayerInfoContainer>().GetPlayerInfo());
+			player = other.gameObject.GetComponent <PlayerInfoContainer>();
 
             //Čia visi veiksmai, kurie atliekami, kai laivas gali ir nori prisijungti
 			if ( player.GetButtonDock()) {
