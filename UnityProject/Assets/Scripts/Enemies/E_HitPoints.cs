@@ -21,5 +21,6 @@ public class E_HitPoints : MonoBehaviour {
 		}
 		Debug.Log ("Player hit by mover");
 		other.gameObject.BroadcastMessage("GetDamage", ContactDamage);
+		Destroy (gameObject);
 	}
 }

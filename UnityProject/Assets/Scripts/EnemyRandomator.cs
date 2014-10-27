@@ -14,7 +14,7 @@ public class EnemyRandomator : MonoBehaviour {
 
 	void Update () {
 		if (challenge < difficulty) {
-			int j = Mathf.FloorToInt(Random.Range (0f, enemyPrefabs.Length - 1.1f));
+			int j = Mathf.FloorToInt(Random.Range (0f, enemyPrefabs.Length));
 			for(int i = 0; i < Random.Range(0f, 5.99f); i++){
 				float x = Random.Range (-spawnX, spawnX);
 				Instantiate (enemyPrefabs[j], new Vector3(x, 0f, spawnZ), new Quaternion());

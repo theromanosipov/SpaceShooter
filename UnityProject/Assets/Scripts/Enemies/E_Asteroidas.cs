@@ -3,7 +3,7 @@ using System.Collections;
 
 public class E_Asteroidas : MonoBehaviour {
 
-	public float[] speed;
+	public float[] speed = new float[2];
 	public float tumble;
 	public float angle;
 	void Start () {

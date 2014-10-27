@@ -13,6 +13,7 @@ public class Powerup : MonoBehaviour {
             //Perduoda PlayerInfo iš other į naujai sukurtą laivą
             ship.GetComponent<PlayerInfoContainer>().SetPlayerInfo(other.gameObject.GetComponent<PlayerInfoContainer>().GetPlayerInfo());
             Destroy( other.gameObject);
+			Destroy( gameObject);
         }
     }
 }
