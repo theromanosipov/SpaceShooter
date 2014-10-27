@@ -50,5 +50,5 @@ public class Dock : MonoBehaviour {
 				Debug.Log( "Ship does not want to dock");
 		}
 	}
-}/
+}
 
