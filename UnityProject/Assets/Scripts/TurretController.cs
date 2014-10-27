@@ -14,7 +14,7 @@ public class TurretController : GenericPlayerController {
 		isFixed = false;
 	}
 	void FixedUpdate () {
-		angle += 180f/3.14f*speed * player.GetAxisH ();
+		angle += 3.14f/180f*speed * player.GetAxisH ();
 		if (isFixed) {
 			Mathf.Clamp (angle,minAngle,maxAngle);
 				}
