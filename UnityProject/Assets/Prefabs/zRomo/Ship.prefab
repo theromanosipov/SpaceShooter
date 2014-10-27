@@ -87,8 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d4e38e6fa71e5479f78c22935b00df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turret: {fileID: 0}
-  ship: {fileID: 0}
+  otherForm: {fileID: 100000, guid: 759522d914a4a0248a2c1e26347f7d95, type: 2}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
