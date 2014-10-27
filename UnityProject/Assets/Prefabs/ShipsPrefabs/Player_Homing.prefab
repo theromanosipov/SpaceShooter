@@ -173,7 +173,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.7198467, y: 89.2219238, z: -1.23392367}
+  m_LocalPosition: {x: -4.16486692, y: 7.83929443, z: 1.9531126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400008}
@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af981650d049774da3126515797b804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meeleDamage: 2
+  meeleDamage: 2000000000
   swingTime: .200000003
   cooldown: 0
 --- !u!114 &11400002

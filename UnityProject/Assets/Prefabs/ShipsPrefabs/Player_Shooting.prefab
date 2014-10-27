@@ -63,7 +63,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400006}
-  - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: Meele
   m_TagString: Player
@@ -289,20 +288,6 @@ MonoBehaviour:
     xMax: 18
     zMin: -10
     zMax: 10
---- !u!114 &11400006
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100006}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0af981650d049774da3126515797b804, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meeleDamage: 20000
-  swingTime: .200000003
-  cooldown: 0
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -325,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af981650d049774da3126515797b804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meeleDamage: 2
+  meeleDamage: 200000000
   swingTime: .200000003
   cooldown: 0
 --- !u!114 &11400012
