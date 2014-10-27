@@ -6,6 +6,8 @@ using System.Collections;
 /// </summary>
 public class Dock : MonoBehaviour {
 
+	public float minTurretRotation, maxTurretRotation;
+
 	private PlayerInfoContainer player;
     private GameObject turret;
 	
@@ -29,7 +31,7 @@ public class Dock : MonoBehaviour {
 	}
 
 	void OnTriggerStay( Collider other) {
-		if( other.tag == "Dockable" && isDockEmpty && Time.time > dockPause) {
+		if( other.tag == "Player" && isDockEmpty && Time.time > dockPause) {
 			Dockable dockable = other.gameObject.GetComponent <Dockable>();
 			player = other.gameObject.GetComponent <PlayerInfoContainer>();
 
@@ -40,6 +42,7 @@ public class Dock : MonoBehaviour {
 				Destroy( other.gameObject);
                 turret = Instantiate(dockable.otherForm, transform.position, Quaternion.identity) as GameObject;
                 turret.GetComponent<PlayerInfoContainer>().SetPlayerInfo( player.GetPlayerInfo());
+				turret.transform.parent = transform;
 
 				Debug.Log( "You got docked boy");
 			}
@@ -47,5 +50,5 @@ public class Dock : MonoBehaviour {
 				Debug.Log( "Ship does not want to dock");
 		}
 	}
-}
+}/
 
