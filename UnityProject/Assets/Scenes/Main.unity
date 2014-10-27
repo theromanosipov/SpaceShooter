@@ -298,6 +298,9 @@ MonoBehaviour:
   - {fileID: 100000, guid: 300020bdbbaeefb45a1fddd6bccdd0e6, type: 2}
   - {fileID: 100002, guid: 414644a958705c6479c963433298ab50, type: 2}
   - {fileID: 100018, guid: 834e7d8c7caeb9c4c853bdc94049e0a6, type: 2}
+  - {fileID: 100000, guid: 0b34a8c1b48a60f45acff2ed106347ec, type: 2}
+  - {fileID: 100000, guid: 008a7862cf9472143909991e2c4cc494, type: 2}
+  - {fileID: 100000, guid: 442e46644bb3cc44199e724264881a8a, type: 2}
   spawnZ: 10
   spawnX: 16
   difficulty: 1
