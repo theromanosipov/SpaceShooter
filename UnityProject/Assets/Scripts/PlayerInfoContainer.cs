@@ -48,5 +48,6 @@ public class PlayerInfoContainer : MonoBehaviour {
 
 	public void GetDamage( int hitPoints) {
 		playerInfo.hitPoints -= hitPoints;
+		Debug.Log ("HitPoints " + playerInfo.hitPoints);
 	}
 }
