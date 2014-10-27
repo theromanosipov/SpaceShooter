@@ -147,7 +147,7 @@ MonoBehaviour:
   speed1: 15
   speed2: 20
   range: 100
-  damage: 1
+  damage: 10000
   delay: .5
   inertia: 10
 --- !u!136 &13600000

@@ -21,6 +21,6 @@ public class EnemyRandomator : MonoBehaviour {
 				challenge++;
 			}
 		}
-		challenge -= Time.deltaTime;
+		challenge /= 1 + Time.deltaTime;
 	}
 }
