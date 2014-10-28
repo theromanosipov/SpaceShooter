@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// Turret Controller script'as
+/// Viliaus
+/// </summary>
 public class TurretController : GenericPlayerController {
 
-	public float speed;
-	public float distance;
-	private float angle;
-	private bool isRotationClamped;	
-	private float minAngle;
-	private float maxAngle;
+	public float speed;				//Sukimosi greitis
+	public float distance;			//Kokiu atstumu nuo įtvirtinimo taško juda bokštas
+	private float angle;			//dabartinę bokšto poziciją nusakantis dydis
+	private bool isRotationClamped;	//if false -> bokštelis sukasi 360 deg, if true reik nurodyt min ir max Angle.
+	private float minAngle;			//Dydžiai naudojami 
+	private float maxAngle;			// 				apriboti bokštelio sukimąsi
 	void Start() {
 		angle = 0;
 		isRotationClamped = false;

@@ -1,15 +1,19 @@
 using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// Homing missile mover'is
+/// Viliaus
+/// </summary>
 public class HomingMissile : MonoBehaviour
 {
-	public float speed1;
-	public float speed2;
-	public float range;
-	public float damage;
-	public float delay;
-	public float inertia;
-	private float activator;
+	public float speed1; 		//Pradinis missile greitis (iki tol, kol praeina delay laikas)
+	public float speed2; 		//Greitis po delay laiko
+	public float range;			//Kokiu atstumu "pastebi" taikinius
+	public float damage;		//Kiek žalos daro
+	public float delay;			//Po kiek laiko pradeda ieškoti taikinių ir po kiek laiko iš speed1 pereinam į speed2
+	public float inertia;		//Parametras, kuris nurodo ant kiek inertiškas šūvis (kaip greitai gali keisti kryptį
+								//Kuo mažesnis šis parametras, tuo greičiau gali keisti
+	private float activator;	
 	private bool timer;
 	private Vector3 direction;
 		// Use this for initialization

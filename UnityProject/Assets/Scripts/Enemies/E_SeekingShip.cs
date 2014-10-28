@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
-
-public class E_EnemyShipNr1 : MonoBehaviour {
-	public float range;
-	public float speed1;
-	public float speed2;
+/// <summary>
+/// EnemyShip Nr1. mover'is -> Sekiojantis laivas
+/// Viliaus
+/// </summary>
+public class E_SeekingShip : MonoBehaviour {
+	public float range;	 //kokiu atstumu pastebi žaidėją.
+	public float speed1; //kokiu greičiu juda, nepastebėjęs žaidėjo.
+	public float speed2; //kokiu greičiu juda, kai pastebi žaidėją.
 
 	void Start () {
 		rigidbody.rotation = new Quaternion(0f,180f,0f,0f);
