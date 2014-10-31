@@ -47,7 +47,7 @@ public class E_Mover5 : MonoBehaviour {
 	{
 		float s;
 		s = transform.position.x;
-		p = 4*((s)*(s)*(s))/((xmax - xmin)*(xmax - xmin)*(xmax - xmin))+0.5f;
+		p = 4*Mathf.Pow(s,3)/Mathf.Pow ((xmax - xmin),3)+0.5f;
 		random = Random.Range (0f,1f);
 		if (random < p) {rigidbody.velocity += new Vector3(-hspeed,0f,0f);}
 		else {rigidbody.velocity += new Vector3(hspeed,0f,0f);}
