@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d258ab0e0cf6934795ed8096be622d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speeddown: .5
+  speeddown: 1
   hspeed: 3
   xmin: -18
   xmax: 18
@@ -164,6 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HitPoints: 100
   ContactDamage: 1000
+  colorResetTime: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

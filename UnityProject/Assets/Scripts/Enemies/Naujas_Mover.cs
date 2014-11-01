@@ -53,13 +53,13 @@ public class Naujas_Mover : MonoBehaviour {
 			{
 			hspeed=(rigidbody.position.x-xmin)/(1.999f*traveltime);
 			rigidbody.velocity = new Vector3(-hspeed,0f,rigidbody.velocity.z);
-			Debug.Log ("Left");
+			//Debug.Log ("Left");
 			}
 		else 
 			{
 			hspeed=(xmax-rigidbody.position.x)/(1.999f*traveltime);
 			rigidbody.velocity = new Vector3(hspeed,0f,rigidbody.velocity.z);
-			Debug.Log ("Right");
+			//Debug.Log ("Right");
 			}
 		yield return new WaitForSeconds(traveltime);		
 		rigidbody.velocity = new Vector3(0f,0f,rigidbody.velocity.z);
