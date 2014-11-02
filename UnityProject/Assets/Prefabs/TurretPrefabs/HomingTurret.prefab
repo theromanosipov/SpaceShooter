@@ -158,6 +158,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   distance: 1.39999998
+  isDistanceLocked: 1
+  minDistance: 0
+  maxDistance: 0
+  speedDistance: 0
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -176,7 +180,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: .5
   m_Height: 2

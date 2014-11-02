@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d4e38e6fa71e5479f78c22935b00df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherForm: {fileID: 0}
+  otherForm: {fileID: 100000, guid: bf8596e551883dc409d63b3c6326fbad, type: 2}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
