@@ -270,7 +270,7 @@ MonoBehaviour:
   shipsToSpawnAtStart:
   - {fileID: 100010, guid: 8a5405e24a590ed43b129073963e0e14, type: 2}
   - {fileID: 100002, guid: a892589bba997984597788aeff068c20, type: 2}
-  - {fileID: 100010, guid: b18bdf66fe8e6be47b1392998f02d2be, type: 2}
+  - {fileID: 100010, guid: 8a5405e24a590ed43b129073963e0e14, type: 2}
 --- !u!4 &750546329
 Transform:
   m_ObjectHideFlags: 0
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 750546327}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc2374041dabd034ea0d5318849470d5, type: 3}
   m_Name: 

@@ -9,7 +9,7 @@ public class ShieldSphere : MonoBehaviour {
 
 	void Update(){
 		if (Time.time >= resetTime) {
-			gameObject.renderer.material.color = new Color(0.7f,0,0);}
+			gameObject.renderer.material.color = new Color(0f,1f,1f);}
 	}
 
 	void GetDamage(int Damage)

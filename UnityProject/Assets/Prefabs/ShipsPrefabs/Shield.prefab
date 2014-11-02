@@ -39,10 +39,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b32a23e45d87b646b3d7e773b031db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sphereCount: 10
+  sphereCount: 4
   sphere: {fileID: 100000, guid: 140c2147dc0590442a1e86bb8a7d338f, type: 2}
-  distance: 2
-  rotationSpeed: 4
+  distance: 1
+  rotationSpeed: 10
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

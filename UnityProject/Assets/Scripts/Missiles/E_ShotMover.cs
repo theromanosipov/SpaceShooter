@@ -17,7 +17,7 @@ public class E_ShotMover : MonoBehaviour {
 	}
 
 	void OnTriggerEnter (Collider other) {
-		if (other.tag != "Player") {
+		if (other.tag != "Player"&&other.tag !="Shield") {
 			return;
 		}
 		other.gameObject.BroadcastMessage("GetDamage", damage);
