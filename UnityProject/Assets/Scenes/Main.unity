@@ -305,6 +305,7 @@ MonoBehaviour:
   - {fileID: 100022, guid: 6f5bcd990eb90864db95991fc78d5c9b, type: 2}
   - {fileID: 100000, guid: 14e6eda213039914981d8fbe9a957184, type: 2}
   - {fileID: 100012, guid: 0d2fdb78df9895049b4bbe9943a99fa8, type: 2}
+  - {fileID: 100000, guid: 66bde6f31603da64d956af76a041d76f, type: 2}
   spawnZ: 10
   spawnX: 16
   difficulty: 1
