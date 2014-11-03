@@ -1,25 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// Mover script'as. Jo esmė ta, kad greitis ekrano centre yra 
+/// didesnis nei ekrano kraštuose, ir pasiekęs ekrano kraštą persirikiuoja į kitą ekrano pusę.
+/// Viliaus
+/// </summary>
 public class Naujas_Mover : MonoBehaviour {
 
-	public float speeddown;
-	public float traveltime;
-	public float waittime;
-	public float xmin;
-	public float xmax;
-	public float ymin;
-	public float ymax;
-	private float nextmove;
-	private float p;
-	private float hspeed;
-	private float power1;
+	public float speeddown; //Vertikalus greitis
+	public float traveltime;//Kiek laiko užtrunka įveikti atkarpą
+	public float waittime;  //Kas kiek laiko pradeda įveikinėti atkarpą. BŪTINAI turi būti didesnis, nei traveltime
+	public float xmin;      //
+	public float xmax;		//Ribos, kuriose vyksta judėjimas.
+	public float ymin;		//
+	public float ymax;		// y max gali būti mažesnis už viršutinę ribą -> kai laivas pateks tarp ymin ir ymax jis nebeišeis jau iš tų ribų
+	private float nextmove; //Privatus kintamasis nusakantis laiką, kada kitą kartą judės. Time.time+waittime
+	private float p;		//Kintamasis, kuris naudojamas nuspręsti į kurią pusę laivas judės.
+	private float hspeed;	//Kintamasis, kokio greičiu jis judės atkarpą. 
+							//Apskaičiuojamas: atstumas, kurį reikia įveikti padalinamas iš traveltime
 
 	// Use this for initialization
 	void Start () {
 		rigidbody.velocity = -speeddown*transform.forward;
 		nextmove += waittime;
-		power1 = 7;
 	}
 	
 	// Update is called once per frame

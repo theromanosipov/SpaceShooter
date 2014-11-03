@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// Tėvinio skydo sferų objekto scriptas. Jo atsiradimo metu sukuriamos sferos.
+/// Viliaus
+/// </summary>
 public class Shield : MonoBehaviour {
 
-	public int sphereCount;
-	public GameObject sphere;
-	public float distance;
-	public float rotationSpeed;
-	private GameObject Sphere;
-	private Vector3 spherePosition;
-	private float angle;
+	public int sphereCount;			//Kiek sferų suksis apie mūsų laivą
+	public GameObject sphere;		//Sferų prefab'as
+	public float distance;			//Kokiu atstumu mūsų sferos suksis
+	public float rotationSpeed;		//Kokiu greičiu suksis.
+	private GameObject Sphere;		//Kintamasis naudojamas įvaikinti mūsų sferą skydo prefab'ui.
+	private Vector3 spherePosition; //Instantiate'inamos sferos pozicija
+	private float angle;			//Kintamasis naudojamas apskaičiuoti sferų pozicijas, kad jos būtų tolygiai pasiskirstę.
 	// Use this for initialization
 	void Start () {
 		angle = 0;

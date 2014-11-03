@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// Skydo sferos script'as. Aprašo spalvos pasikeitimą, gyvybes ir sunaikinimą. Turi GetDamage metodą;
+/// </summary>
 public class ShieldSphere : MonoBehaviour {
 
-	public int HitPoints;
-	public float colorResetTime;
-	private float resetTime;
+	public int HitPoints;		//Kiek mūsų sfera turi gyvybių
+	public float colorResetTime;//Per kiek laiko spalva atistatys
+	private float resetTime;	
 
 	void Update(){
 		if (Time.time >= resetTime) {

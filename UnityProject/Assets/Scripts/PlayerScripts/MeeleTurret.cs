@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// Meele Turret daroma žala;
+/// </summary>
 public class MeeleTurret : MonoBehaviour {
 
 	public float ContactDamage;
@@ -9,7 +11,6 @@ public class MeeleTurret : MonoBehaviour {
 		if (other.tag != "Enemy") {
 			return;
 		}
-		Debug.Log ("Player hit by mover");
 		other.gameObject.BroadcastMessage("GetDamage", ContactDamage);
 	}
 }

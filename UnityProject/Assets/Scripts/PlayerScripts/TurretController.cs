@@ -8,10 +8,10 @@ public class TurretController : GenericPlayerController {
 
 	public float speed;				//Sukimosi greitis
 	public float distance;			//Kokiu atstumu nuo įtvirtinimo taško juda bokštas
-	public bool isDistanceLocked;
-	public float minDistance;
-	public float maxDistance;
-	public float speedDistance;
+	public bool isDistanceLocked;	//Jei true, tai atstumas nuo tėvo konstanta, jei ne, galima keisti minDistance maxDistance ribose
+	public float minDistance;		//Minimalus atstumas, kuriuo gali būti bokštas nuo tėvo
+	public float maxDistance;		//Maksimalus atstumas, kuriuo gali būti bokštas nuo tėvo
+	public float speedDistance;		//Kaip greitai galima keisti atstumą.
 	private float angle;			//dabartinę bokšto poziciją nusakantis dydis
 	private bool isRotationClamped;	//if false -> bokštelis sukasi 360 deg, if true reik nurodyt min ir max Angle.
 	private float minAngle;			//Dydžiai naudojami 
