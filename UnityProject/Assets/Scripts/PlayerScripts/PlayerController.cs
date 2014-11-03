@@ -9,6 +9,13 @@ public class Boundary {
 public class PlayerController : GenericPlayerController {
   public float speed;
   public Boundary boundery;
+	public GameObject meele;
+	private GameObject tMeele;
+  
+  void Start(){
+		tMeele=Instantiate(meele, transform.position, Quaternion.Euler (0f,120f,0)) as GameObject;
+		tMeele.transform.parent = transform;
+	}
 
   void FixedUpdate() {
 
