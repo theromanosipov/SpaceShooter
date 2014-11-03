@@ -33,6 +33,7 @@ GameObject:
   - 114: {fileID: 11400008}
   - 114: {fileID: 11400012}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: Player_Shooting
   m_TagString: Player
@@ -190,6 +191,20 @@ MonoBehaviour:
     zMin: -10
     zMax: 10
   meele: {fileID: 100002, guid: c4e781a6c4bedd2418ef7d509275d3e6, type: 2}
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d989b3be44ae1849811b3d1d8869fa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invincibilityDuration: 2
+  invincibilityCooldown: 0
+  invincibilityColor: {r: 150, g: 50, b: 50, a: 1}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
