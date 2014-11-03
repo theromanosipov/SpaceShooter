@@ -4,16 +4,8 @@ using System.Collections;
 public class PlayerInfoContainer : MonoBehaviour {
 
 	private PlayerInfo playerInfo;
-	private float colorResetTime;
-	private float resetTime;
-
-	void Start()
-	{
-		colorResetTime = 0.3f;
-	}
 
 	void Update() {
-		if (Time.time >= resetTime) {gameObject.renderer.material.color = new Color(0.5f,0.5f,1f);}
 		if (playerInfo == null)
 			Debug.Log ("PlayerInfoContainer negauna PlayerInfo");
 	}
@@ -54,10 +46,8 @@ public class PlayerInfoContainer : MonoBehaviour {
 		playerInfo.score += newScore;
 	}
 
-	public void GetDamage( int hitPoints) {
-		gameObject.renderer.material.color = new Color(1f,0,0f);
-		resetTime = Time.time + colorResetTime;
-		playerInfo.hitPoints -= hitPoints;
+	public void AddHitpoints( int hitPoints) {
+		playerInfo.hitPoints += hitPoints;
 		Debug.Log ("HitPoints " + playerInfo.hitPoints);
 		if (playerInfo.hitPoints <= 0) {
 			Destroy(gameObject);
