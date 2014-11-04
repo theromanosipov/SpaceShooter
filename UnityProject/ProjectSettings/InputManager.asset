@@ -200,10 +200,10 @@ InputManager:
     m_Name: Horizontal4
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: left alt
+    negativeButton: j
+    positiveButton: l
     altNegativeButton: 
-    altPositiveButton: mouse 1
+    altPositiveButton: 
     gravity: 1000
     dead: .00100000005
     sensitivity: 1000
@@ -216,10 +216,10 @@ InputManager:
     m_Name: Vertical4
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: left alt
+    negativeButton: k
+    positiveButton: i
     altNegativeButton: 
-    altPositiveButton: mouse 1
+    altPositiveButton: 
     gravity: 1000
     dead: .00100000005
     sensitivity: 1000
@@ -233,7 +233,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left alt
+    positiveButton: u
     altNegativeButton: 
     altPositiveButton: mouse 1
     gravity: 1000
@@ -249,9 +249,9 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left alt
+    positiveButton: o
     altNegativeButton: 
-    altPositiveButton: mouse 1
+    altPositiveButton: 
     gravity: 1000
     dead: .00100000005
     sensitivity: 1000
@@ -313,9 +313,9 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left alt
+    positiveButton: \
     altNegativeButton: 
-    altPositiveButton: mouse 1
+    altPositiveButton: 
     gravity: 1000
     dead: .00100000005
     sensitivity: 1000
