@@ -23,9 +23,6 @@ public class Dock : MonoBehaviour {
 	
 	void Update() {
         // Turretas sunaikinamas ir spawninamas laivas
-        Debug.Log("DOCK TEST ----------      !isDockEmpty " + !isDockEmpty);
-        Debug.Log("DOCK TEST ----------      !player.IsDockPause() " + !player.IsDockPause());
-        Debug.Log("DOCK TEST ----------      player.GetButtonDock() " + player.GetButtonDock());
         if (!isDockEmpty && !player.IsDockPause() && player.GetButtonDock())
         {
             player.SetDockPause(0.5f);

@@ -10,7 +10,6 @@ public class PlayerInfoContainer : MonoBehaviour {
 
     // Debuginimui
 	void Update() {
-        Debug.Log(IsDockPause());
 		if (playerInfo == null)
 			Debug.Log ("PlayerInfoContainer negauna PlayerInfo");
 	}
