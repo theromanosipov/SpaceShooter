@@ -14,7 +14,7 @@ public class SimpleShot: MonoBehaviour {
 		if (other.tag != "Enemy") {
 			return;
 		}
-		other.gameObject.BroadcastMessage("GetDamage", damage);
+		other.gameObject.SendMessage("GetDamage", damage);
 		Destroy (gameObject);
 	}
 

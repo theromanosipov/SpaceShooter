@@ -39,7 +39,7 @@ public class E_EnemyInfo : MonoBehaviour {
 			return;
 		}
 		Debug.Log ("Player hit by mover");
-		other.gameObject.BroadcastMessage("GetDamage", ContactDamage);
+		other.gameObject.SendMessage("GetDamage", ContactDamage);
 		DestroyShip ();
 	}
 	void DestroyShip(){

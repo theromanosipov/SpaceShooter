@@ -147,9 +147,9 @@ MonoBehaviour:
   speed1: 15
   speed2: 20
   range: 7
-  damage: 50
+  damage: 1000
   delay: .5
-  inertia: 10
+  inertia: 8
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1

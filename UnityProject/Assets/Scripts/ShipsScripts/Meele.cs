@@ -28,6 +28,6 @@ public class Meele : GenericPlayerController {
 			return;
 				}
 		Debug.Log ("Meele hit");
-		other.gameObject.BroadcastMessage("GetDamage", meeleDamage);
+		other.gameObject.SendMessage("GetDamage", meeleDamage);
 	}
 }

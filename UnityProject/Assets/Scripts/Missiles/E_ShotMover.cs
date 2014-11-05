@@ -20,7 +20,7 @@ public class E_ShotMover : MonoBehaviour {
 		if (other.tag != "Player"&&other.tag !="Shield") {
 			return;
 		}
-		other.gameObject.BroadcastMessage("GetDamage", damage);
+		other.gameObject.SendMessage("GetDamage", damage);
 		Destroy (gameObject);
 	}
 

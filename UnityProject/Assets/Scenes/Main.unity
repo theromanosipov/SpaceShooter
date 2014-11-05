@@ -234,7 +234,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 448253119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 50, y: 5, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
@@ -270,6 +270,7 @@ MonoBehaviour:
   shipsToSpawnAtStart:
   - {fileID: 100004, guid: bfc94e2251dec264e8b0f2234ab0442b, type: 2}
   - {fileID: 100002, guid: a892589bba997984597788aeff068c20, type: 2}
+  - {fileID: 100010, guid: 8a5405e24a590ed43b129073963e0e14, type: 2}
   - {fileID: 100010, guid: 8a5405e24a590ed43b129073963e0e14, type: 2}
 --- !u!4 &750546329
 Transform:
