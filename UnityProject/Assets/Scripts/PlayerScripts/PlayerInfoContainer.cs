@@ -1,11 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// PlayerInfoContainer saugo PlayerInfo ir suteikia interfeisą gauti ir keisti informaciją apie laivą
+/// </summary>
 public class PlayerInfoContainer : MonoBehaviour {
 
 	private PlayerInfo playerInfo;
 
+    // Debuginimui
 	void Update() {
+        Debug.Log(IsDockPause());
 		if (playerInfo == null)
 			Debug.Log ("PlayerInfoContainer negauna PlayerInfo");
 	}
@@ -51,6 +56,17 @@ public class PlayerInfoContainer : MonoBehaviour {
 		Debug.Log ("HitPoints " + playerInfo.hitPoints);
 		if (playerInfo.hitPoints <= 0) {
 			Destroy(gameObject);
-				}
+		}
 	}
+
+    public void SetDockPause( float newDockPause) {
+        playerInfo.dockPause = Time.time + newDockPause;
+    }
+
+    public bool IsDockPause() {
+        if (playerInfo.dockPause > Time.time)
+            return true;
+        else
+            return false;
+    }
 }

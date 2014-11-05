@@ -8,9 +8,13 @@ public class Powerup : MonoBehaviour {
 
     void OnTriggerEnter( Collider other) {
         if (other.tag == "Player") {
-            //Sukuria nauja lavą newShip
+            // Sukuria nauja lavą newShip
             GameObject ship = Instantiate(newShip, other.gameObject.transform.position, Quaternion.identity) as GameObject;
-            //Perduoda PlayerInfo iš other į naujai sukurtą laivą
+
+            // Perduoda other doke esantį turretą naujai sukurtam ship
+            // other.gameObject.GetComponent<Dock>().
+
+            // Perduoda PlayerInfo iš other į naujai sukurtą laivą
             ship.GetComponent<PlayerInfoContainer>().SetPlayerInfo(other.gameObject.GetComponent<PlayerInfoContainer>().GetPlayerInfo());
             Destroy( other.gameObject);
 			Destroy( gameObject);

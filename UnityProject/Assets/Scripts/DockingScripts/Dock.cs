@@ -2,53 +2,82 @@
 using System.Collections;
 
 /// <summary>
-/// Dock skriptas skirtas dokui prie, kurio jungsis laivai.
+/// Dock skriptas skirtas dokui prie, kurio jungiasi laivas
 /// </summary>
 public class Dock : MonoBehaviour {
 
-	public float minTurretRotation, maxTurretRotation;
+    // Jei turretas sukasi apie savo ašį, šie kintamieji apriboją jo sukimasį (radianais)
+	// public float minTurretRotation, maxTurretRotation;
 
+    // Reference į turreto PlayerInfoContainer, kad galėtume sužinoti, kada turretas nori atsijungti.
 	private PlayerInfoContainer player;
+
+    // Referencę į turretą, kad galėtume jį sunaikinti
     private GameObject turret;
-	
+
+    // False, kai doke yra turretas
 	private bool isDockEmpty = true;
-    //Pauzė kad vos tik prisijungęs laivas ta pačia akimirka neatsijungtu
-	private float dockPause;
+
+    // True, kai vyksta bet koks dokavimasis, neleidžia duokuotis vienu metu
+    private static bool isDockingInProgress = false;
 	
 	void Update() {
-        //Turretas sunaikinamas ir spawninamas laivas
-		if( !isDockEmpty && dockPause < Time.time && player.GetButtonDock()) {
-            dockPause = Time.time + 0.5f;  
-            Destroy( turret);
+        // Turretas sunaikinamas ir spawninamas laivas
+        Debug.Log("DOCK TEST ----------      !isDockEmpty " + !isDockEmpty);
+        Debug.Log("DOCK TEST ----------      !player.IsDockPause() " + !player.IsDockPause());
+        Debug.Log("DOCK TEST ----------      player.GetButtonDock() " + player.GetButtonDock());
+        if (!isDockEmpty && !player.IsDockPause() && player.GetButtonDock())
+        {
+            player.SetDockPause(0.5f);
+            
             Dockable dockable = turret.GetComponent<Dockable>();
 
             GameObject ship = Instantiate(dockable.otherForm, transform.position, Quaternion.identity) as GameObject;
 			ship.GetComponent<PlayerInfoContainer>().SetPlayerInfo( player.GetPlayerInfo());
 
+            Destroy(turret);
+ 
+            turret = null;
             isDockEmpty = true;
-			Debug.Log( "Dock kinda works");
+
 		}
 	}
 
 	void OnTriggerStay( Collider other) {
-		if( other.tag == "Player" && isDockEmpty && Time.time > dockPause) {
+        
+        if (!isDockingInProgress && isDockEmpty && other.tag == "Player" && !player.IsDockPause())
+        {
+            isDockingInProgress = true;
+            player = other.gameObject.GetComponent<PlayerInfoContainer>();
 			Dockable dockable = other.gameObject.GetComponent <Dockable>();
-			player = other.gameObject.GetComponent <PlayerInfoContainer>();
-
-            //Čia visi veiksmai, kurie atliekami, kai laivas gali ir nori prisijungti
+			
+            // Čia visi veiksmai, kurie atliekami, kai laivas gali ir nori prisijungti
 			if ( player.GetButtonDock()) {
-				isDockEmpty = false;
-                dockPause = Time.time + 0.5f;
+                isDockEmpty = false;
 				Destroy( other.gameObject);
-                turret = Instantiate(dockable.otherForm, transform.position, Quaternion.identity) as GameObject;
-                turret.GetComponent<PlayerInfoContainer>().SetPlayerInfo( player.GetPlayerInfo());
-				turret.transform.parent = transform;
-
+                GameObject newTurret = Instantiate(dockable.otherForm, transform.position, Quaternion.identity) as GameObject;
+                newTurret.GetComponent<PlayerInfoContainer>().SetPlayerInfo( player.GetPlayerInfo());
+                DockTurret(newTurret);
 				Debug.Log( "You got docked boy");
 			}
-			else
-				Debug.Log( "Ship does not want to dock");
+			else {
+                isDockEmpty = true;
+                Debug.Log("Ship does not want to dock");
+            }
+            isDockingInProgress = false;
 		}
 	}
+
+    public GameObject GetTurret() {
+        return turret;
+    }
+
+    public void DockTurret(GameObject newTurret) {
+        player.SetDockPause(0.5f);
+        isDockEmpty = false;
+        turret = newTurret;
+        player = turret.GetComponent<PlayerInfoContainer>();
+        turret.transform.parent = transform;
+    }
 }
 
