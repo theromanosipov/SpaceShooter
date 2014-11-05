@@ -12,7 +12,9 @@ public class Powerup : MonoBehaviour {
             GameObject ship = Instantiate(newShip, other.gameObject.transform.position, Quaternion.identity) as GameObject;
 
             // Perduoda other doke esantį turretą naujai sukurtam ship
-            // other.gameObject.GetComponent<Dock>().
+			GameObject turret = other.gameObject.GetComponent<Dock>().GetTurret();
+			if ( turret != null)
+				ship.GetComponent<Dock>().DockTurret( turret);
 
             // Perduoda PlayerInfo iš other į naujai sukurtą laivą
             ship.GetComponent<PlayerInfoContainer>().SetPlayerInfo(other.gameObject.GetComponent<PlayerInfoContainer>().GetPlayerInfo());

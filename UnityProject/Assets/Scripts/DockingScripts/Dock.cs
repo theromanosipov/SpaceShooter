@@ -13,7 +13,7 @@ public class Dock : MonoBehaviour {
 	private PlayerInfoContainer player;
 
     // Referencę į turretą, kad galėtume jį sunaikinti
-    private GameObject turret;
+    private GameObject turret = null;
 
     // False, kai doke yra turretas
 	private bool isDockEmpty = true;
@@ -32,7 +32,7 @@ public class Dock : MonoBehaviour {
             
             Dockable dockable = turret.GetComponent<Dockable>();
 
-            GameObject ship = Instantiate(dockable.otherForm, transform.position, Quaternion.identity) as GameObject;
+            GameObject ship = Instantiate(dockable.otherForm, turret.transform.position, Quaternion.identity) as GameObject;
 			ship.GetComponent<PlayerInfoContainer>().SetPlayerInfo( player.GetPlayerInfo());
 
             Destroy(turret);
@@ -43,16 +43,15 @@ public class Dock : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerStay( Collider other) {
-        
-        if (!isDockingInProgress && isDockEmpty && other.tag == "Player" && !player.IsDockPause())
+	void OnTriggerStay( Collider other) { 
+        if (!isDockingInProgress && isDockEmpty && other.tag == "Player")
         {
             isDockingInProgress = true;
             player = other.gameObject.GetComponent<PlayerInfoContainer>();
 			Dockable dockable = other.gameObject.GetComponent <Dockable>();
 			
             // Čia visi veiksmai, kurie atliekami, kai laivas gali ir nori prisijungti
-			if ( player.GetButtonDock()) {
+			if ( player.GetButtonDock() && !player.IsDockPause()) {
                 isDockEmpty = false;
 				Destroy( other.gameObject);
                 GameObject newTurret = Instantiate(dockable.otherForm, transform.position, Quaternion.identity) as GameObject;
@@ -73,10 +72,10 @@ public class Dock : MonoBehaviour {
     }
 
     public void DockTurret(GameObject newTurret) {
-        player.SetDockPause(0.5f);
         isDockEmpty = false;
         turret = newTurret;
         player = turret.GetComponent<PlayerInfoContainer>();
+		player.SetDockPause(0.5f);
         turret.transform.parent = transform;
     }
 }
