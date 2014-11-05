@@ -14,11 +14,11 @@ public class Powerup : MonoBehaviour {
 			// Perduoda PlayerInfo iš other į naujai sukurtą laivą
 			ship.GetComponent<PlayerInfoContainer>().SetPlayerInfo(other.gameObject.GetComponent<PlayerInfoContainer>().GetPlayerInfo());
 
-			Dock otherDock = other.gameObject.GetComponents<Dock>()[0];
+			Dock otherDock = other.gameObject.GetComponentsInChildren<Dock>()[0];
 			GameObject turret = otherDock.GetTurret();
 
 			if ( turret != null) {
-				//ship.GetComponents<Dock>()[0].DockTurret( turret);
+				ship.GetComponentsInChildren<Dock>()[0].DockTurret( turret);
 			}
 
             Destroy( other.gameObject);
