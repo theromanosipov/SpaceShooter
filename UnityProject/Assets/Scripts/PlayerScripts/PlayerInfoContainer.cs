@@ -54,7 +54,7 @@ public class PlayerInfoContainer : MonoBehaviour {
 		playerInfo.hitPoints += hitPoints;
 		Debug.Log ("HitPoints " + playerInfo.hitPoints);
 		if (playerInfo.hitPoints <= 0) {
-			Destroy(gameObject);
+			DestroyShip();
 		}
 	}
 
@@ -68,4 +68,8 @@ public class PlayerInfoContainer : MonoBehaviour {
         else
             return false;
     }
+
+	void DestroyShip(){
+		Destroy (gameObject);
+	}
 }

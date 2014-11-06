@@ -11,7 +11,7 @@ public class Mine : MonoBehaviour {
 
 
 	void OnTriggerEnter (Collider other) {
-		if (other.tag == "Player"||other.tag=="Untagged") {
+		if (other.tag == "Player"||other.tag=="Untagged"||other.tag=="Shield") {
 			return;
 		}
 		if (exploded == false) {
