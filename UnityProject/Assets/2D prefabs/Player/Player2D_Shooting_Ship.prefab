@@ -18,7 +18,7 @@ GameObject:
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400008}
   m_Layer: 0
-  m_Name: Player_Shooting_Ship
+  m_Name: Player2D_Shooting_Ship
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -15,7 +15,7 @@ GameObject:
   - 50: {fileID: 5000000}
   - 58: {fileID: 5800000}
   m_Layer: 0
-  m_Name: Asteroidas
+  m_Name: Asteroidas2D
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

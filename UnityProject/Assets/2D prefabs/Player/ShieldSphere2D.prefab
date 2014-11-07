@@ -13,7 +13,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 58: {fileID: 5800000}
   m_Layer: 0
-  m_Name: ShieldSphere
+  m_Name: ShieldSphere2D
   m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
