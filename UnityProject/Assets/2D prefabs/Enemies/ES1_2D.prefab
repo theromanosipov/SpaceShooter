@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HitPoints: 100
   ContactDamage: 30
-  colorResetTime: 0
+  colorResetTime: .300000012
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

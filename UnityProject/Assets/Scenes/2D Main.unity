@@ -351,6 +351,10 @@ Prefab:
       propertyPath: m_RootMapOrder
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 1a1fbe2ad879fc148ac681408235ed3e, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a1fbe2ad879fc148ac681408235ed3e, type: 2}
   m_RootGameObject: {fileID: 1484604813}
