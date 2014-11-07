@@ -11,14 +11,14 @@ public class x2D_PlayerController : GenericPlayerController {
 	public float speed;
 	public Boundary2 boundary;
 	public GameObject meele;
-	//public GameObject dock;
+	public GameObject dock;
 	private GameObject pMeele;
-	//private GameObject pDock;
+	private GameObject pDock;
 
 	// Use this for initialization
 	void Start () {
-		//pDock = Instantiate (dock, transform.position, Quaternion.identity) as GameObject;
-		//pDock.transform.parent = transform;
+		pDock = Instantiate (dock, transform.position, Quaternion.identity) as GameObject;
+		pDock.transform.parent = transform;
 		pMeele = Instantiate (meele, transform.position, Quaternion.identity) as GameObject;
 		pMeele.transform.parent = transform;	
 	}

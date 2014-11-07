@@ -15,11 +15,11 @@ public class x2D_Powerup : MonoBehaviour {
 			// Perduoda PlayerInfo iš other į naujai sukurtą laivą
 			ship.GetComponent<PlayerInfoContainer>().SetPlayerInfo(other.gameObject.GetComponent<PlayerInfoContainer>().GetPlayerInfo());
 			
-			Dock otherDock = other.gameObject.GetComponentsInChildren<Dock>()[0];
+			x2D_Dock otherDock = other.gameObject.GetComponentsInChildren<x2D_Dock>()[0];
 			GameObject turret = otherDock.GetTurret();
 			
 			if ( turret != null) {
-				ship.GetComponentsInChildren<Dock>()[0].DockTurret( turret);
+				ship.GetComponentsInChildren<x2D_Dock>()[0].DockTurret( turret);
 			}
 			
 			Destroy( other.gameObject);
