@@ -38,7 +38,7 @@ public class x2D_EnemyInfo : MonoBehaviour {
 		if (other.tag != "Player") {
 			return;
 		}
-		Debug.Log ("Player hit by mover");
+		//Debug.Log ("Player hit by mover");
 		other.gameObject.SendMessage("GetDamage", ContactDamage);
 		DestroyShip ();
 	}

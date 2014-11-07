@@ -164,6 +164,7 @@ MonoBehaviour:
     yMax: 10
   meele: {fileID: 100002, guid: 6d179c2aa289c364692b4d8189f2a57c, type: 2}
   dock: {fileID: 100000, guid: 99e420e4553a3004f873d1a1704fde98, type: 2}
+  hitPointsText: {fileID: 100000, guid: 8fe53cd8bf9cf4c4292d62eae29fe5e5, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

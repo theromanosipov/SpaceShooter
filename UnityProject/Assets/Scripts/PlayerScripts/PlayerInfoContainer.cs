@@ -5,7 +5,6 @@ using System.Collections;
 /// PlayerInfoContainer saugo PlayerInfo ir suteikia interfeisą gauti ir keisti informaciją apie laivą
 /// </summary>
 public class PlayerInfoContainer : MonoBehaviour {
-
 	private PlayerInfo playerInfo;
 
     // Debuginimui
@@ -50,9 +49,12 @@ public class PlayerInfoContainer : MonoBehaviour {
 		playerInfo.score += newScore;
 	}
 
+	public int GetHitPoints(){
+		return playerInfo.hitPoints;
+	}
 	public void AddHitpoints( int hitPoints) {
 		playerInfo.hitPoints += hitPoints;
-		Debug.Log ("HitPoints " + playerInfo.hitPoints);
+		//Debug.Log ("HitPoints " + playerInfo.hitPoints);
 		if (playerInfo.hitPoints <= 0) {
 			DestroyShip();
 		}
