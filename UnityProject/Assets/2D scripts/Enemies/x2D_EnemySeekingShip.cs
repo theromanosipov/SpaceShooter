@@ -33,8 +33,8 @@ public class x2D_EnemySeekingShip : MonoBehaviour {
 			rigidbody2D.velocity = directionOfTravel * speed2;
 			transform.rotation= Quaternion.Euler(0,0,90+(180/3.14159f)*Mathf.Atan(rigidbody2D.velocity.y/rigidbody2D.velocity.x));
 			
-		} else{//rigidbody.rotation =  Quaternion.identity;		
-			rigidbody.velocity = -transform.up * speed1;
+		} else{	
+			rigidbody2D.velocity = -transform.up * speed1;
 		}
 	}
 }
