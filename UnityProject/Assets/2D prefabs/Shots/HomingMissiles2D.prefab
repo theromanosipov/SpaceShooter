@@ -15,7 +15,7 @@ GameObject:
   - 50: {fileID: 5000000}
   - 61: {fileID: 6100000}
   m_Layer: 0
-  m_Name: MineShot
+  m_Name: HomingMissiles2D
   m_TagString: Shot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .200000003, y: .300000012, z: .200000003}
+  m_LocalScale: {x: .200000003, y: .600000024, z: .200000003}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -45,7 +45,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 8a9fa595fb6047c4b97038613eace79d, type: 2}
+  - {fileID: 2100000, guid: 49fd049c5da2c8245858169faffe25db, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -94,7 +94,7 @@ AudioSource:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 1a3d92ed4b971a847bbdd59ed3a716e0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 395a2ce7fdd5b954ebca98f832972c6f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -152,11 +152,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6080384551e4b5140ab6d0a651591af9, type: 3}
+  m_Script: {fileID: 11500000, guid: e58315787ef04f34d802d21ad7e96e6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed1: 15
+  speed2: 20
+  range: 7
   damage: 1000
+  delay: .5
+  inertia: 8
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
