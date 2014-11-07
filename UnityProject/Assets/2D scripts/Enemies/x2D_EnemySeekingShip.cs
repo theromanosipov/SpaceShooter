@@ -31,7 +31,7 @@ public class x2D_EnemySeekingShip : MonoBehaviour {
 		if (minDist <= range) {        Vector3 directionOfTravel = player_0.transform.position - currentPos;
 			directionOfTravel.Normalize();
 			rigidbody2D.velocity = directionOfTravel * speed2;
-			transform.rotation= Quaternion.Euler(0,0,90+(180/3.14159f)*Mathf.Atan(rigidbody2D.velocity.y/rigidbody2D.velocity.x));
+			transform.rotation= Quaternion.Euler(0,0,-90+(180/3.14159f)*Mathf.Atan(rigidbody2D.velocity.y/rigidbody2D.velocity.x));
 			
 		} else{	
 			rigidbody2D.velocity = -transform.up * speed1;
