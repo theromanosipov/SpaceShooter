@@ -11,7 +11,6 @@ public class x2D_PlayerController : GenericPlayerController {
 	public float speed;
 	public Boundary2 boundary;
 	public GameObject meele;
-	public GameObject dock;
 	public GameObject hitPointsText;
 	private GameObject pMeele;
 	private GameObject phitPointsText;

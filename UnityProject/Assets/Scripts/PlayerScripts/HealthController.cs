@@ -1,27 +1,44 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Kontroliuoja žalos gavimą
+/// 
+/// ???
+/// Roman Osipov
+/// </summary>
 public class HealthController : GenericPlayerController {
-	public float invincibilityDuration = 2f;
-	public float invincibilityCooldown = 0f;
-	public Color invincibilityColor = new Color (150, 50, 50);
-
-	private float invincibleUntil = 0f;
-
 	
+    // Material, kuris hitMaterialDuration laikui uždedamas playeriui
+    public Material hitMaterial;
+
+    // Originalus laivo material išsaugomas prieš uždedant hitMaterial
+    private Material originalMaterial = null;
+
+    // Laikas, kuriam bus uždėtas hitMaterial
+	public float hitMaterialDuration;
+
+    // Laikas, iki kurio bus uždėtas hitMaterial
+    private float hitMaterialUntil;
+
+
 	public override void Update(){
 		base.Update();
-		if (Time.time >= invincibleUntil + invincibilityCooldown) gameObject.renderer.material.color = new Color(0.0f,0.0f,1f);
-		else if (Time.time >= invincibleUntil) gameObject.renderer.material.color = new Color(0.5f,0.5f,1f);
+        // Jei originalMaterial != null, tai reiški, kad šiuo metu yra uždėtas hitMaterial
+        if (originalMaterial != null && Time.time > hitMaterialUntil) {
+            // Grąžina originalMaterial
+            gameObject.renderer.material = originalMaterial;
+            originalMaterial = null;
+        }
 	}
 
+    // Uždeda hitMaterial, išsaugo originalMaterial, nuima hitpoints per PlayerInfoContainer
 	public void GetDamage(int damage){
-		if (Time.time < invincibleUntil)
-				return;
-		else if (Time.time > invincibleUntil + invincibilityCooldown){
-				invincibleUntil = Time.time + invincibilityDuration;
-				gameObject.renderer.material.color = invincibilityColor;
-		}
+
+        hitMaterialUntil = Time.time + hitMaterialDuration;
+        originalMaterial = gameObject.renderer.material;
+        gameObject.renderer.material = hitMaterial;
+		
 		player.AddHitpoints (-damage);
 	}
 }

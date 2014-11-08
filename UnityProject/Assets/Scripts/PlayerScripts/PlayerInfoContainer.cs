@@ -3,6 +3,8 @@ using System.Collections;
 
 /// <summary>
 /// PlayerInfoContainer saugo PlayerInfo ir suteikia interfeisą gauti ir keisti informaciją apie laivą
+/// 
+/// Roman Osipov
 /// </summary>
 public class PlayerInfoContainer : MonoBehaviour {
 	private PlayerInfo playerInfo;
@@ -21,6 +23,15 @@ public class PlayerInfoContainer : MonoBehaviour {
 		return playerInfo;
 	}
 
+	public long GetScore() {
+		return playerInfo.score;
+	}
+
+    ///////////////////////////////////////////////////////////////////////////////////
+    //
+    // Metodai, kurie grąžina informaciją apie konkretaus žaidėjo mygtukų paspaudymus
+    //
+    ///////////////////////////////////////////////////////////////////////////////////
 	public float GetAxisH() {
 		return Input.GetAxis( "Horizontal" + playerInfo.controllerNumber);
 	}
@@ -40,10 +51,8 @@ public class PlayerInfoContainer : MonoBehaviour {
 	public bool GetButtonMelee() {
 		return Input.GetButton("Melee" + playerInfo.controllerNumber);
 	}
-	
-	public long GetScore() {
-		return playerInfo.score;
-	}
+
+    ///////////////////////////////////////////////////////////////////////////////////
 	
 	public void AddScore( long newScore) {
 		playerInfo.score += newScore;
@@ -52,6 +61,7 @@ public class PlayerInfoContainer : MonoBehaviour {
 	public int GetHitPoints(){
 		return playerInfo.hitPoints;
 	}
+
 	public void AddHitpoints( int hitPoints) {
 		playerInfo.hitPoints += hitPoints;
 		//Debug.Log ("HitPoints " + playerInfo.hitPoints);
@@ -60,10 +70,12 @@ public class PlayerInfoContainer : MonoBehaviour {
 		}
 	}
 
+    // Uždeda pauzę, kai laivas negali prisidokuoti ir atsidokuoti
     public void SetDockPause( float newDockPause) {
         playerInfo.dockPause = Time.time + newDockPause;
     }
 
+    // True jei laivas neseniai prisidokavo ar atsidokavo
     public bool IsDockPause() {
         if (playerInfo.dockPause > Time.time)
             return true;
@@ -71,6 +83,8 @@ public class PlayerInfoContainer : MonoBehaviour {
             return false;
     }
 
+    // Sunaikina laivą prie
+    // TODO turreto atkabinimas
 	void DestroyShip(){
 		Destroy (gameObject);
 	}

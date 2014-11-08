@@ -1,8 +1,11 @@
 using UnityEngine;
 using System.Collections;
 
+
 /// <summary>
 /// Dock skriptas skirtas dokui prie, kurio jungiasi laivas
+/// 
+/// Roman Osipov
 /// </summary>
 public class x2D_Dock : MonoBehaviour {
 	
@@ -21,6 +24,7 @@ public class x2D_Dock : MonoBehaviour {
 	// True, kai vyksta bet koks dokavimasis, neleidžia duokuotis vienu metu
 	private static bool isDockingInProgress = false;
 	
+    /// Tikrinam ar turretas nori atsikabinti ir jei nori atkabinam
 	void Update() {
 		// Turretas sunaikinamas ir spawninamas laivas
 		if (!isDockEmpty && !player.IsDockPause() && player.GetButtonDock())
@@ -35,8 +39,7 @@ public class x2D_Dock : MonoBehaviour {
 			Destroy(turret);
 			
 			turret = null;
-			isDockEmpty = true;
-			
+			isDockEmpty = true;	
 		}
 	}
 	
@@ -64,10 +67,12 @@ public class x2D_Dock : MonoBehaviour {
 		}
 	}
 	
+    // Perduoda pridokuoto turreto GameObject. Naudojamas kai reikia permesti turretą ant kito laivo, pvz paėmus Powerupą
 	public GameObject GetTurret() {
 		return turret;
 	}
 	
+    // Pridokuoja bet kokį GameObject kaip turretą. Naudojamas kai jau turime turretą ir norime jį įdėti į doką
 	public void DockTurret(GameObject newTurret) {
 		isDockEmpty = false;
 		turret = newTurret;
