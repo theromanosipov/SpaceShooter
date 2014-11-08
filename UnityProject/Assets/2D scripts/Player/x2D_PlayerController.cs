@@ -14,13 +14,10 @@ public class x2D_PlayerController : GenericPlayerController {
 	public GameObject dock;
 	public GameObject hitPointsText;
 	private GameObject pMeele;
-	private GameObject pDock;
 	private GameObject phitPointsText;
 
 	// Use this for initialization
 	void Start () {
-		pDock = Instantiate (dock, transform.position, Quaternion.identity) as GameObject;
-		pDock.transform.parent = transform;
 		phitPointsText = Instantiate (hitPointsText, new Vector3(transform.position.x,transform.position.y-1,transform.position.z-3),Quaternion.identity) as GameObject;
 		phitPointsText.transform.parent = transform;
 		pMeele = Instantiate (meele, transform.position, Quaternion.identity) as GameObject;
