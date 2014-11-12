@@ -12,9 +12,11 @@ public class x2D_Meele : GenericPlayerController {
 		base.Update();
 		if (Time.time - pressStart > swingTime) {
 			gameObject.renderer.enabled = false;
+			gameObject.collider2D.enabled = false;
 		}
 		if (player.GetButtonMelee () && Time.time - pressStart > cooldown + swingTime) {
 			gameObject.renderer.enabled = true;
+			gameObject.collider2D.enabled = true;
 			pressStart = Time.time;
 		}
 		
@@ -24,7 +26,7 @@ public class x2D_Meele : GenericPlayerController {
 	}
 	
 	void OnTriggerEnter2D (Collider2D other) {
-		if (other.tag != "Enemy" || Time.time - pressStart > swingTime) {
+		if (other.tag != "Enemy") {
 			return;
 		}
 		Debug.Log ("Meele hit");
