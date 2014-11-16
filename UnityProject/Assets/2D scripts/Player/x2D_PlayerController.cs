@@ -25,9 +25,11 @@ public class x2D_PlayerController : GenericPlayerController {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		rigidbody2D.velocity = new Vector2 (player.GetAxisH (), player.GetAxisV ());
-		rigidbody2D.velocity.Normalize ();
-		rigidbody2D.velocity = rigidbody2D.velocity * speed;
+		rigidbody2D.velocity = new Vector2 (player.GetAxisH ()*speed, player.GetAxisV ()*speed);
+		//if (rigidbody2D.velocity.magnitude > speed) {
+		//				rigidbody2D.velocity.Normalize ();
+		//				rigidbody2D.velocity = rigidbody2D.velocity * speed;
+		//		}
 		
 		rigidbody2D.position = new Vector2 (
 			Mathf.Clamp (rigidbody2D.position.x, boundary.xMin, boundary.xMax),

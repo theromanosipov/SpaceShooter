@@ -6,22 +6,24 @@ public class x2D_Mine : MonoBehaviour {
 	public GameObject shot;
 	public int shotCount;
 	public int waveCount;
+	public int damage;
 	public float delayWaveSpawn;
 	private bool exploded = false;
 	
 	
 	void OnTriggerEnter2D (Collider2D other) {
-		if (other.tag == "Player"||other.tag=="Untagged"||other.tag=="Shield") {
+		if (other.tag !="Enemy")//(other.tag == "Player"||other.tag=="Untagged"||other.tag=="Shield") {
 			return;
-		}
+
 		if (exploded == false) {
+			if (other.tag=="Enemy")
+				other.SendMessage("GetDamage", damage);
 			StartCoroutine(Explode ());
 			exploded=true;	
 		}
 	}
 	
 	IEnumerator Explode(){
-		Debug.Log ("Entered");
 		for (int i=0; i <shotCount; i++) 
 		{
 			for (int j=0; j<waveCount; j++)
