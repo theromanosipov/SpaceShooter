@@ -7,6 +7,7 @@ public class x2D_GameController : MonoBehaviour
 {
 	//Visų žaidėjų PlayerInfo
 	public int lives;
+	public int playerCount;
 	public PlayerInfo[] player;
 	public GameObject[] shipsToSpawnAtStart;
 	public GameObject meelePrefab;
@@ -20,11 +21,18 @@ public class x2D_GameController : MonoBehaviour
 				}
 
 		//Spawninami žaidėjų laivai
-		for (int i = 0; i < shipsToSpawnAtStart.Length; i++) {
-						GameObject playerShip = Instantiate (shipsToSpawnAtStart [i], new Vector2 (2 * i - 1, -8), Quaternion.identity) as GameObject;
-						//Naujau sukurtam žaidėjo laivui duoda PlayerInfo, kad šis galėtų būt valdomas
-						playerShip.GetComponent<PlayerInfoContainer> ().SetPlayerInfo (player [i]);
-				}
+		for (int i=0; i<playerCount; i++) 
+		{
+			GameObject playerShip = Instantiate (meelePrefab, new Vector2 (-8+i*16/(playerCount-1), -8), Quaternion.identity) as GameObject;
+			//				//Naujau sukurtam žaidėjo laivui duoda PlayerInfo, kad šis galėtų būt valdomas
+			playerShip.GetComponent<PlayerInfoContainer> ().SetPlayerInfo (player [i]);
+		}
+
+		//for (int i = 0; i < shipsToSpawnAtStart.Length; i++) {
+		//				GameObject playerShip = Instantiate (shipsToSpawnAtStart [i], new Vector2 (2 * i - 1, -8), Quaternion.identity) as GameObject;
+		//				//Naujau sukurtam žaidėjo laivui duoda PlayerInfo, kad šis galėtų būt valdomas
+		//				playerShip.GetComponent<PlayerInfoContainer> ().SetPlayerInfo (player [i]);
+		//		}
 		}
 	void playerDied(PlayerInfo deadPlayer)
 	{
