@@ -37,13 +37,26 @@ public class Level_Spawner : MonoBehaviour
 		}
 	}
 
+	void SpawnSymmetrically(GameObject prefab, float x, float y)
+	{
+		Instantiate (prefab, new Vector3(x,y,0), Quaternion.identity);
+		Instantiate (prefab, new Vector3(-x,y,0), Quaternion.identity);
+	}
+
+
+	void SpawnRandom(GameObject prefab, float xmin, float xmax, float y)
+	{
+		Instantiate (prefab, new Vector3(Random.Range(xmin,xmax),y,0), Quaternion.identity);
+	}
+
 	IEnumerator Level0 ()
 	{
 		isLevelEnabled [0] = true;
+
 		float delay=0.4f;	
 		while (!gameOver&&isLevelEnabled[0]) 
 		{
-			Instantiate (enemyPrefabs[0], new Vector3(Random.Range(XValues[0],XValues[1]),YValue,0), Quaternion.identity);
+			SpawnRandom (enemyPrefabs[0],XValues[0],XValues[1],YValue);
 			yield return new WaitForSeconds(delay);
 		}
 	}
@@ -51,10 +64,10 @@ public class Level_Spawner : MonoBehaviour
 	IEnumerator Level1 ()
 	{
 		isLevelEnabled [1] = true;
+
 		float delay=3f;	
 		int shieldCount=15;
-		Instantiate (enemyPrefabs[3], new Vector3(XValues[0]/2,YValue,0), Quaternion.identity);
-		Instantiate (enemyPrefabs[3], new Vector3(XValues[1]/2,YValue,0), Quaternion.identity);
+		SpawnSymmetrically (enemyPrefabs [3], XValues [0] / 2, YValue);
 		SpawnRow (powerupPrefabs [4], shieldCount);
 		while (!gameOver&&isLevelEnabled[1]) 
 		{
@@ -69,13 +82,13 @@ public class Level_Spawner : MonoBehaviour
 
 		isLevelEnabled [0] = false;
 		isLevelEnabled [1] = false;
-		Instantiate (enemyPrefabs[4], new Vector3(XValues[0]/2,YValue,0), Quaternion.identity);
-		Instantiate (enemyPrefabs[4], new Vector3(XValues[1]/2,YValue,0), Quaternion.identity);
+		SpawnSymmetrically (enemyPrefabs [4], XValues [0] / 2, YValue);
 	}
 
 	void Level3()
 	{
 		isLevelEnabled [3] = true;
+
 		gameObject.SendMessage ("Level0");
 		gameObject.SendMessage ("Level1");
 	}
