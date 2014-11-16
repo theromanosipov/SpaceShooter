@@ -86,6 +86,13 @@ public class PlayerInfoContainer : MonoBehaviour {
     // Sunaikina laivą prie
     // TODO turreto atkabinimas
 	void DestroyShip(){
+		GameObject gameController=GameObject.FindGameObjectWithTag("GameMaster");
+		//int playerID = playerInfo.controllerNumber;
+		gameController.SendMessage ("playerDied", playerInfo);
+		gameObject.renderer.enabled = false;
+		gameObject.collider2D.enabled = false;
+		int hitPoints = GetHitPoints ();
+		AddHitpoints (100 - hitPoints);
 		Destroy (gameObject);
 	}
 }

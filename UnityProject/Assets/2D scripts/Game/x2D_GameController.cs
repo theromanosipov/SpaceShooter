@@ -6,8 +6,10 @@ using System.Collections;
 public class x2D_GameController : MonoBehaviour
 {
 	//Visų žaidėjų PlayerInfo
+	public int lives;
 	public PlayerInfo[] player;
 	public GameObject[] shipsToSpawnAtStart;
+	public GameObject meelePrefab;
 		
 	public virtual void Start ()
 		{
@@ -24,5 +26,14 @@ public class x2D_GameController : MonoBehaviour
 						playerShip.GetComponent<PlayerInfoContainer> ().SetPlayerInfo (player [i]);
 				}
 		}
+	void playerDied(PlayerInfo deadPlayer)
+	{
+		if (lives > 0) 
+		{
+			lives--;
+			GameObject playerShip = Instantiate (meelePrefab, new Vector2 (0, -8), Quaternion.identity) as GameObject;
+			playerShip.GetComponent<PlayerInfoContainer> ().SetPlayerInfo (deadPlayer);
+		}
+	}
 }
 

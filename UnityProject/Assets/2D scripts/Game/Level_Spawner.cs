@@ -24,7 +24,8 @@ public class Level_Spawner : MonoBehaviour
 		{
 			gameObject.SendMessage ("Level" + timerTracker);
 			timerTracker++;
-			nextWave=Time.time+timers[timerTracker];
+			if (timerTracker < timers.Length) 
+				nextWave=Time.time+timers[timerTracker];
 		}
 	}
 	
@@ -49,6 +50,11 @@ public class Level_Spawner : MonoBehaviour
 		Instantiate (prefab, new Vector3(Random.Range(xmin,xmax),y,0), Quaternion.identity);
 	}
 
+	void SpawnOne(GameObject prefab, float x, float y)
+	{
+		Instantiate (prefab, new Vector3(x,y,0), Quaternion.identity);
+	}
+
 	IEnumerator Level0 ()
 	{
 		isLevelEnabled [0] = true;
@@ -65,13 +71,13 @@ public class Level_Spawner : MonoBehaviour
 	{
 		isLevelEnabled [1] = true;
 
-		float delay=3f;	
+		float delay=4f;	
 		int shieldCount=15;
 		SpawnSymmetrically (enemyPrefabs [3], XValues [0] / 2, YValue);
 		SpawnRow (powerupPrefabs [4], shieldCount);
 		while (!gameOver&&isLevelEnabled[1]) 
 		{
-			Instantiate (enemyPrefabs[1], new Vector3(Random.Range(XValues[0],XValues[1]),YValue,0), Quaternion.identity);
+			SpawnRandom (enemyPrefabs[1],XValues[0],XValues[1],YValue);
 			yield return new WaitForSeconds(delay);
 		}
 	}
@@ -80,17 +86,34 @@ public class Level_Spawner : MonoBehaviour
 	{
 		isLevelEnabled [2] = true;
 
-		isLevelEnabled [0] = false;
 		isLevelEnabled [1] = false;
 		SpawnSymmetrically (enemyPrefabs [4], XValues [0] / 2, YValue);
+		SpawnOne (powerupPrefabs [0], 0.75f * XValues [0], YValue);
+		SpawnOne (powerupPrefabs [1], 0.25f * XValues [0], YValue);
+		SpawnOne (powerupPrefabs [2], 0.25f * XValues [1], YValue);
+		SpawnOne (powerupPrefabs [3], 0.75f * XValues [1], YValue);
+
 	}
 
 	void Level3()
 	{
 		isLevelEnabled [3] = true;
 
-		gameObject.SendMessage ("Level0");
+		SpawnRow (enemyPrefabs [5], 6);
 		gameObject.SendMessage ("Level1");
 	}
+
+	void Level4()
+	{
+		isLevelEnabled [4] = true;
+		
+		SpawnRow (enemyPrefabs [6], 6);
+		gameObject.SendMessage ("Level0");
+		gameObject.SendMessage ("Level0");
+	}
+	
+
 }
+
+
 
