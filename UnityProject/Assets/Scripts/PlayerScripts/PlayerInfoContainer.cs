@@ -56,6 +56,7 @@ public class PlayerInfoContainer : MonoBehaviour {
 	
 	public void AddScore( long newScore) {
 		playerInfo.score += newScore;
+		Debug.Log (playerInfo.score);
 	}
 
 	public int GetHitPoints(){

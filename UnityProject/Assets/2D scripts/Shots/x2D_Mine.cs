@@ -17,8 +17,10 @@ public class x2D_Mine : MonoBehaviour {
 			return;
 
 		if (exploded == false) {
-			if (other.tag=="Enemy")
+			if (other.tag=="Enemy"){
+				other.gameObject.SendMessage("SetDamager", shooter);
 				other.SendMessage("GetDamage", damage);
+			}
 			StartCoroutine(Explode ());
 			exploded=true;	
 		}
@@ -27,8 +29,11 @@ public class x2D_Mine : MonoBehaviour {
 	IEnumerator Explode(){
 		for (int i=0; i <shotCount; i++) 
 		{
-			for (int j=0; j<waveCount; j++)
-				Instantiate(shot, transform.position, Quaternion.Euler(0,0,Random.Range (0f,360f)));			;
+			for (int j=0; j<waveCount; j++){
+				GameObject bullet = Instantiate(shot, transform.position, Quaternion.Euler(0,0,Random.Range (0f,360f))) as GameObject;
+				bullet.BroadcastMessage("AssignPlayer", shooter);
+				
+			};
 			yield return new WaitForSeconds(delayWaveSpawn);
 		}	
 		Destroy (gameObject);

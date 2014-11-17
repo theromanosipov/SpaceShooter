@@ -13,10 +13,12 @@ public class x2D_EnemyInfo : MonoBehaviour {
 	public int HitPoints;		//Laivo gyvybės.
 	public int ContactDamage;	//Kiek žalos daro žaidėjui kontakto metu
 	public float colorResetTime=0.3f;
+	public int killScore = 9;
 	public bool isInvincible=false;
 	public bool isDestroyableByCollision = true;
 	public Color enemyColor = new Color (1f, 0.7f, 0.7f);
 	private float resetTime;
+	private PlayerInfoContainer damager;
 	
 	void Update()
 	{
@@ -37,18 +39,25 @@ public class x2D_EnemyInfo : MonoBehaviour {
 			DestroyShip ();
 		}
 	}
+
+	void SetDamager(PlayerInfoContainer player){
+		damager = player;
+		}
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.tag != "Player") {
 			return;
 		}
 		//Debug.Log ("Player hit by mover");
 		other.gameObject.SendMessage("GetDamage", ContactDamage);
+		damager = other.GetComponent<PlayerInfoContainer>();
 		if (!isDestroyableByCollision) {
 						return;
 		}
 		DestroyShip ();
 	}
 	void DestroyShip(){
+		if (damager != null)
+			damager.AddScore (killScore);
 		Destroy (gameObject);
 	}
 }

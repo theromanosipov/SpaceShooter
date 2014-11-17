@@ -66,6 +66,7 @@ public class x2D_HomingMissile : MonoBehaviour
 		if (other.tag != "Enemy") {
 			return;
 		}
+		other.gameObject.SendMessage("SetDamager", shooter);
 		other.gameObject.SendMessage("GetDamage", damage);
 		Destroy (gameObject);
 	}
