@@ -15,6 +15,7 @@ public class x2D_HomingMissile : MonoBehaviour
 	//Kuo mažesnis šis parametras, tuo greičiau gali keisti
 	private float activator;	
 	private bool timer;
+	private PlayerInfoContainer shooter;
 	private Vector3 direction;
 	// Use this for initialization
 	void Start ()
@@ -57,6 +58,9 @@ public class x2D_HomingMissile : MonoBehaviour
 				rigidbody2D.velocity = direction * speed2;
 			}
 		}
+	}
+	public void AssignPlayer(PlayerInfoContainer player){
+		shooter = player;
 	}
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.tag != "Enemy") {

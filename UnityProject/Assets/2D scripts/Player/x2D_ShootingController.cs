@@ -22,13 +22,13 @@ public class x2D_ShootingController : GenericPlayerController
 		if (player.GetButtonPowerup() && shotCount > 0) {
 			foreach(Transform shotSpawn in shotSpawns)
 			{ 
-				Instantiate( shot, shotSpawn.position, 
+				GameObject shot = Instantiate( shot, shotSpawn.position, 
 				            Quaternion.Euler 
 				            (shotSpawn.rotation.eulerAngles.x,
 				 shotSpawn.rotation.eulerAngles.y,
 				 shotSpawn.rotation.eulerAngles.z+Random.Range (-scatter,scatter))
-				            );
-				
+				            ) as GameObject;
+				shot.BroadcastMessage("AssignPlayer", player);
 			}
 			shotCount--;
 		}

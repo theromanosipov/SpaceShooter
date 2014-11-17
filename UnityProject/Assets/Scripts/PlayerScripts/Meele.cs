@@ -7,7 +7,6 @@ public class Meele : GenericPlayerController {
 	public float cooldown = 0.4f;
 
 	private float pressStart = 0;
-
 	public override void Update(){
         base.Update();
 		if (Time.time - pressStart > swingTime) {

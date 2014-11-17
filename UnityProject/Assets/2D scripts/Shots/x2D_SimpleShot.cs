@@ -3,6 +3,7 @@ using System.Collections;
 
 public class x2D_SimpleShot: MonoBehaviour {
 	public float speed;
+	private PlayerInfoContainer shooter;
 	public int damage;
 	// Use this for initialization
 	void Start () {
@@ -16,6 +17,9 @@ public class x2D_SimpleShot: MonoBehaviour {
 		}
 		other.gameObject.SendMessage("GetDamage", damage);
 		Destroy (gameObject);
+	}
+	public void AssignPlayer(PlayerInfoContainer player){
+		shooter = player;
 	}
 	
 }

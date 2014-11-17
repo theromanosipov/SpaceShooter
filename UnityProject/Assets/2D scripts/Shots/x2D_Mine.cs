@@ -7,6 +7,7 @@ public class x2D_Mine : MonoBehaviour {
 	public int shotCount;
 	public int waveCount;
 	public int damage;
+	private PlayerInfoContainer shooter;
 	public float delayWaveSpawn;
 	private bool exploded = false;
 	
@@ -31,5 +32,8 @@ public class x2D_Mine : MonoBehaviour {
 			yield return new WaitForSeconds(delayWaveSpawn);
 		}	
 		Destroy (gameObject);
+	}
+	public void AssignPlayer(PlayerInfoContainer player){
+		shooter = player;
 	}
 }
