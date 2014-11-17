@@ -22,8 +22,8 @@ public class ShootingController : GenericPlayerController
 		if (player.GetButtonPowerup() && shotCount > 0) {
 			foreach(Transform shotSpawn in shotSpawns)
 			{ 
-				Instantiate( shot, shotSpawn.position, Quaternion.Euler (shotSpawn.rotation.eulerAngles.x,shotSpawn.rotation.eulerAngles.y+Random.Range (-scatter,scatter),shotSpawn.rotation.eulerAngles.z));
-			
+				GameObject bullet = Instantiate( shot, shotSpawn.position, Quaternion.Euler (shotSpawn.rotation.eulerAngles.x,shotSpawn.rotation.eulerAngles.y+Random.Range (-scatter,scatter),shotSpawn.rotation.eulerAngles.z)) as GameObject;
+				bullet.BroadcastMessage("AssignPlayer", player);
 			}
 			shotCount--;
 		}

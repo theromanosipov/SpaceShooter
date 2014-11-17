@@ -4,6 +4,7 @@ using System.Collections;
 public class SimpleShot: MonoBehaviour {
 	public float speed;
 	public int damage;
+	private PlayerInfoContainer shooter;
 	// Use this for initialization
 	void Start () {
 		rigidbody.velocity = speed*transform.up;
@@ -16,6 +17,9 @@ public class SimpleShot: MonoBehaviour {
 		}
 		other.gameObject.SendMessage("GetDamage", damage);
 		Destroy (gameObject);
+	}
+	public void AssignPlayer(PlayerInfoContainer player){
+		shooter = player;
 	}
 
 }

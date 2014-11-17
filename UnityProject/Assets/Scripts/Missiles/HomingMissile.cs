@@ -15,6 +15,7 @@ public class HomingMissile : MonoBehaviour
 								//Kuo mažesnis šis parametras, tuo greičiau gali keisti
 	private float activator;	
 	private bool timer;
+	private PlayerInfoContainer shooter;
 	private Vector3 direction;
 		// Use this for initialization
 		void Start ()
@@ -66,6 +67,10 @@ public class HomingMissile : MonoBehaviour
 		}
 		other.gameObject.SendMessage("GetDamage", damage);
 		Destroy (gameObject);
+	}
+
+	public void AssignPlayer(PlayerInfoContainer player){
+		shooter = player;
 	}
 }
 

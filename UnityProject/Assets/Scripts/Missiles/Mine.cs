@@ -7,6 +7,7 @@ public class Mine : MonoBehaviour {
 	public int shotCount;
 	public int waveCount;
 	public float delayWaveSpawn;
+	private PlayerInfoContainer shooter;
 	private bool exploded = false;
 
 
@@ -29,5 +30,8 @@ public class Mine : MonoBehaviour {
 			yield return new WaitForSeconds(delayWaveSpawn);
 		}	
 		Destroy (gameObject);
+	}
+	public void AssignPlayer(PlayerInfoContainer player){
+		shooter = player;
 	}
 }

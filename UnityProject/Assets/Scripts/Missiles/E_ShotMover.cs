@@ -10,6 +10,7 @@ public class E_ShotMover : MonoBehaviour {
 
 	public float speed; //Kokiu greičiu skrenda šūviai
 	public int damage;  //Kiek žalos daro
+	private PlayerInfoContainer shooter;
 	// Use this for initialization
 	void Start () {
 		rigidbody.velocity = -speed*transform.up;
@@ -22,6 +23,10 @@ public class E_ShotMover : MonoBehaviour {
 		}
 		other.gameObject.SendMessage("GetDamage", damage);
 		Destroy (gameObject);
+	}
+
+	public void AssignPlayer(PlayerInfoContainer player){
+		shooter = player;
 	}
 
 }
