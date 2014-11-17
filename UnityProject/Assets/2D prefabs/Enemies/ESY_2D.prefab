@@ -237,7 +237,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4013f3f8ec6048248819b2feacf01724, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -335,9 +335,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5122632d83fd11e478b3f9a8b60448e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPoints: 200
-  ContactDamage: 20
+  HitPoints: 243
+  ContactDamage: 33
   colorResetTime: .300000012
+  isInvincible: 0
+  isDestroyableByCollision: 1
+  enemyColor: {r: 1, g: .699999988, b: .699999988, a: 1}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

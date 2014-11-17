@@ -71,7 +71,7 @@ public class Level_Spawner : MonoBehaviour
 	{
 		isLevelEnabled [1] = true;
 
-		float delay=4f;	
+		float delay=2f;	
 		int shieldCount=15;
 		SpawnSymmetrically (enemyPrefabs [3], XValues [0] / 2, YValue);
 		SpawnRow (powerupPrefabs [4], shieldCount);
@@ -86,7 +86,7 @@ public class Level_Spawner : MonoBehaviour
 	{
 		isLevelEnabled [2] = true;
 
-		isLevelEnabled [1] = false;
+		//isLevelEnabled [1] = false;
 		SpawnSymmetrically (enemyPrefabs [4], XValues [0] / 2, YValue);
 		SpawnOne (powerupPrefabs [0], 0.75f * XValues [0], YValue);
 		SpawnOne (powerupPrefabs [1], 0.25f * XValues [0], YValue);

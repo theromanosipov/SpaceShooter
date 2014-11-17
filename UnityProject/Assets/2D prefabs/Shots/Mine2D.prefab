@@ -81,8 +81,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shot: {fileID: 100000, guid: 037055db9fa98624a884903022192b67, type: 2}
-  shotCount: 5
+  shotCount: 7
   waveCount: 2
+  damage: 1450
   delayWaveSpawn: .00499999989
 --- !u!1001 &100100000
 Prefab:

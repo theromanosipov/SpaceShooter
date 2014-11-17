@@ -14,7 +14,7 @@ GameObject:
   - 61: {fileID: 6100000}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Shot
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd3ae8757d798742b55183e319569b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meeleDamage: 20000000
+  meeleDamage: 729
   swingTime: .200000003
   cooldown: 0
 --- !u!1001 &100100000

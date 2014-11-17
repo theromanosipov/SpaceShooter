@@ -50,7 +50,7 @@ GameObject:
   - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: GameController2D_Viliaus
-  m_TagString: Untagged
+  m_TagString: GameMaster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,8 +191,12 @@ MonoBehaviour:
   XValues:
   - -18
   - 18
-  YValue: 10
+  YValue: 10.5
   timers:
+  - 0
+  - 5
+  - 10
+  - 10
   - 5
   enemyPrefabs:
   - {fileID: 100000, guid: c1660bbe15b33a449925937ccbbeef8c, type: 2}
@@ -209,7 +213,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: c4675b6149d76e143bd48f6dd8855ccf, type: 2}
   - {fileID: 100000, guid: 358f550b4d7c8384288c9465526f048c, type: 2}
   gameOver: 0
-  isLevelEnabled: 
+  isLevelEnabled: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -232,11 +236,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d73640c1406a64899c289717380559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lives: 5
+  playerCount: 0
   shipsToSpawnAtStart:
-  - {fileID: 100000, guid: df883043e877b8c439235c1f1d2724da, type: 2}
-  - {fileID: 100000, guid: df883043e877b8c439235c1f1d2724da, type: 2}
-  - {fileID: 100000, guid: 054dc6abd184c584ab7d008711003d99, type: 2}
-  - {fileID: 100000, guid: df883043e877b8c439235c1f1d2724da, type: 2}
+  - {fileID: 100000, guid: 305009fcba046264ea721d0a38f0459e, type: 2}
+  - {fileID: 100000, guid: 305009fcba046264ea721d0a38f0459e, type: 2}
+  - {fileID: 100000, guid: 47eec362071bbc343bdc5cb23cb61249, type: 2}
+  - {fileID: 100000, guid: 305009fcba046264ea721d0a38f0459e, type: 2}
+  meelePrefab: {fileID: 100000, guid: 305009fcba046264ea721d0a38f0459e, type: 2}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

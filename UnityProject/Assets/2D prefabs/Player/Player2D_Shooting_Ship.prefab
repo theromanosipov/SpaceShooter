@@ -244,10 +244,10 @@ MonoBehaviour:
   shot: {fileID: 100000, guid: e86cef303f925ab4897243e29dba1ab6, type: 2}
   shotSpawns:
   - {fileID: 400004}
-  fireRate: 20
+  fireRate: 30
   scatterK: 1
   shotCount: 1
-  maxShots: 1
+  maxShots: 10
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1

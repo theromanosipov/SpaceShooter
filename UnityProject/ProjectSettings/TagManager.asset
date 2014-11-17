@@ -7,6 +7,9 @@ TagManager:
   - Dockable
   - Enemy
   - Shield
+  - GameMaster
+  - Shot
+  - Maze
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

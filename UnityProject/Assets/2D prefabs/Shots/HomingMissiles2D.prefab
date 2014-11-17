@@ -157,10 +157,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed1: 15
   speed2: 20
-  range: 7
-  damage: 1000
-  delay: .5
-  inertia: 8
+  range: 10
+  damage: 81
+  delay: .0500000007
+  inertia: 5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

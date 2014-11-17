@@ -351,9 +351,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5122632d83fd11e478b3f9a8b60448e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPoints: 200
-  ContactDamage: 1000
+  HitPoints: 162
+  ContactDamage: 33
   colorResetTime: 0
+  isInvincible: 0
+  isDestroyableByCollision: 1
+  enemyColor: {r: 1, g: .699999988, b: .699999988, a: 1}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
