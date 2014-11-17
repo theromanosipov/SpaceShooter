@@ -23,10 +23,6 @@ public class PlayerInfoContainer : MonoBehaviour {
 		return playerInfo;
 	}
 
-	public long GetScore() {
-		return playerInfo.score;
-	}
-
     ///////////////////////////////////////////////////////////////////////////////////
     //
     // Metodai, kurie grąžina informaciją apie konkretaus žaidėjo mygtukų paspaudymus
@@ -56,6 +52,10 @@ public class PlayerInfoContainer : MonoBehaviour {
 	
 	public void AddScore( long newScore) {
 		playerInfo.score += newScore;
+	}
+
+	public long GetScore() {
+		return playerInfo.score;
 	}
 
 	public int GetHitPoints(){
