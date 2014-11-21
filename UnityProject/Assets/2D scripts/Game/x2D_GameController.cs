@@ -1,45 +1,51 @@
 using UnityEngine;
 using System.Collections;
+
 /// <summary>
-/// Klasė, kuri sukuria ir išsaugo PlayerInfo ir ateityje spawnins priešus (gal)
+/// Konteineris, kur yra vieno spawninamo laivo informacija. 
+/// Galima pridėti daugiau kintamųjų, pvz pozicija, spalva ir tt.
+/// </summary>
+[System.Serializable]
+public class SpawningOptions
+{
+    public GameObject shipGameObject;
+    public int playerNumber;
+}
+
+/// <summary>
+/// Klasė, kuri spawnina žaidėjus
 /// </summary>
 public class x2D_GameController : MonoBehaviour
 {
-	//Visų žaidėjų PlayerInfo
 	public int lives;
-	public int playerCount;
-	public PlayerInfo[] player;
-	public GameObject[] shipsToSpawnAtStart;
-	public GameObject meelePrefab;
+	private PlayerInfo[] player;
+    public SpawningOptions[] shipsToSpawnAtStart;
+	public GameObject respawnPrefab;
 		
 	public virtual void Start ()
-		{
-		//Vos tik prasideda žaidimas inicializuojami 4 PlayerInfo
-		player = new PlayerInfo[4];
-		for (int i = 0; i < 4; i++) {
-						player [i] = new PlayerInfo (i+1);
-				}
+	{
+        //Vos tik prasideda žaidimas inicializuojami PlayerInfo, pagal shipsToSpawnAtStart.Length
+        player = new PlayerInfo[shipsToSpawnAtStart.Length];
+        for (int i = 0; i < shipsToSpawnAtStart.Length; i++)
+        {
+            player[i] = new PlayerInfo(shipsToSpawnAtStart[i].playerNumber);
+        }
 
-		//Spawninami žaidėjų laivai
-		for (int i=0; i<playerCount; i++) 
-		{
-			GameObject playerShip = Instantiate (meelePrefab, new Vector2 (-8+i*16/(playerCount-1), -8), Quaternion.identity) as GameObject;
-			//				//Naujau sukurtam žaidėjo laivui duoda PlayerInfo, kad šis galėtų būt valdomas
-			playerShip.GetComponent<PlayerInfoContainer> ().SetPlayerInfo (player [i]);
-		}
+        //Spawninami laivai
+	    for (int i = 0; i < shipsToSpawnAtStart.Length; i++) {
+	    	GameObject playerShip = Instantiate (shipsToSpawnAtStart [i].shipGameObject, new Vector2 (2 * i - 1, -8), Quaternion.identity) as GameObject;
+	    	//Naujai spawnintam žaidėjo laivui duoda PlayerInfo, kad šis galėtų būti valdomas
+	    	playerShip.GetComponent<PlayerInfoContainer> ().SetPlayerInfo (player [i]);
+	    }
+	}
 
-		//for (int i = 0; i < shipsToSpawnAtStart.Length; i++) {
-		//				GameObject playerShip = Instantiate (shipsToSpawnAtStart [i], new Vector2 (2 * i - 1, -8), Quaternion.identity) as GameObject;
-		//				//Naujau sukurtam žaidėjo laivui duoda PlayerInfo, kad šis galėtų būt valdomas
-		//				playerShip.GetComponent<PlayerInfoContainer> ().SetPlayerInfo (player [i]);
-		//		}
-		}
+    // Respawninamas sunaikintas laivas
 	void playerDied(PlayerInfo deadPlayer)
 	{
 		if (lives > 0) 
 		{
 			lives--;
-			GameObject playerShip = Instantiate (meelePrefab, new Vector2 (0, -8), Quaternion.identity) as GameObject;
+            GameObject playerShip = Instantiate(respawnPrefab, new Vector2(0, -8), Quaternion.identity) as GameObject;
 			playerShip.GetComponent<PlayerInfoContainer> ().SetPlayerInfo (deadPlayer);
 		}
 	}
