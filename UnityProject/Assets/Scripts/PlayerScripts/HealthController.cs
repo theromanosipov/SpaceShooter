@@ -8,18 +8,12 @@ using System.Collections;
 /// Roman Osipov
 /// </summary>
 public class HealthController : GenericPlayerController {
-	
-    // Material, kuris hitMaterialDuration laikui uždedamas playeriui
-    public Material hitMaterial;
 
-    // Originalus laivo material išsaugomas prieš uždedant hitMaterial
-    private Material originalMaterial = null;
-
-    // Laikas, kuriam bus uždėtas hitMaterial
-	public float hitMaterialDuration;
-
-    // Laikas, iki kurio bus uždėtas hitMaterial
-    private float hitMaterialUntil;
+    // Spalvos keitimas
+    public Material hitMaterial;                    // Material, kuris hitMaterialDuration laikui uždedamas playeriui
+    private Material originalMaterial = null;       // Originalus laivo material išsaugomas prieš uždedant hitMaterial
+    public float hitMaterialDuration;               // Laikas, kuriam bus uždėtas hitMaterial
+    private float hitMaterialUntil;                 // Laikas, iki kurio bus uždėtas hitMaterial
 
 	public override void Update(){
 		base.Update();
@@ -33,7 +27,6 @@ public class HealthController : GenericPlayerController {
 
     // Uždeda hitMaterial, išsaugo originalMaterial, nuima hitpoints per PlayerInfoContainer
 	public void GetDamage(int damage){
-
         hitMaterialUntil = Time.time + hitMaterialDuration;
         if (originalMaterial == null)
         {

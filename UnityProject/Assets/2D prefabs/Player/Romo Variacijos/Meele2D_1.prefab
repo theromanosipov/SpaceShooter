@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd3ae8757d798742b55183e319569b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meeleDamage: 729
+  meeleDamage: 20
   swingTime: .200000003
   cooldown: 0
 --- !u!1001 &100100000

@@ -5,7 +5,7 @@ using System.Collections;
 /// Taip pat tuti GetDamage metodą.
 /// Laivas prisilietęs prie žaidėjo yra sunaikinamas.
 /// Turi metodą DestroyShip -> vėliau jame explosion'o inicijavimą reiks įdėt.
-/// Viliaus
+/// Viliaus ir Romo
 /// </summary>
 public class x2D_EnemyInfo : MonoBehaviour {
 	
@@ -18,7 +18,7 @@ public class x2D_EnemyInfo : MonoBehaviour {
 	private float resetTime;
 	private PlayerInfoContainer damager;
 
-    public Color startingColor;
+    public Color startingColor = new Color(1f, 1f, 1f);
 
     // Spalvos keitimas
     public Material hitMaterial;                    // Material, kuris hitMaterialDuration laikui uždedamas playeriui
