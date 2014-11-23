@@ -183,7 +183,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0047bbde64bdf24ca6aa43210548879, type: 3}
   m_Name: 
@@ -237,13 +237,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 6
-  playerCount: 4
   shipsToSpawnAtStart:
-  - {fileID: 100000, guid: 305009fcba046264ea721d0a38f0459e, type: 2}
-  - {fileID: 100000, guid: 305009fcba046264ea721d0a38f0459e, type: 2}
-  - {fileID: 100000, guid: 47eec362071bbc343bdc5cb23cb61249, type: 2}
-  - {fileID: 100000, guid: 305009fcba046264ea721d0a38f0459e, type: 2}
-  meelePrefab: {fileID: 100000, guid: 47eec362071bbc343bdc5cb23cb61249, type: 2}
+  - shipGameObject: {fileID: 100000, guid: df883043e877b8c439235c1f1d2724da, type: 2}
+    playerNumber: 1
+  - shipGameObject: {fileID: 100000, guid: 305009fcba046264ea721d0a38f0459e, type: 2}
+    playerNumber: 2
+  - shipGameObject: {fileID: 100000, guid: 054dc6abd184c584ab7d008711003d99, type: 2}
+    playerNumber: 3
+  - shipGameObject: {fileID: 100000, guid: 47eec362071bbc343bdc5cb23cb61249, type: 2}
+    playerNumber: 4
+  respawnPrefab: {fileID: 100000, guid: 305009fcba046264ea721d0a38f0459e, type: 2}
+  boundary:
+    xMin: -18
+    xMax: 18
+    yMin: -10
+    yMax: 10
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

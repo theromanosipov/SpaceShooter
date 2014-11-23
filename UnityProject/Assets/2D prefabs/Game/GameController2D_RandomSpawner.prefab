@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: GameController2D_RandomSpawner
-  m_TagString: Untagged
+  m_TagString: GameMaster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,13 +253,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
-  playerCount: 0
   shipsToSpawnAtStart:
-  - {fileID: 100000, guid: 305009fcba046264ea721d0a38f0459e, type: 2}
-  - {fileID: 100000, guid: 305009fcba046264ea721d0a38f0459e, type: 2}
-  - {fileID: 100000, guid: 305009fcba046264ea721d0a38f0459e, type: 2}
-  - {fileID: 100000, guid: 305009fcba046264ea721d0a38f0459e, type: 2}
-  meelePrefab: {fileID: 100000, guid: 305009fcba046264ea721d0a38f0459e, type: 2}
+  - shipGameObject: {fileID: 100000, guid: df883043e877b8c439235c1f1d2724da, type: 2}
+    playerNumber: 3
+  respawnPrefab: {fileID: 100000, guid: 305009fcba046264ea721d0a38f0459e, type: 2}
+  boundary:
+    xMin: -18
+    xMax: 18
+    yMin: -10
+    yMax: 10
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -283,17 +285,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 100000, guid: 932dae5eb43fb8a479068c607bc35483, type: 2}
-  - {fileID: 100000, guid: 2e36edbd9e7c58841a577aa018fe28b7, type: 2}
-  - {fileID: 100000, guid: 8231a649756da3d428d0c327288a694e, type: 2}
-  - {fileID: 100000, guid: c4675b6149d76e143bd48f6dd8855ccf, type: 2}
-  - {fileID: 100000, guid: 358f550b4d7c8384288c9465526f048c, type: 2}
   - {fileID: 100000, guid: c1660bbe15b33a449925937ccbbeef8c, type: 2}
-  - {fileID: 100002, guid: f8767df151f0d38489a322dfefe8684a, type: 2}
-  - {fileID: 100000, guid: f3daee43452f4f44f9c1925aadc13336, type: 2}
-  - {fileID: 100018, guid: f0a15dfc4dce01f45ba2f436b0b0b760, type: 2}
   - {fileID: 100022, guid: cb55fdd82c60cd549acc3ebce10c3cae, type: 2}
-  - {fileID: 100010, guid: 39b46ec9a55bff94cb262b6aae040350, type: 2}
   spawnZ: 10
   spawnX: 18
   difficulty: 1

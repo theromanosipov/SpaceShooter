@@ -33,11 +33,8 @@ public class x2D_GameController : MonoBehaviour
         }
 
         // Spawninami laivai
-	    for (int i = 0; i < shipsToSpawnAtStart.Length; i++) {
-            GameObject playerShip = Instantiate(shipsToSpawnAtStart[i].shipGameObject, new Vector2(-8 + i * 16 / (shipsToSpawnAtStart.Length), -8), Quaternion.identity) as GameObject;
-            playerShip.GetComponent<PlayerInfoContainer>().SetPlayerInfo(player[i]);    // Žaidėjo laivui duoda PlayerInfo, kad šis galėtų būti valdomas
-            playerShip.GetComponent<x2D_PlayerController>().boundary = boundary;        // Nustato lygio ribas
-	    }
+	    for (int i = 0; i < shipsToSpawnAtStart.Length; i++) 
+						SpawnPlayerShip (player [i], shipsToSpawnAtStart [i].shipGameObject, new Vector2 (-8 + i * 16 / (shipsToSpawnAtStart.Length), -8));
 	}
 
     // Respawninamas sunaikintas laivas
@@ -46,9 +43,15 @@ public class x2D_GameController : MonoBehaviour
 		if (lives > 0) 
 		{
 			lives--;
-            GameObject playerShip = Instantiate(respawnPrefab, new Vector2(0, -8), Quaternion.identity) as GameObject;
-			playerShip.GetComponent<PlayerInfoContainer> ().SetPlayerInfo (deadPlayer);
+			SpawnPlayerShip(deadPlayer, respawnPrefab, new Vector2(0, -8));
 		}
+	}
+
+	void SpawnPlayerShip(PlayerInfo playerInfo, GameObject prefab, Vector2 location)
+	{
+		GameObject playerShip = Instantiate(prefab, location, Quaternion.identity) as GameObject;
+		playerShip.GetComponent<PlayerInfoContainer>().SetPlayerInfo(playerInfo);    // Žaidėjo laivui duoda PlayerInfo, kad šis galėtų būti valdomas
+		playerShip.GetComponent<x2D_PlayerController>().boundary = boundary;        // Nustato lygio ribas
 	}
 }
 
