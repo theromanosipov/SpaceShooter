@@ -11,7 +11,7 @@ public class GenericPlayerController : MonoBehaviour {
 	public virtual void Update() {
         //Jei player == null gaunamas PlayerInfo iš PlayerInfoContainer
         if( player == null) {
-            Debug.Log("Getting PlayerInfo");
+//            Debug.Log("Getting PlayerInfo");
 			player = gameObject.GetComponentsInParent<PlayerInfoContainer>()[0];
 		}
     }

@@ -29,7 +29,7 @@ public class x2D_Meele : GenericPlayerController {
 		if (other.tag != "Enemy") {
 			return;
 		}
-		Debug.Log ("Meele hit");
+//		Debug.Log ("Meele hit");
 		other.gameObject.SendMessage("SetDamager", gameObject.GetComponentInParent<PlayerInfoContainer>());
 		other.gameObject.SendMessage("GetDamage", meeleDamage);
 	}

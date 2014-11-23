@@ -321,6 +321,10 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11400004, guid: 1a1fbe2ad879fc148ac681408235ed3e, type: 2}
       propertyPath: enemyPrefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 1a1fbe2ad879fc148ac681408235ed3e, type: 2}
+      propertyPath: shipsToSpawnAtStart.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1a1fbe2ad879fc148ac681408235ed3e, type: 2}
@@ -363,6 +367,42 @@ Prefab:
       propertyPath: enemyPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 100000, guid: c1660bbe15b33a449925937ccbbeef8c, type: 2}
+    - target: {fileID: 11400000, guid: 1a1fbe2ad879fc148ac681408235ed3e, type: 2}
+      propertyPath: shipsToSpawnAtStart.Array.data[0].shipGameObject
+      value: 
+      objectReference: {fileID: 100000, guid: df883043e877b8c439235c1f1d2724da, type: 2}
+    - target: {fileID: 11400000, guid: 1a1fbe2ad879fc148ac681408235ed3e, type: 2}
+      propertyPath: shipsToSpawnAtStart.Array.data[0].playerNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 1a1fbe2ad879fc148ac681408235ed3e, type: 2}
+      propertyPath: respawnPrefab
+      value: 
+      objectReference: {fileID: 100000, guid: 305009fcba046264ea721d0a38f0459e, type: 2}
+    - target: {fileID: 11400004, guid: 1a1fbe2ad879fc148ac681408235ed3e, type: 2}
+      propertyPath: enemyPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 100022, guid: cb55fdd82c60cd549acc3ebce10c3cae, type: 2}
+    - target: {fileID: 11400000, guid: 1a1fbe2ad879fc148ac681408235ed3e, type: 2}
+      propertyPath: boundary.xMin
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 1a1fbe2ad879fc148ac681408235ed3e, type: 2}
+      propertyPath: boundary.xMax
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 1a1fbe2ad879fc148ac681408235ed3e, type: 2}
+      propertyPath: boundary.yMin
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 1a1fbe2ad879fc148ac681408235ed3e, type: 2}
+      propertyPath: boundary.yMax
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1a1fbe2ad879fc148ac681408235ed3e, type: 2}
+      propertyPath: m_TagString
+      value: GameMaster
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a1fbe2ad879fc148ac681408235ed3e, type: 2}
   m_RootGameObject: {fileID: 1484604813}
@@ -379,8 +419,8 @@ GameObject:
   - 114: {fileID: 1484604814}
   - 114: {fileID: 1484604816}
   m_Layer: 0
-  m_Name: GameController2D
-  m_TagString: Untagged
+  m_Name: GameController2D_RandomSpawner
+  m_TagString: GameMaster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -397,11 +437,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d73640c1406a64899c289717380559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lives: 5
   shipsToSpawnAtStart:
-  - {fileID: 100000, guid: df883043e877b8c439235c1f1d2724da, type: 2}
-  - {fileID: 100000, guid: df883043e877b8c439235c1f1d2724da, type: 2}
-  - {fileID: 100000, guid: 47eec362071bbc343bdc5cb23cb61249, type: 2}
-  - {fileID: 100000, guid: 47eec362071bbc343bdc5cb23cb61249, type: 2}
+  - shipGameObject: {fileID: 100000, guid: df883043e877b8c439235c1f1d2724da, type: 2}
+    playerNumber: 2
+  respawnPrefab: {fileID: 100000, guid: 305009fcba046264ea721d0a38f0459e, type: 2}
+  boundary:
+    xMin: -5
+    xMax: 5
+    yMin: -5
+    yMax: 5
 --- !u!4 &1484604815
 Transform:
   m_ObjectHideFlags: 0
@@ -429,6 +474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 100000, guid: c1660bbe15b33a449925937ccbbeef8c, type: 2}
+  - {fileID: 100022, guid: cb55fdd82c60cd549acc3ebce10c3cae, type: 2}
   spawnZ: 10
   spawnX: 18
   difficulty: 1
