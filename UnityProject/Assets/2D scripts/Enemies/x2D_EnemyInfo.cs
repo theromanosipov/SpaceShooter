@@ -9,31 +9,54 @@ using System.Collections;
 /// </summary>
 public class x2D_EnemyInfo : MonoBehaviour {
 	
-	// Use this for initialization
-	public int HitPoints;		//Laivo gyvybės.
-	public int ContactDamage;	//Kiek žalos daro žaidėjui kontakto metu
-	public float colorResetTime=0.3f;
+	public int HitPoints;		                    // Laivo gyvybės.
+	public int ContactDamage;	                    // Kiek žalos daro žaidėjui kontakto metu
 	public int killScore = 9;
-	public bool isInvincible=false;
+	public bool isInvincible = false;
 	public bool isDestroyableByCollision = true;
-	public Color enemyColor = new Color (1f, 0.7f, 0.7f);
+	
 	private float resetTime;
 	private PlayerInfoContainer damager;
-	
+
+    public Color startingColor;
+
+    // Spalvos keitimas
+    public Material hitMaterial;                    // Material, kuris hitMaterialDuration laikui uždedamas playeriui
+    private Material originalMaterial = null;       // Originalus laivo material išsaugomas prieš uždedant hitMaterial
+    public float hitMaterialDuration;               // Laikas, kuriam bus uždėtas hitMaterial
+    private float hitMaterialUntil;                 // Laikas, iki kurio bus uždėtas hitMaterial
+
+    void Start()
+    {
+        gameObject.renderer.material.color = startingColor;
+    }
+
 	void Update()
 	{
-		if (Time.time >= resetTime) {gameObject.renderer.material.color = enemyColor;}
+        if (originalMaterial != null && Time.time > hitMaterialUntil)
+        {
+            // Grąžina originalMaterial
+            gameObject.renderer.material = originalMaterial;
+            originalMaterial = null;
+        }
 	}
-	// Update is called once per frame
+	
 	void GetDamage(int Damage)
 	{
-		
-		resetTime = Time.time + colorResetTime;
+        //Debug.Log("gets damage");
 		if (isInvincible) {
-						gameObject.renderer.material.color = new Color (0.5f, 0.5f, 0.5f);
-						return;
-				}
-		gameObject.renderer.material.color = new Color(1f,0,0);
+			gameObject.renderer.material.color = new Color (0.5f, 0.5f, 0.5f);
+			return;
+		}
+
+        // Uždedamas hitMaterial
+        hitMaterialUntil = Time.time + hitMaterialDuration;
+        if (originalMaterial == null)
+        {
+            originalMaterial = gameObject.renderer.material;
+            gameObject.renderer.material = hitMaterial;
+        }
+
 		HitPoints -= Damage;
 		if (HitPoints <= 0) {
 			DestroyShip ();

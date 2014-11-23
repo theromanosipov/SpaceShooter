@@ -21,7 +21,6 @@ public class HealthController : GenericPlayerController {
     // Laikas, iki kurio bus uždėtas hitMaterial
     private float hitMaterialUntil;
 
-
 	public override void Update(){
 		base.Update();
         // Jei originalMaterial != null, tai reiški, kad šiuo metu yra uždėtas hitMaterial
@@ -36,8 +35,11 @@ public class HealthController : GenericPlayerController {
 	public void GetDamage(int damage){
 
         hitMaterialUntil = Time.time + hitMaterialDuration;
-        originalMaterial = gameObject.renderer.material;
-        gameObject.renderer.material = hitMaterial;
+        if (originalMaterial == null)
+        {
+            originalMaterial = gameObject.renderer.material;
+            gameObject.renderer.material = hitMaterial;
+        }
 		
 		player.AddHitpoints (-damage);
 	}

@@ -21,21 +21,22 @@ public class x2D_GameController : MonoBehaviour
 	private PlayerInfo[] player;
     public SpawningOptions[] shipsToSpawnAtStart;
 	public GameObject respawnPrefab;
+    public Boundary2 boundary;
 		
 	public virtual void Start ()
 	{
-        //Vos tik prasideda žaidimas inicializuojami PlayerInfo, pagal shipsToSpawnAtStart.Length
+        // Vos tik prasideda žaidimas inicializuojami PlayerInfo, pagal shipsToSpawnAtStart.Length
         player = new PlayerInfo[shipsToSpawnAtStart.Length];
         for (int i = 0; i < shipsToSpawnAtStart.Length; i++)
         {
             player[i] = new PlayerInfo(shipsToSpawnAtStart[i].playerNumber);
         }
 
-        //Spawninami laivai
+        // Spawninami laivai
 	    for (int i = 0; i < shipsToSpawnAtStart.Length; i++) {
-	    	GameObject playerShip = Instantiate (shipsToSpawnAtStart [i].shipGameObject, new Vector2 (2 * i - 1, -8), Quaternion.identity) as GameObject;
-	    	//Naujai spawnintam žaidėjo laivui duoda PlayerInfo, kad šis galėtų būti valdomas
-	    	playerShip.GetComponent<PlayerInfoContainer> ().SetPlayerInfo (player [i]);
+            GameObject playerShip = Instantiate(shipsToSpawnAtStart[i].shipGameObject, new Vector2(-8 + i * 16 / (shipsToSpawnAtStart.Length), -8), Quaternion.identity) as GameObject;
+            playerShip.GetComponent<PlayerInfoContainer>().SetPlayerInfo(player[i]);    // Žaidėjo laivui duoda PlayerInfo, kad šis galėtų būti valdomas
+            playerShip.GetComponent<x2D_PlayerController>().boundary = boundary;        // Nustato lygio ribas
 	    }
 	}
 
