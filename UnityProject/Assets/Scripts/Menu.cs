@@ -31,7 +31,7 @@ public class Menu : MonoBehaviour {
 		{
 			if (GUILayout.Button("Play Game"))
 			{
-				Application.LoadLevel("Main");
+				Application.LoadLevel("2D Main");
 			}
 		}
 		if (GUILayout.Button("Credits"))

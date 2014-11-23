@@ -12,7 +12,7 @@ public class x2D_EnemyShotMover : MonoBehaviour {
 	public int damage;  //Kiek žalos daro
 	// Use this for initialization
 	void Start () {
-		rigidbody2D.velocity = -speed*transform.up;
+		rigidbody2D.velocity = speed*transform.up;
 		
 	}
 	
