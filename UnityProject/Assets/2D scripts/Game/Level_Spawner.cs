@@ -34,20 +34,20 @@ public class Level_Spawner : MonoBehaviour
 		count--;
 		for (int i=0; i<=count; i++)
 		{
-			Instantiate (prefab, new Vector3(XValues[0]+1+i*(XValues[1]-XValues[0]-2)/count,YValue,0), Quaternion.identity);
+			SpawnOne (prefab,XValues[0]+1+i*(XValues[1]-XValues[0]-2)/count,YValue);
 		}
 	}
 
 	void SpawnSymmetrically(GameObject prefab, float x, float y)
 	{
-		Instantiate (prefab, new Vector3(x,y,0), Quaternion.identity);
-		Instantiate (prefab, new Vector3(-x,y,0), Quaternion.identity);
+		SpawnOne (prefab, x, y);
+		SpawnOne (prefab, -x, y);
 	}
 
 
 	void SpawnRandom(GameObject prefab, float xmin, float xmax, float y)
 	{
-		Instantiate (prefab, new Vector3(Random.Range(xmin,xmax),y,0), Quaternion.identity);
+		SpawnOne (prefab, Random.Range (xmin, xmax), y);
 	}
 
 	void SpawnOne(GameObject prefab, float x, float y)
