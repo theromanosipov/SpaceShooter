@@ -144,7 +144,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 400018}
   - 114: {fileID: 11400006}
-  - 114: {fileID: 11400004}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 33: {fileID: 3300000}
@@ -282,7 +281,7 @@ Transform:
   m_GameObject: {fileID: 100018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 400016}
   m_Father: {fileID: 0}
@@ -353,10 +352,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HitPoints: 162
   ContactDamage: 33
-  colorResetTime: 0
+  killScore: 9
   isInvincible: 0
   isDestroyableByCollision: 1
-  enemyColor: {r: 1, g: .699999988, b: .699999988, a: 1}
+  startingColor: {r: 1, g: .972413898, b: 0, a: 1}
+  hitMaterial: {fileID: 2100000, guid: 428c416a914e3584390c46e63b2a48ff, type: 2}
+  hitMaterialDuration: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -370,33 +371,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speeddown: .5
   hspeed: 2
-  xmin: -18
-  xmax: 18
-  wait: 1.79999995
-  mtime: 1.5
+  xmin: -27
+  xmax: 27
+  wait: 2.31660199
+  mtime: 2.31660104
   shotspawnscenter: {fileID: 100016}
   rotationSpeed: 3
---- !u!114 &11400004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27ae76c1e5b091543900decb1d24a689, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shot: {fileID: 100000, guid: b7790217cd2e4f64e85d670c2b8e5c36, type: 2}
-  shotSpawns:
-  - {fileID: 400014}
-  - {fileID: 400010}
-  - {fileID: 400006}
-  - {fileID: 400002}
-  shotCount: 5
-  delayShotSpwan: .5
-  delayShotSeries: 7.19999981
-  firstShotDelay: 5
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -419,9 +399,9 @@ MonoBehaviour:
   - {fileID: 400002}
   - {fileID: 400000}
   shotCount: 2
-  delayShotSpwan: .699999988
-  delayShotSeries: 1.79999995
-  firstShotDelay: 2.5
+  delayShotSpwan: 1.15830123
+  delayShotSeries: 2.31660199
+  firstShotDelay: 2.31660199
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

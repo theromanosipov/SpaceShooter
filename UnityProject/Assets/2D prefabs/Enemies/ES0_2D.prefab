@@ -128,10 +128,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HitPoints: 9
   ContactDamage: 5
-  colorResetTime: .300000012
+  killScore: 9
   isInvincible: 0
   isDestroyableByCollision: 1
-  enemyColor: {r: 1, g: .699999988, b: .699999988, a: 1}
+  startingColor: {r: 1, g: 1, b: 1, a: 1}
+  hitMaterial: {fileID: 0}
+  hitMaterialDuration: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -147,8 +149,8 @@ MonoBehaviour:
   shotSpawns:
   - {fileID: 400000}
   shotCount: 2
-  delayShotSpwan: .600000024
-  delayShotSeries: 2.4000001
+  delayShotSpwan: 1.15830123
+  delayShotSeries: 2.31660199
   firstShotDelay: 0
 --- !u!114 &11400004
 MonoBehaviour:
@@ -161,12 +163,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aec82b75dc862847b8701b23b1ed76c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speeddown: 1
-  hspeed: 3
-  xmin: -18
-  xmax: 18
-  wait: 2.4000001
-  mtime: 2
+  speeddown: 5
+  hspeed: 5
+  xmin: -27
+  xmax: 27
+  wait: 2.89575291
+  mtime: 2.89575195
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

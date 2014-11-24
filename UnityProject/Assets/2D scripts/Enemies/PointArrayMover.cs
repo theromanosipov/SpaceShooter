@@ -8,39 +8,49 @@ using System.Collections;
 /// </summary>
 public class PointArrayMover : MonoBehaviour {
 
-    public Vector2 startingPosition;                // Pozicija paskutinio update metu, prieš pirmąjį update pradinė pozicija
 	public Vector2[] destinations;                  // Taškai per kūriuos keliaus
     public float duration;                          // Kiek kartų bus ištempta speed animacija
     public AnimationCurve speed;                    // Greičio ir laiko priklausomybė
 
     private Vector2 currentDestination;
+    private Vector2 currentPosition;
     private int currentDestinationNumber;
 
     private float startTime;
 
-    void Start ()
-    {
-        transform.position = new Vector3(startingPosition.x, startingPosition.y, 0);
-        currentDestinationNumber = 0;
-        currentDestination = destinations[currentDestinationNumber];
-
-        startTime = Time.time;
-    }
+    private bool isPaused = true;                   // Jei true Update nevyks
 	
 	void Update () 
     {
-        // Pajudina link currentDestination
-        startingPosition = Vector2.MoveTowards(startingPosition, currentDestination, speed.Evaluate((Time.time - startTime) / duration));
-        transform.position = new Vector3(startingPosition.x, startingPosition.y, 0);
+        if (isPaused)
+            return;
 
-        if (currentDestinationNumber == destinations.Length - 1 && startingPosition == currentDestination)  // Pasiekėme paskutinį destination
+        // Pajudina link currentDestination
+        currentPosition = Vector2.MoveTowards(currentPosition, currentDestination, speed.Evaluate((Time.time - startTime) / duration));
+        transform.position = new Vector3(currentPosition.x, currentPosition.y, 0);
+
+        if (currentDestinationNumber == destinations.Length - 1 && currentPosition == currentDestination)  // Pasiekėme paskutinį destination
         {
             Destroy(gameObject);
         }
-        else if (startingPosition == currentDestination)    // Pasiekieme currentDestination
+        else if (currentPosition == currentDestination)    // Pasiekieme currentDestination
         {
             currentDestinationNumber++;
             currentDestination = destinations[currentDestinationNumber];
         }
 	}
+
+    public void SetDestination(Vector2[] points)
+    {
+        destinations = points;
+        transform.position = new Vector3(destinations[0].x, destinations[0].y, 0);
+        currentPosition = destinations[0];
+
+        currentDestinationNumber = 1;
+        currentDestination = destinations[currentDestinationNumber];
+
+        startTime = Time.time;
+
+        isPaused = false;
+    }
 }
