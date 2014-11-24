@@ -185,7 +185,7 @@ MonoBehaviour:
   distance: 2
   isDistanceLocked: 0
   minDistance: 1
-  maxDistance: 3
+  maxDistance: 4
   speedDistance: .200000003
 --- !u!114 &11400004
 MonoBehaviour:
