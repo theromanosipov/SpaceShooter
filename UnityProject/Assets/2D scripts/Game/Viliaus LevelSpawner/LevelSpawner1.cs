@@ -10,7 +10,7 @@ public class LevelSpawner1 : LevelSpawner {
         float delay = 0.289575f;
         while (!isGameOver && isLevelEnabled[0])
         {
-            SpawnRandom(enemyPrefabs[0], XValues[0], XValues[1], YValue);
+            SpawnRandom(enemyPrefabs[0], spawnXMin, spawnXMax, spawnY);
             yield return new WaitForSeconds(delay);
         }
     }

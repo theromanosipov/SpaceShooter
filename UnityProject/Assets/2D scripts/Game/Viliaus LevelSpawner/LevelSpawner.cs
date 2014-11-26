@@ -3,8 +3,9 @@ using System.Collections;
 
 public class LevelSpawner : MonoBehaviour
 {
-    public float[] XValues;				    //XMIN XMAX
-    public float YValue;				    //YMAX
+    public float spawnXMin;
+    public float spawnXMax;
+    public float spawnY;				    
     public float[] timers;				    //po kiek laiko spawnins lygį	
     public GameObject[] enemyPrefabs;
     public GameObject[] powerupPrefabs;
@@ -34,7 +35,7 @@ public class LevelSpawner : MonoBehaviour
         count--;
         for (int i = 0; i <= count; i++)
         {
-            SpawnOne(prefab, XValues[0] + 1 + i * (XValues[1] - XValues[0] - 2) / count, YValue);
+            SpawnOne(prefab, spawnXMin + 1 + i * (spawnXMax - spawnXMin - 2) / count, spawnY);
         }
     }
 
