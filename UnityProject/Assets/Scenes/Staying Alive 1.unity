@@ -142,7 +142,7 @@ Transform:
   m_GameObject: {fileID: 138135541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 20}
-  m_LocalScale: {x: 100, y: 100, z: 2}
+  m_LocalScale: {x: 70, y: 45, z: 2}
   m_Children: []
   m_Father: {fileID: 807855787}
   m_RootOrder: 0
@@ -211,7 +211,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: .0196078438}
+  m_BackGroundColor: {r: .441176474, g: 1, b: .699391544, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -256,7 +256,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11400004, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
       propertyPath: shipsToSpawnAtStart.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
       propertyPath: m_LocalPosition.x
@@ -297,7 +297,7 @@ Prefab:
     - target: {fileID: 11400004, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
       propertyPath: shipsToSpawnAtStart.Array.data[0].shipGameObject
       value: 
-      objectReference: {fileID: 100002, guid: 9d79861d1a4748942a2da45ddfbfab64, type: 2}
+      objectReference: {fileID: 100000, guid: ff0f20b4496db5a44beeb1f4dbff74f5, type: 2}
     - target: {fileID: 11400004, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
       propertyPath: shipsToSpawnAtStart.Array.data[1].shipGameObject
       value: 
@@ -316,7 +316,7 @@ Prefab:
       objectReference: {fileID: 100002, guid: 9d79861d1a4748942a2da45ddfbfab64, type: 2}
     - target: {fileID: 11400004, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
       propertyPath: shipsToSpawnAtStart.Array.data[0].playerNumber
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
       propertyPath: shipsToSpawnAtStart.Array.data[1].playerNumber
@@ -356,11 +356,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
       propertyPath: m_LocalScale.x
-      value: 100
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
       propertyPath: m_LocalScale.y
-      value: 100
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
       propertyPath: m_RootOrder
@@ -373,6 +373,26 @@ Prefab:
     - target: {fileID: 11400004, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
       propertyPath: lives
       value: 99999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
+      propertyPath: BypassListenerEffects
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 14d57a1f8fecbc64abf34bfc69fc59c9, type: 3}
+    - target: {fileID: 2000000, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
+      propertyPath: m_BackGroundColor.r
+      value: .441176474
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
+      propertyPath: m_BackGroundColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
+      propertyPath: m_BackGroundColor.b
+      value: .699391544
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400000, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
@@ -412,12 +432,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 99999999
   shipsToSpawnAtStart:
-  - shipGameObject: {fileID: 100002, guid: 9d79861d1a4748942a2da45ddfbfab64, type: 2}
-    playerNumber: 1
-  - shipGameObject: {fileID: 100002, guid: 9d79861d1a4748942a2da45ddfbfab64, type: 2}
+  - shipGameObject: {fileID: 100000, guid: ff0f20b4496db5a44beeb1f4dbff74f5, type: 2}
     playerNumber: 3
-  - shipGameObject: {fileID: 100002, guid: 9d79861d1a4748942a2da45ddfbfab64, type: 2}
-    playerNumber: 4
   respawnPrefab: {fileID: 100002, guid: 9d79861d1a4748942a2da45ddfbfab64, type: 2}
   boundary:
     xMin: -27
@@ -445,19 +461,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1484604813}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a2d11d771136d14cab3298a7c833350, type: 3}
+  m_Script: {fileID: 11500000, guid: 07c8e22e1b385bb4b9102d1e78847685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnXMin: -27
   spawnXMax: 27
   spawnY: 15
-  timers:
-  - 0
   enemyPrefabs:
-  - {fileID: 100038, guid: 807c6392d74234f4da0935606731110c, type: 2}
-  powerupPrefabs: []
-  isGameOver: 0
-  isLevelEnabled: 01
+  - {fileID: 100000, guid: bce5bab7242cc8c42a8bbe5389507393, type: 2}
+  wave:
+  - timer: 1
+    waveMethodName: WaveSpinners
+    isEnabled: 1
 --- !u!82 &1484604817
 AudioSource:
   m_ObjectHideFlags: 0
@@ -467,7 +482,7 @@ AudioSource:
   m_GameObject: {fileID: 1484604813}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 0a2cae6abb8ee44479e64076b37375ed, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 14d57a1f8fecbc64abf34bfc69fc59c9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
