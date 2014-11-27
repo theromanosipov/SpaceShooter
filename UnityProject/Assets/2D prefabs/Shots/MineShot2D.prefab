@@ -152,11 +152,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6080384551e4b5140ab6d0a651591af9, type: 3}
+  m_Script: {fileID: 11500000, guid: ce8240348e1309746afd11a3e678c418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  damage: 9
+  damage: 10
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

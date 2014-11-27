@@ -155,7 +155,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 138135541}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e9e991c50471ce4aaacdf83adae5f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d926092000c8e341845dd0b0a44700f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &807855782
@@ -330,7 +330,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1484604813}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cec1b91872b8c7a4784fbecbad84842f, type: 3}
   m_Name: 
@@ -338,11 +338,11 @@ MonoBehaviour:
   lives: 99999999
   shipsToSpawnAtStart:
   - shipGameObject: {fileID: 100002, guid: 9d79861d1a4748942a2da45ddfbfab64, type: 2}
-    playerNumber: 3
+    playerNumber: 2
   - shipGameObject: {fileID: 100000, guid: df883043e877b8c439235c1f1d2724da, type: 2}
     playerNumber: 3
   - shipGameObject: {fileID: 100000, guid: 47eec362071bbc343bdc5cb23cb61249, type: 2}
-    playerNumber: 3
+    playerNumber: 2
   respawnPrefab: {fileID: 100002, guid: 9d79861d1a4748942a2da45ddfbfab64, type: 2}
   boundary:
     xMin: -27
@@ -373,10 +373,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f24d2df502b8149b1226c72a41a257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XValues:
-  - -27
-  - 27
-  YValue: 15
+  spawnXMin: -27
+  spawnXMax: 27
+  spawnY: 18
   timers:
   - 0
   - 5.21235514

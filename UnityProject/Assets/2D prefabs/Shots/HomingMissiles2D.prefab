@@ -152,14 +152,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e58315787ef04f34d802d21ad7e96e6e, type: 3}
+  m_Script: {fileID: 11500000, guid: 344c3fd0515fdaa479faf12ed7d3c359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed1: 15
-  speed2: 20
-  range: 10
-  damage: 81
-  delay: .0500000007
+  speed1: 7
+  speed2: 12
+  range: 5
+  damage: 27
+  delay: .300000012
   inertia: 5
 --- !u!1001 &100100000
 Prefab:

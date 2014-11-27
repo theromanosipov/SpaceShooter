@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class x2D_ShootingController : GenericPlayerController
+public class ShootingController : GenericPlayerController
 {
 	public GameObject shot;
 	public Transform[] shotSpawns;
