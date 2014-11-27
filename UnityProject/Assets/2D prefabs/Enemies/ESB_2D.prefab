@@ -453,10 +453,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HitPoints: 2187
   ContactDamage: 80
-  colorResetTime: .300000012
+  killScore: 9
   isInvincible: 0
   isDestroyableByCollision: 1
-  enemyColor: {r: 1, g: .699999988, b: .699999988, a: 1}
+  startingColor: {r: .75686276, g: .75686276, b: .75686276, a: 0}
+  hitMaterial: {fileID: 0}
+  hitMaterialDuration: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

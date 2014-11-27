@@ -369,8 +369,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1041a83475c494e468fe76f59fedb5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speeddown: .5
-  hspeed: 2
+  speeddown: 5
+  hspeed: 4
   xmin: -27
   xmax: 27
   wait: 2.31660199

@@ -24,7 +24,7 @@ public class LevelSpawner1 : LevelSpawner {
         {
             SpawnRow(powerupPrefabs[0], 10);
             yield return new WaitForSeconds(delay);
-            SpawnRow(enemyPrefabs[3], 5);
+            SpawnRow(enemyPrefabs[3], 8);
             yield return new WaitForSeconds(delay);
         }
     }

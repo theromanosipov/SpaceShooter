@@ -17,6 +17,7 @@ GameObject:
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400008}
+  - 114: {fileID: 11400010}
   m_Layer: 0
   m_Name: Player2D_Meele_Ship
   m_TagString: Player
@@ -212,6 +213,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1837bcb6127d5954ca91d950e489cfb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec3bb1d71eebeac4aa17305a9970d07f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  boundary:
+    xMin: 0
+    xMax: 0
+    yMin: 0
+    yMax: 0
+  meele: {fileID: 100002, guid: 6d179c2aa289c364692b4d8189f2a57c, type: 2}
+  hitPointsText: {fileID: 100000, guid: 8fe53cd8bf9cf4c4292d62eae29fe5e5, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

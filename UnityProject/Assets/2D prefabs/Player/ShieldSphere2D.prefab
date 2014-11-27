@@ -77,11 +77,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43593d2ab3c081642a2cf9ec77a454f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 690fe64d105407b4f81c621f8d257d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HitPoints: 50
-  colorResetTime: .300000012
+  colorResetTime: .200000003
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
