@@ -211,7 +211,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: .384313732, b: .576470613, a: .0196078438}
+  m_BackGroundColor: {r: .441176474, g: 1, b: .699391544, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -384,15 +384,15 @@ Prefab:
       objectReference: {fileID: 8300000, guid: 14d57a1f8fecbc64abf34bfc69fc59c9, type: 3}
     - target: {fileID: 2000000, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
       propertyPath: m_BackGroundColor.r
-      value: 0
+      value: .441176474
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
       propertyPath: m_BackGroundColor.g
-      value: .384313732
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
       propertyPath: m_BackGroundColor.b
-      value: .576470613
+      value: .699391544
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400000, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
@@ -411,7 +411,6 @@ GameObject:
   - 114: {fileID: 1484604814}
   - 82: {fileID: 1484604817}
   - 114: {fileID: 1484604816}
-  - 114: {fileID: 1484604818}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameMaster
@@ -533,14 +532,3 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &1484604818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1484604813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d5040abd543973419e37df07ff91d15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
