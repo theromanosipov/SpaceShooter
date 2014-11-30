@@ -5,7 +5,14 @@ public class Boper : MonoBehaviour {
 
 	public AnimationCurve bopCurve;
 
+    private Vector3 startingScale;
+
+    void Start() {
+        startingScale = transform.localScale;
+    }
+
     void Update() {
-        transform.localScale = new Vector3(1, bopCurve.Evaluate( RythmUtility.getBeatProgress()), 1);
+        float scale = bopCurve.Evaluate( RythmUtility.getBeatProgress());
+        transform.localScale = startingScale * scale;
 	}
 }
