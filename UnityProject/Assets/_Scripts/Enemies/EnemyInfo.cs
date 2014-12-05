@@ -63,21 +63,22 @@ public class EnemyInfo : MonoBehaviour {
 		}
 	}
 
-	void SetDamager(PlayerInfoContainer player){
+	void SetDamager(PlayerInfoContainer player) {
 		damager = player;
-		}
+    }
+
 	void OnTriggerEnter2D (Collider2D other) {
-		if (other.tag != "Player") {
-			return;
-		}
-		//Debug.Log ("Player hit by mover");
-		other.gameObject.SendMessage("GetDamage", ContactDamage);
-		damager = other.GetComponent<PlayerInfoContainer>();
-		if (!isDestroyableByCollision) {
-						return;
-		}
-		DestroyShip ();
+        if (other.tag == "Player") {
+            //Debug.Log ("Player hit by mover");
+            other.gameObject.SendMessage("GetDamage", ContactDamage);
+            damager = other.GetComponent<PlayerInfoContainer>();
+            if (!isDestroyableByCollision) {
+                return;
+            }
+            DestroyShip();
+        }
 	}
+
 	void DestroyShip(){
 		if (damager != null)
 			damager.AddScore (killScore);
