@@ -29,12 +29,12 @@ public class LevelSpawnerV2 : MonoBehaviour {
     IEnumerator CallOnAudioBeat() {
         for (int i = 0; i < wave.Length; i++) {
             if (isGameOver)
-                yield return 0;
+                yield break;
 
             int iSample = (int)(beatTime[wave[i].timer - 1] * audio.clip.frequency);            // Gauna norimo samplo numerį
             while (audio.timeSamples < iSample) yield return 0;                                 // Laukia norimo audio samplo
             if(wave[i].isEnabled)
-                gameObject.SendMessage(wave[i].waveMethodName, wave[i].timer);              // Kviečia spawninimo metodą. Perduoda per, kurį beatą buvo iškviestas metodas
+                gameObject.SendMessage(wave[i].waveMethodName, wave[i].timer);                  // Kviečia spawninimo metodą. Perduoda per, kurį beatą buvo iškviestas metodas
         }
     }
 

@@ -1,53 +1,80 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LevelSpawnerV2Level1 : LevelSpawnerV2 {
-
-    public float wallSpeed;
+[System.Serializable]
+public class WallInfo {
+    public float wallSpeedX;
+    public float wallSpeedY;
+    public Vector3 rotation;
     public Vector3[] wallPosition;
     public Color[] wallColors;
+    public int delay;
+}
 
-	IEnumerator WaveSpinners( int currentBeat) {
-        Vector2[] destination = new Vector2[2];
-        destination[0] = new Vector2(27.1f, 15.38f);
-        destination[1] = new Vector2(-30, -18);
-        int delay = 1;
+[System.Serializable]
+public class PointArrayInfo {
+    public Vector2[] pointArray;
+    public GameObject gameObject;
+}
 
-        while (!isGameOver && currentBeat + delay <= beatTime.Length) {
-            GameObject currentEnemy = Instantiate(enemyPrefabs[0]) as GameObject;
-            currentEnemy.GetComponent<PointArrayMover>().SetDestination(destination);
-            currentBeat += delay;
-            int iSample = (int)(beatTime[currentBeat - 1] * audio.clip.frequency);            // Gauna norimo samplo numerį
-            while (audio.timeSamples < iSample) yield return 0;                               // Laukia norimo audio samplo
-        }
+public class LevelSpawnerV2Level1 : LevelSpawnerV2 {
+
+    public WallInfo Wall1;
+    public WallInfo Wall2;
+    public WallInfo Wall3;
+
+    public void SpawnWall1(int currentBeat) {
+        StartCoroutine(SpawnDeathWall(currentBeat, Wall1));
     }
 
-    IEnumerator DeathWallDown1(int currentBeat) {
-        int delay = 1;
+    public void SpawnWall2(int currentBeat) {
+        StartCoroutine(SpawnDeathWall(currentBeat, Wall2));
+    }
+
+    public void SpawnWall3(int currentBeat) {
+        StartCoroutine(SpawnDeathWall(currentBeat, Wall3));
+    }
+
+    IEnumerator SpawnDeathWall(int currentBeat, WallInfo wallInfo) {
 
         int wallToSpawn = 0;                            // Iteratorius, kurį didinam iki wallPosition.Length ir tada nustojam spawnint sienas
         int colorNumber = 0;                            // Kitų sienų spalvų numeris wallColors masyve                  
-        GameObject[] justSpawned = new GameObject[2];   // Dvi sienos, kuria spawnins
+        GameObject justSpawned;
 
 
-        while (!isGameOver && currentBeat + delay <= beatTime.Length && wallToSpawn < wallPosition.Length) {
+        while (!isGameOver && currentBeat + wallInfo.delay <= beatTime.Length && wallToSpawn < wallInfo.wallPosition.Length) {
 
-            justSpawned[0] = Instantiate(enemyPrefabs[1], wallPosition[wallToSpawn], Quaternion.identity) as GameObject;                        // Spawnina pirmą sieną
-            Vector3 secondWallOffset = new Vector3 (55, 0, 0);                                                                                  // Nustato koks bus antros sienos poslinkis lyginant su pirma siena
-            justSpawned[1] = Instantiate(enemyPrefabs[1], wallPosition[wallToSpawn] + secondWallOffset, Quaternion.identity) as GameObject;     // Spawnina antrą sieną
+            justSpawned = Instantiate(enemyPrefabs[1], wallInfo.wallPosition[wallToSpawn], Quaternion.identity) as GameObject;      // Spawnina pirmą sieną
 
-            justSpawned[0].rigidbody2D.velocity = justSpawned[1].rigidbody2D.velocity = new Vector2(0, -wallSpeed);                             // Nustato sienų greitį
-            justSpawned[0].renderer.material.color = justSpawned[1].renderer.material.color = wallColors[colorNumber];                          // Nustato sienų spalvą
+            justSpawned.rigidbody2D.velocity = new Vector2(wallInfo.wallSpeedX, wallInfo.wallSpeedY);       // Nustato sienų greitį
+            justSpawned.renderer.material.color = wallInfo.wallColors[colorNumber];                         // Nustato sienų spalvą
+            justSpawned.transform.localEulerAngles = wallInfo.rotation;
 
             colorNumber++;
-            if (colorNumber >= wallColors.Length)       // Užloopina spalvas, leidžia wallColors, būti mažesniam nei wallPosition
+            if (colorNumber >= wallInfo.wallColors.Length)       // Užloopina spalvas, leidžia wallColors, būti mažesniam nei wallPosition
                 colorNumber = 0;
 
             wallToSpawn++;
             
-            currentBeat += delay;
+            currentBeat += wallInfo.delay;
             int iSample = (int)(beatTime[currentBeat - 1] * audio.clip.frequency);          // Gauna norimo samplo numerį
             while (audio.timeSamples < iSample) yield return 0;                             // Laukia norimo audio samplo
         }
+    }
+
+    public PointArrayInfo pointInfo1;
+    public PointArrayInfo pointInfo2;
+
+    public void SpawnPointArrayMover1(int currentBeat) {
+        SpawnPointArrayMover(pointInfo1);
+    }
+
+    public void SpawnPointArrayMover2(int currentBeat) {
+        SpawnPointArrayMover(pointInfo2);
+    }
+
+    public void SpawnPointArrayMover(PointArrayInfo pointInfo) {
+        GameObject currentEnemy = Instantiate(pointInfo.gameObject) as GameObject;
+        currentEnemy.GetComponent<PointArrayMover>().SetDestination(pointInfo.pointArray);    
     }
 }

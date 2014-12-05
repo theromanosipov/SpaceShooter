@@ -9,8 +9,7 @@ using System.Collections;
 public class PointArrayMover : MonoBehaviour {
 
 	public Vector2[] destinations;                  // Taškai per kūriuos keliaus
-    public float duration;                          // Kiek kartų bus ištempta speed animacija
-    public AnimationCurve speed;                    // Greičio ir laiko priklausomybė
+    public float speed;                             // Greičio ir laiko priklausomybė
 
     private Vector2 currentDestination;
     private Vector2 currentPosition;
@@ -26,7 +25,7 @@ public class PointArrayMover : MonoBehaviour {
             return;
 
         // Pajudina link currentDestination
-        currentPosition = Vector2.MoveTowards(currentPosition, currentDestination, speed.Evaluate((Time.time - startTime) / duration));
+        currentPosition = Vector2.MoveTowards(currentPosition, currentDestination, speed);
         transform.position = new Vector3(currentPosition.x, currentPosition.y, 0);
 
         if (currentDestinationNumber == destinations.Length - 1 && currentPosition == currentDestination)  // Pasiekėme paskutinį destination
