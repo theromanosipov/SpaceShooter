@@ -10,7 +10,7 @@ public class LevelSpawner1 : LevelSpawner {
         float delay = 0.289575f;
         while (!isGameOver && isLevelEnabled[0])
         {
-            SpawnRandom(enemyPrefabs[0], spawnXMin, spawnXMax, spawnY);
+			SpawnRandom(enemyPrefabs[0], spawnXMin, spawnXMax, spawnY);
             yield return new WaitForSeconds(delay);
         }
     }
@@ -22,7 +22,7 @@ public class LevelSpawner1 : LevelSpawner {
         float delay = 9.2664093f/4;
         while (!isGameOver && isLevelEnabled[1])
         {
-            SpawnRow(powerupPrefabs[0], 10);
+			SpawnRow(powerupPrefabs[Mathf.FloorToInt(Random.Range (0f, powerupPrefabs.Length - 0.1f))], 10);
             yield return new WaitForSeconds(delay);
             SpawnRow(enemyPrefabs[3], 8);
             yield return new WaitForSeconds(delay);

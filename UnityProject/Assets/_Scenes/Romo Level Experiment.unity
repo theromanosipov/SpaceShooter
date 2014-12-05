@@ -390,5 +390,8 @@ MonoBehaviour:
   - {fileID: 100002, guid: f8767df151f0d38489a322dfefe8684a, type: 2}
   powerupPrefabs:
   - {fileID: 100000, guid: 358f550b4d7c8384288c9465526f048c, type: 2}
+  - {fileID: 100000, guid: 932dae5eb43fb8a479068c607bc35483, type: 2}
+  - {fileID: 100000, guid: c4675b6149d76e143bd48f6dd8855ccf, type: 2}
+  - {fileID: 100000, guid: 8231a649756da3d428d0c327288a694e, type: 2}
   isGameOver: 0
   isLevelEnabled: 00000000000000000000
