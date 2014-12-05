@@ -467,15 +467,15 @@ Prefab:
       objectReference: {fileID: 100002, guid: 9d79861d1a4748942a2da45ddfbfab64, type: 2}
     - target: {fileID: 11400004, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
       propertyPath: shipsToSpawnAtStart.Array.data[0].playerNumber
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400004, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
-      propertyPath: shipsToSpawnAtStart.Array.data[1].playerNumber
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
-      propertyPath: shipsToSpawnAtStart.Array.data[2].playerNumber
+      propertyPath: shipsToSpawnAtStart.Array.data[1].playerNumber
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
+      propertyPath: shipsToSpawnAtStart.Array.data[2].playerNumber
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
       propertyPath: shipsToSpawnAtStart.Array.data[3].playerNumber
@@ -525,6 +525,10 @@ Prefab:
       propertyPath: lives
       value: 99999999
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400000, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 149dd000bbe33414b9a16122268422d0, type: 2}
@@ -564,11 +568,11 @@ MonoBehaviour:
   lives: 99999999
   shipsToSpawnAtStart:
   - shipGameObject: {fileID: 100002, guid: 9d79861d1a4748942a2da45ddfbfab64, type: 2}
-    playerNumber: 1
-  - shipGameObject: {fileID: 100002, guid: 9d79861d1a4748942a2da45ddfbfab64, type: 2}
     playerNumber: 3
   - shipGameObject: {fileID: 100002, guid: 9d79861d1a4748942a2da45ddfbfab64, type: 2}
     playerNumber: 4
+  - shipGameObject: {fileID: 100002, guid: 9d79861d1a4748942a2da45ddfbfab64, type: 2}
+    playerNumber: 2
   respawnPrefab: {fileID: 100002, guid: 9d79861d1a4748942a2da45ddfbfab64, type: 2}
   boundary:
     xMin: -27
@@ -617,6 +621,9 @@ MonoBehaviour:
   - {fileID: 100002, guid: f8767df151f0d38489a322dfefe8684a, type: 2}
   powerupPrefabs:
   - {fileID: 100000, guid: 358f550b4d7c8384288c9465526f048c, type: 2}
+  - {fileID: 100000, guid: c4675b6149d76e143bd48f6dd8855ccf, type: 2}
+  - {fileID: 100000, guid: 932dae5eb43fb8a479068c607bc35483, type: 2}
+  - {fileID: 100000, guid: 2e36edbd9e7c58841a577aa018fe28b7, type: 2}
   isGameOver: 0
   isLevelEnabled: 00000000000000000000
 --- !u!82 &1484604817

@@ -34,7 +34,7 @@ public class Menu : MonoBehaviour {
 			{
 				Application.LoadLevel("Romo Level Experiment");
 			}
-            GUILayout.Label("Judėjimas \n Pulto kairė vairalazdė \n Klaviatūros krypties klavišai \n Klaviatūros IJKL mygtukai \nPrisijungimas / atsijungimas \n Pulto B mygtukas \n Klaviatūros E mygtukas \n Klaviatūros O (numpad) mygtukas \nMelee / artima ataka \n Pulto A mygtukas \n Klaviatūros SPACE mygtukas \n Klaviatūros / (numpad) mygtukas \nSpecialioji ataka \n Pulto X mygtukas \n Klaviatūros Q mygtukas \n Klaviatūros U (numpad) mygtukas");
+			GUILayout.Label("Judėjimas \n Pulto kairė vairalazdė \n Klaviatūros krypties klavišai \n Klaviatūros IJKL mygtukai \n Klaviatūros WASD mygtukai \nPrisijungimas / atsijungimas \n Pulto B mygtukas \n Klaviatūros E mygtukas \n Klaviatūros O (numpad) mygtukas \nMelee / artima ataka \n Pulto A mygtukas \n Klaviatūros SPACE mygtukas \n Klaviatūros / (numpad) mygtukas \nSpecialioji ataka \n Pulto X mygtukas \n Klaviatūros Q mygtukas \n Klaviatūros U (numpad) mygtukas");
 		}
 		if (GUILayout.Button("Credits"))
 		{
