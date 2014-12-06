@@ -14,6 +14,10 @@ public class EnemyMover2 : MonoBehaviour {
 	public float xmax;		//Ribos, kuriose vyksta judėjimas.
 	public float ymin;		//
 	public float ymax;		// y max gali būti mažesnis už viršutinę ribą -> kai laivas pateks tarp ymin ir ymax jis nebeišeis jau iš tų ribų
+	public float exitTime;
+	public float exitSpeed=20;
+	private bool isExitTriggered=false;
+	private float exitStartTime;
 	private float nextmove; //Privatus kintamasis nusakantis laiką, kada kitą kartą judės. Time.time+waittime
 	private float p;		//Kintamasis, kuris naudojamas nuspręsti į kurią pusę laivas judės.
 	private float hspeed;	//Kintamasis, kokio greičiu jis judės atkarpą. 
@@ -22,23 +26,28 @@ public class EnemyMover2 : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rigidbody2D.velocity = -speeddown*transform.up;
-		nextmove += waittime;
+		nextmove = Time.time +waittime;
+		exitStartTime = Time.time + exitTime;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (Time.time >= nextmove) 
+		if (Time.time > exitStartTime&&!isExitTriggered) {
+			isExitTriggered=true;
+			rigidbody2D.velocity=Random.insideUnitCircle*20;
+		}
+		if (Time.time >= nextmove&&!isExitTriggered) 
 		{
 			StartCoroutine(changevelocity ());
 			nextmove=Time.time+waittime;
 			
 		}
-		if ((rigidbody2D.position.y<=ymin)&&(speeddown>0f))
+		if ((rigidbody2D.position.y<=ymin)&&(speeddown>0f)&&!isExitTriggered)
 		{
 			speeddown=-speeddown;
 			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x,-rigidbody2D.velocity.y);
 		}
-		if ((rigidbody2D.position.y>=ymax)&&(speeddown<0f))
+		if ((rigidbody2D.position.y>=ymax)&&(speeddown<0f)&&!isExitTriggered)
 		{
 			speeddown=-speeddown;
 			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x,-rigidbody2D.velocity.y);
@@ -64,7 +73,8 @@ public class EnemyMover2 : MonoBehaviour {
 			rigidbody2D.velocity = new Vector2(hspeed,rigidbody2D.velocity.y);
 			//Debug.Log ("Right");
 		}
-		yield return new WaitForSeconds(traveltime);		
+		yield return new WaitForSeconds(traveltime);	
+		if (!isExitTriggered)
 		rigidbody2D.velocity = new Vector2(0f,rigidbody2D.velocity.y);
 	}
 	

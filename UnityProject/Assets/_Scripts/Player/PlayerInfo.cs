@@ -16,7 +16,7 @@ public class PlayerInfo {
 
 	public int controllerNumber;
 	public long score = 0;
-	public int hitPoints = 100;
+	public int hitPoints = 1;
 
     // Vykstant prisidokavimui ir atsidokavimaui dockPause įrašomas laikas, kada galima atlikti kitą tokią operaciją
     public float dockPause;

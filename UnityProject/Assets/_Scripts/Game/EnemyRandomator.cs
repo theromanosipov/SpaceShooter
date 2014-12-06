@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class x2D_EnemyRandomator : MonoBehaviour {
+public class EnemyRandomator : MonoBehaviour {
 	
 	public GameObject[] enemyPrefabs;
 	public float spawnZ;
