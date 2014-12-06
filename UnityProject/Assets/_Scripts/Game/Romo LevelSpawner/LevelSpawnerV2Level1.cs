@@ -77,4 +77,22 @@ public class LevelSpawnerV2Level1 : LevelSpawnerV2 {
         GameObject currentEnemy = Instantiate(pointInfo.gameObject) as GameObject;
         currentEnemy.GetComponent<PointArrayMover>().SetDestination(pointInfo.pointArray);    
     }
+
+    public GameObject[] spawnRandomPrefabs;
+	public float spawnX;
+
+    IEnumerator SpawnRandom(int currentBeat) {
+        Debug.Log("SpawnRandom");
+        int k = 0;
+        while (k < 10) {
+            int j = Mathf.FloorToInt(Random.Range(0f, spawnRandomPrefabs.Length));
+            for (int i = 0; i < Random.Range(0f, 5.99f); i++) {
+                float x = Random.Range(-spawnX, spawnX);
+                GameObject spawnedNow = Instantiate(spawnRandomPrefabs[j], new Vector3(x, spawnY, 0), Quaternion.identity) as GameObject;
+            }
+            k++;
+            float nextSpawnTime = Time.time + 1;
+            while (Time.time < nextSpawnTime) yield return 0;
+        }
+    }
 }
