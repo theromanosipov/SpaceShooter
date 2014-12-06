@@ -3547,20 +3547,20 @@ MonoBehaviour:
   - {fileID: 100000, guid: c791a70a69f229d479da97d0bf136016, type: 2}
   wave:
   - timer: 1
-    waveMethodName: SpawnRandom
-    isEnabled: 1
-  - timer: 1
     waveMethodName: SpawnWall1
-    isEnabled: 0
+    isEnabled: 1
   - timer: 1
     waveMethodName: SpawnWall2
-    isEnabled: 0
-  - timer: 8
+    isEnabled: 1
+  - timer: 6
+    waveMethodName: SpawnRandom
+    isEnabled: 1
+  - timer: 10
     waveMethodName: SpawnWall3
     isEnabled: 1
-  - timer: 7
-    waveMethodName: SpawnPointArrayMover2
-    isEnabled: 0
+  - timer: 10
+    waveMethodName: SpawnWall4
+    isEnabled: 1
   - timer: 8
     waveMethodName: SpawnWall3
     isEnabled: 0

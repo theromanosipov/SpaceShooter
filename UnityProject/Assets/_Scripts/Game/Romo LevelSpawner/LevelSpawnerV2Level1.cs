@@ -7,7 +7,7 @@ public class WallInfo {
     public float wallSpeedY;
     public Vector3 rotation;
     public Vector3[] wallPosition;
-    public Color[] wallColors;
+    public Color[] wallColors = new Color[6] {new Color32(255,0,0,255), new Color32(255,142,0,255), new Color32(255,237,0,255), new Color32(0,255,23,255), new Color32(0,107,255,255), new Color32(178,0,255,255)};
     public int delay;
 }
 
@@ -22,17 +22,19 @@ public class LevelSpawnerV2Level1 : LevelSpawnerV2 {
     public WallInfo Wall1;
     public WallInfo Wall2;
     public WallInfo Wall3;
+    public WallInfo Wall4;
 
     public void SpawnWall1(int currentBeat) {
         StartCoroutine(SpawnDeathWall(currentBeat, Wall1));
     }
-
     public void SpawnWall2(int currentBeat) {
         StartCoroutine(SpawnDeathWall(currentBeat, Wall2));
     }
-
     public void SpawnWall3(int currentBeat) {
         StartCoroutine(SpawnDeathWall(currentBeat, Wall3));
+    }
+    public void SpawnWall4(int currentBeat) {
+        StartCoroutine(SpawnDeathWall(currentBeat, Wall4));
     }
 
     IEnumerator SpawnDeathWall(int currentBeat, WallInfo wallInfo) {
