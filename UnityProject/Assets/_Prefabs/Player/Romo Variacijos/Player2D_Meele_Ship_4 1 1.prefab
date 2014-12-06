@@ -50,7 +50,7 @@ GameObject:
   - 114: {fileID: 11400008}
   - 114: {fileID: 11400006}
   - 58: {fileID: 5800000}
-  - 114: {fileID: 11400012}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: Player2D_Meele_Ship_4 1 1
   m_TagString: Player
@@ -199,6 +199,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationRate: 10
   pauseAfterRotation: 1
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69adb74740eb9c4693d6c02e97b6448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bopCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: .0506101437
+      value: .895577729
+      inSlope: .378707916
+      outSlope: .378707916
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -207,17 +238,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 100004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec3bb1d71eebeac4aa17305a9970d07f, type: 3}
+  m_Script: {fileID: 11500000, guid: f681f5aa8e8d2ec468255a898bf13c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 16
   boundary:
-    xMin: 0
-    xMax: 0
-    yMin: 0
-    yMax: 0
-  meele: {fileID: 100002, guid: 101872e8a81baea4f91f3253c4fae229, type: 2}
-  hitPointsText: {fileID: 100008, guid: a93496017806b7740910df5fd946f306, type: 2}
+    x: 27
+    y: 15
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -241,20 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a08c230503ad74194e9a4152b1ea19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 0}
---- !u!114 &11400012
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba86032841f802f4984f900aca0f08bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitMaterial: {fileID: 0}
-  hitMaterialDuration: 0
+  playerExplosion: {fileID: 100008, guid: a93496017806b7740910df5fd946f306, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

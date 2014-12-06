@@ -8,6 +8,7 @@ using System.Collections;
 /// </summary>
 public class PlayerInfoContainer : MonoBehaviour {
 	private PlayerInfo playerInfo;
+    public GameObject playerExplosion;
 
     // Debuginimui
 	void Update() {
@@ -86,6 +87,7 @@ public class PlayerInfoContainer : MonoBehaviour {
     // Sunaikina laivą prie
     // TODO turreto atkabinimas
 	void DestroyShip(){
+        Instantiate(playerExplosion, transform.position, Quaternion.identity);
 		GameObject gameController=GameObject.FindGameObjectWithTag("GameMaster");
 		//int playerID = playerInfo.controllerNumber;
 		gameController.SendMessage ("playerDied", playerInfo);

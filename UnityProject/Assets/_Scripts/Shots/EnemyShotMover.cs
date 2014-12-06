@@ -15,13 +15,12 @@ public class EnemyShotMover : MonoBehaviour {
 		rigidbody2D.velocity = -speed*transform.up;
 		
 	}
-	
-	void OnTriggerEnter2D (Collider2D other) {
-		if (other.tag != "Player"&&other.tag !="Shield") {
-			return;
-		}
-		other.gameObject.SendMessage("GetDamage", damage);
-		Destroy (gameObject);
-	}
+
+    void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag == "Player") {
+            other.gameObject.SendMessage("DestroyShip");
+            Destroy(gameObject);
+        }
+    }
 	
 }

@@ -70,7 +70,7 @@ public class EnemyInfo : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other) {
         if (other.tag == "Player") {
             //Debug.Log ("Player hit by mover");
-            other.gameObject.SendMessage("GetDamage", ContactDamage);
+            other.gameObject.SendMessage("DestroyShip");
             damager = other.GetComponent<PlayerInfoContainer>();
             if (!isDestroyableByCollision) {
                 return;
