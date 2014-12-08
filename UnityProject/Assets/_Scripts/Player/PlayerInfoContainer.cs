@@ -87,7 +87,8 @@ public class PlayerInfoContainer : MonoBehaviour {
     // Sunaikina laivą prie
     // TODO turreto atkabinimas
 	void DestroyShip(){
-        Instantiate(playerExplosion, transform.position, Quaternion.identity);
+        if ( playerExplosion != null)
+            Instantiate(playerExplosion, transform.position, Quaternion.identity);
 		GameObject gameController=GameObject.FindGameObjectWithTag("GameMaster");
 		//int playerID = playerInfo.controllerNumber;
 		gameController.SendMessage ("playerDied", playerInfo);

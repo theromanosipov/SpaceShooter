@@ -8,7 +8,7 @@ public class WallInfo {
     public Vector3 rotation;
     public Vector3[] wallPosition;
     public Color[] wallColors = RythmUtility.getRainbow();
-    public int delay;
+    public int delay = 1;
 }
 
 [System.Serializable]
@@ -25,6 +25,8 @@ public class LevelSpawnerV2Level1 : LevelSpawnerV2 {
     public WallInfo Wall4;
     public WallInfo Wall5;
     public WallInfo Wall6;
+    public WallInfo Wall7;
+    public WallInfo Wall8;
 
     public void SpawnWall1(int currentBeat) {
         StartCoroutine(SpawnDeathWall(currentBeat, Wall1));
@@ -43,6 +45,12 @@ public class LevelSpawnerV2Level1 : LevelSpawnerV2 {
     }
     public void SpawnWall6(int currentBeat) {
         StartCoroutine(SpawnDeathWall(currentBeat, Wall6));
+    }
+    public void SpawnWall7(int currentBeat) {
+        StartCoroutine(SpawnDeathWall(currentBeat, Wall7));
+    }
+    public void SpawnWall8(int currentBeat) {
+        StartCoroutine(SpawnDeathWall(currentBeat, Wall8));
     }
 
     IEnumerator SpawnDeathWall(int currentBeat, WallInfo wallInfo) {

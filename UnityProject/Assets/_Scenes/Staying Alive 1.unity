@@ -2993,9 +2993,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 99999999
   shipsToSpawnAtStart:
-  - shipGameObject: {fileID: 100002, guid: 75d9f620bdf9db2429436f4c7adff3c8, type: 2}
-    playerNumber: 1
-  respawnPrefab: {fileID: 100002, guid: 75d9f620bdf9db2429436f4c7adff3c8, type: 2}
+  - shipGameObject: {fileID: 100000, guid: 47eec362071bbc343bdc5cb23cb61249, type: 2}
+    playerNumber: 3
+  respawnPrefab: {fileID: 100000, guid: 47eec362071bbc343bdc5cb23cb61249, type: 2}
   boundary:
     xMin: -27
     xMax: 27
@@ -3180,6 +3180,56 @@ MonoBehaviour:
     - {x: 32, y: -16, z: 0}
     - {x: 31, y: -16, z: 0}
     - {x: 29, y: -16, z: 0}
+    wallColors:
+    - {r: 1, g: 0, b: 0, a: 1}
+    - {r: 1, g: .556862772, b: 0, a: 1}
+    - {r: 1, g: .929411769, b: 0, a: 1}
+    - {r: 0, g: 1, b: .0901960805, a: 1}
+    - {r: 0, g: .419607848, b: 1, a: 1}
+    - {r: .698039234, g: 0, b: 1, a: 1}
+    delay: 1
+  Wall7:
+    wallSpeedX: 10
+    wallSpeedY: -2
+    rotation: {x: 0, y: 0, z: 90}
+    wallPosition:
+    - {x: -28, y: -23, z: 0}
+    - {x: -28, y: -23, z: 0}
+    - {x: -28, y: -23, z: 0}
+    - {x: -28, y: -23, z: 0}
+    - {x: -28, y: -23, z: 0}
+    - {x: -28, y: -23, z: 0}
+    - {x: -28, y: -23, z: 0}
+    - {x: -28, y: -23, z: 0}
+    - {x: -28, y: -23, z: 0}
+    - {x: -28, y: -23, z: 0}
+    - {x: -28, y: -23, z: 0}
+    - {x: -28, y: -23, z: 0}
+    wallColors:
+    - {r: 1, g: 0, b: 0, a: 1}
+    - {r: 1, g: .556862772, b: 0, a: 1}
+    - {r: 1, g: .929411769, b: 0, a: 1}
+    - {r: 0, g: 1, b: .0901960805, a: 1}
+    - {r: 0, g: .419607848, b: 1, a: 1}
+    - {r: .698039234, g: 0, b: 1, a: 1}
+    delay: 1
+  Wall8:
+    wallSpeedX: -10
+    wallSpeedY: 2
+    rotation: {x: 0, y: 0, z: 90}
+    wallPosition:
+    - {x: 28, y: 23, z: 0}
+    - {x: 28, y: 23, z: 0}
+    - {x: 28, y: 23, z: 0}
+    - {x: 28, y: 23, z: 0}
+    - {x: 28, y: 23, z: 0}
+    - {x: 28, y: 23, z: 0}
+    - {x: 28, y: 23, z: 0}
+    - {x: 28, y: 23, z: 0}
+    - {x: 28, y: 23, z: 0}
+    - {x: 28, y: 23, z: 0}
+    - {x: 28, y: 23, z: 0}
+    - {x: 28, y: 23, z: 0}
     wallColors:
     - {r: 1, g: 0, b: 0, a: 1}
     - {r: 1, g: .556862772, b: 0, a: 1}
