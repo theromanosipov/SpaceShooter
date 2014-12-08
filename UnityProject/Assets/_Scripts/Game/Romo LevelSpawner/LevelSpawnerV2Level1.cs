@@ -7,7 +7,7 @@ public class WallInfo {
     public float wallSpeedY;
     public Vector3 rotation;
     public Vector3[] wallPosition;
-    public Color[] wallColors = new Color[6] {new Color32(255,0,0,255), new Color32(255,142,0,255), new Color32(255,237,0,255), new Color32(0,255,23,255), new Color32(0,107,255,255), new Color32(178,0,255,255)};
+    public Color[] wallColors = RythmUtility.getRainbow();
     public int delay;
 }
 
@@ -23,6 +23,8 @@ public class LevelSpawnerV2Level1 : LevelSpawnerV2 {
     public WallInfo Wall2;
     public WallInfo Wall3;
     public WallInfo Wall4;
+    public WallInfo Wall5;
+    public WallInfo Wall6;
 
     public void SpawnWall1(int currentBeat) {
         StartCoroutine(SpawnDeathWall(currentBeat, Wall1));
@@ -35,6 +37,12 @@ public class LevelSpawnerV2Level1 : LevelSpawnerV2 {
     }
     public void SpawnWall4(int currentBeat) {
         StartCoroutine(SpawnDeathWall(currentBeat, Wall4));
+    }
+    public void SpawnWall5(int currentBeat) {
+        StartCoroutine(SpawnDeathWall(currentBeat, Wall5));
+    }
+    public void SpawnWall6(int currentBeat) {
+        StartCoroutine(SpawnDeathWall(currentBeat, Wall6));
     }
 
     IEnumerator SpawnDeathWall(int currentBeat, WallInfo wallInfo) {
@@ -88,13 +96,14 @@ public class LevelSpawnerV2Level1 : LevelSpawnerV2 {
         int k = 0;
         while (k < 10) {
             int j = Mathf.FloorToInt(Random.Range(0f, spawnRandomPrefabs.Length));
-            for (int i = 0; i < Random.Range(0f, 5.99f); i++) {
+            for (int i = 0; i < Random.Range(0f, 3.99f); i++) {
                 float x = Random.Range(-spawnX, spawnX);
                 GameObject spawnedNow = Instantiate(spawnRandomPrefabs[j], new Vector3(x, spawnY, 0), Quaternion.identity) as GameObject;
             }
             k++;
-            float nextSpawnTime = Time.time + 1;
-            while (Time.time < nextSpawnTime) yield return 0;
+            currentBeat += 4;
+            int iSample = (int)(beatTime[currentBeat - 1] * audio.clip.frequency);
+            while (audio.timeSamples < iSample) yield return 0; 
         }
     }
 }
