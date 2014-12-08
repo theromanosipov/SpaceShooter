@@ -402,9 +402,9 @@ MonoBehaviour:
   - {fileID: 400004}
   - {fileID: 400002}
   - {fileID: 400000}
-  shotCount: 2
+  shotCount: 1
   delayShotSpwan: 1.15830123
-  delayShotSeries: 2.31660199
+  delayShotSeries: 5
   firstShotDelay: 2.31660199
 --- !u!1001 &100100000
 Prefab:
