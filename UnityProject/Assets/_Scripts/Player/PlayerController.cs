@@ -18,9 +18,9 @@ public class PlayerController : GenericPlayerController {
 
 	// Use this for initialization
 	void Start () {
-		phitPointsText = Instantiate (hitPointsText, new Vector3(transform.position.x,transform.position.y-1,transform.position.z-3),Quaternion.identity) as GameObject;
+		phitPointsText = Instantiate (hitPointsText, new Vector3(transform.position.x,transform.position.y-1.5f,transform.position.z-3),Quaternion.identity) as GameObject;
 		phitPointsText.transform.parent = transform;
-		pScoreText = Instantiate (hitPointsText, new Vector3(transform.position.x,transform.position.y-1.5f,transform.position.z-3),Quaternion.identity) as GameObject;
+		pScoreText = Instantiate (hitPointsText, new Vector3(transform.position.x,transform.position.y-2.5f,transform.position.z-3),Quaternion.identity) as GameObject;
 		pScoreText.transform.parent = transform;
 		pMeele = Instantiate (meele, transform.position, Quaternion.identity) as GameObject;
 		pMeele.transform.parent = transform;	

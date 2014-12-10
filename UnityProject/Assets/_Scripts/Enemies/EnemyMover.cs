@@ -11,8 +11,6 @@ public class EnemyMover : MonoBehaviour {
 	public float hspeed;				//Kokiu greičiu laivas juda horizontaliai
 	public float xmin;					//riba
 	public float xmax;					//riba
-	public float ymin;
-	public float ymax;
 	public float wait;					//Kas kiek laiko laivas juda horizontaliai
 	public float mtime;					//Kiek laiko laivas juda horizontaliai
 	public GameObject shotspawnscenter;	//Laivo vaikas, kuriam priklauso visi shotSpawn'ai

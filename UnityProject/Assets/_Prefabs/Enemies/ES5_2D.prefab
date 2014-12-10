@@ -370,17 +370,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speeddown: 5
-  hspeed: 4
+  hspeed: 2
   xmin: -27
   xmax: 27
-  ymin: 0
-  ymax: 0
   wait: 2.31660199
   mtime: 2.31660104
   shotspawnscenter: {fileID: 100016}
   rotationSpeed: 3
-  exitTime: 5
-  exitSpeed: 20
+  exitTime: 13
+  exitSpeed: 10
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -320,12 +320,12 @@ MonoBehaviour:
   speeddown: 2
   traveltime: 3.5
   waittime: 3.50999999
-  xmin: -18
-  xmax: 18
-  ymin: -9
-  ymax: -4
-  exitTime: 5
-  exitSpeed: 20
+  xmin: -27
+  xmax: 27
+  ymin: -14
+  ymax: -8
+  exitTime: 30
+  exitSpeed: 10
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1

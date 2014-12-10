@@ -91,6 +91,7 @@ public class PlayerInfoContainer : MonoBehaviour {
             Instantiate(playerExplosion, transform.position, Quaternion.identity);
 		GameObject gameController=GameObject.FindGameObjectWithTag("GameMaster");
 		//int playerID = playerInfo.controllerNumber;
+		AddScore (-100);
 		gameController.SendMessage ("playerDied", playerInfo);
 		gameObject.renderer.enabled = false;
 		gameObject.collider2D.enabled = false;

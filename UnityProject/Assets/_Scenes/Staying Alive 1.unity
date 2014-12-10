@@ -3031,6 +3031,12 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 100000, guid: bce5bab7242cc8c42a8bbe5389507393, type: 2}
   - {fileID: 100000, guid: c791a70a69f229d479da97d0bf136016, type: 2}
+  - {fileID: 100002, guid: f8767df151f0d38489a322dfefe8684a, type: 2}
+  - {fileID: 100000, guid: f3daee43452f4f44f9c1925aadc13336, type: 2}
+  - {fileID: 100018, guid: f0a15dfc4dce01f45ba2f436b0b0b760, type: 2}
+  - {fileID: 100022, guid: cb55fdd82c60cd549acc3ebce10c3cae, type: 2}
+  - {fileID: 100010, guid: 39b46ec9a55bff94cb262b6aae040350, type: 2}
+  - {fileID: 100012, guid: 8cbe954226e8046469b6b63639fb6dea, type: 2}
   wave:
   - timer: 1
     waveMethodName: SpawnWall1
@@ -3250,7 +3256,11 @@ MonoBehaviour:
     gameObject: {fileID: 100006, guid: 4e5599d733395e6488349ba6e9a310e5, type: 2}
   spawnRandomPrefabs:
   - {fileID: 100002, guid: f8767df151f0d38489a322dfefe8684a, type: 2}
+  - {fileID: 100000, guid: f3daee43452f4f44f9c1925aadc13336, type: 2}
   - {fileID: 100018, guid: f0a15dfc4dce01f45ba2f436b0b0b760, type: 2}
+  - {fileID: 100022, guid: cb55fdd82c60cd549acc3ebce10c3cae, type: 2}
+  - {fileID: 100010, guid: 39b46ec9a55bff94cb262b6aae040350, type: 2}
+  - {fileID: 100012, guid: 8cbe954226e8046469b6b63639fb6dea, type: 2}
   spawnX: 26
 --- !u!82 &1484604817
 AudioSource:
