@@ -3261,6 +3261,11 @@ MonoBehaviour:
   - {fileID: 100022, guid: cb55fdd82c60cd549acc3ebce10c3cae, type: 2}
   - {fileID: 100010, guid: 39b46ec9a55bff94cb262b6aae040350, type: 2}
   - {fileID: 100012, guid: 8cbe954226e8046469b6b63639fb6dea, type: 2}
+  - {fileID: 100000, guid: 932dae5eb43fb8a479068c607bc35483, type: 2}
+  - {fileID: 100000, guid: 2e36edbd9e7c58841a577aa018fe28b7, type: 2}
+  - {fileID: 100000, guid: 8231a649756da3d428d0c327288a694e, type: 2}
+  - {fileID: 100000, guid: c4675b6149d76e143bd48f6dd8855ccf, type: 2}
+  - {fileID: 100000, guid: 358f550b4d7c8384288c9465526f048c, type: 2}
   spawnX: 26
 --- !u!82 &1484604817
 AudioSource:

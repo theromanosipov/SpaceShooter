@@ -227,7 +227,7 @@ MonoBehaviour:
   shotSpawns:
   - {fileID: 400004}
   fireRate: 30
-  scatterK: 20
+  scatterK: 10
   shotCount: 0
   maxShots: 20
 --- !u!114 &11400012
@@ -241,12 +241,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3bb1d71eebeac4aa17305a9970d07f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
   boundary:
-    xMin: 0
-    xMax: 0
-    yMin: 0
-    yMax: 0
+    xMin: -27
+    xMax: 27
+    yMin: -15
+    yMax: 15
   meele: {fileID: 100002, guid: 6d179c2aa289c364692b4d8189f2a57c, type: 2}
   hitPointsText: {fileID: 100000, guid: 8fe53cd8bf9cf4c4292d62eae29fe5e5, type: 2}
 --- !u!114 &11400014

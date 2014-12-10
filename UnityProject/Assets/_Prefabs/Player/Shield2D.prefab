@@ -41,7 +41,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sphereCount: 3
   sphere: {fileID: 100000, guid: eab282eebfac0e644add453169040273, type: 2}
-  distance: 1.5
+  distance: 2
   rotationSpeed: 1
 --- !u!1001 &100100000
 Prefab:
