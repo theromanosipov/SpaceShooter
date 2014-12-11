@@ -12,6 +12,9 @@ public class PlayerController : GenericPlayerController {
 	public Boundary2 boundary;
 	public GameObject meele;
 	public GameObject hitPointsText;
+
+    public float tilt;
+
 	private GameObject pMeele;
 	private GameObject phitPointsText;
 	private GameObject pScoreText;
@@ -33,6 +36,8 @@ public class PlayerController : GenericPlayerController {
 		//				rigidbody2D.velocity.Normalize ();
 		//				rigidbody2D.velocity = rigidbody2D.velocity * speed;
 		//		}
+
+        rigidbody2D.rotation = rigidbody2D.velocity.x * -tilt;
 		
 		rigidbody2D.position = new Vector2 (
 			Mathf.Clamp (rigidbody2D.position.x, boundary.xMin, boundary.xMax),

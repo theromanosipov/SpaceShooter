@@ -6,9 +6,9 @@ public class RainbowChanges : MonoBehaviour {
     public int duration;
 
     private int samples;
-    private Color[] rainbow = RythmUtility.getRainbow();
+    public Color[] rainbow = RythmUtility.getRainbow();
 
-    void Start() {
+    public virtual void Start() {
         samples = duration * rainbow.Length;
     }
 
@@ -18,6 +18,10 @@ public class RainbowChanges : MonoBehaviour {
         int nextColor = (previousColor + 1) % rainbow.Length;
         float lerpValue = (currentSample % duration) * (1f / (float)duration) + (float)RythmUtility.getBeatProgress() / (float)duration;
         Debug.Log((float)RythmUtility.getCurrentBeat() / (float)duration);
-        renderer.material.color = Color.Lerp(rainbow[previousColor], rainbow[nextColor], lerpValue);
+        assignColor (Color.Lerp(rainbow[previousColor], rainbow[nextColor], lerpValue));
 	}
+
+    public virtual void assignColor(Color newColor) {
+        renderer.material.color = newColor;
+    }
 }

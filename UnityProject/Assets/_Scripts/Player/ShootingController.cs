@@ -6,11 +6,20 @@ public class ShootingController : GenericPlayerController
 	public GameObject shot;
 	public Transform[] shotSpawns;
 	public float fireRate;
+
+    public bool givePlayerColor;
+
 	private float scatter;
 	public float scatterK;
 	public float shotCount = 0;
 	public float maxShots = 1;
 	private float nextFire;
+
+    private SpriteRenderer shipRenderer;
+
+    void Start() {
+        shipRenderer = renderer as SpriteRenderer;
+    }
 	
 	public override void Update() {
 		base.Update();
@@ -29,6 +38,11 @@ public class ShootingController : GenericPlayerController
 				 shotSpawn.rotation.eulerAngles.z+Random.Range (-scatter,scatter))
 				            ) as GameObject;
 				bullet.BroadcastMessage("AssignPlayer", player);
+
+                if (givePlayerColor) {
+                    SpriteRenderer bulletRenderer = bullet.renderer as SpriteRenderer;
+                    bulletRenderer.color = shipRenderer.color;
+                }
 			}
 			shotCount--;
 		}

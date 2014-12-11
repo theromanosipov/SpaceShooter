@@ -180,6 +180,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 50: {fileID: 5000000}
   - 61: {fileID: 6100000}
+  - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: ESB_2D
   m_TagString: Enemy
@@ -461,6 +462,37 @@ MonoBehaviour:
   startingColor: {r: .75686276, g: .75686276, b: .75686276, a: 0}
   hitMaterial: {fileID: 0}
   hitMaterialDuration: 0
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69adb74740eb9c4693d6c02e97b6448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bopCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: .0992555842
+      value: .800586522
+      inSlope: .799464583
+      outSlope: .799464583
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

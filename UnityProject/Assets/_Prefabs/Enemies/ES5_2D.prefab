@@ -150,6 +150,7 @@ GameObject:
   - 23: {fileID: 2300000}
   - 50: {fileID: 5000000}
   - 58: {fileID: 5800000}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: ES5_2D
   m_TagString: Enemy
@@ -379,6 +380,37 @@ MonoBehaviour:
   rotationSpeed: 3
   exitTime: 13
   exitSpeed: 10
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69adb74740eb9c4693d6c02e97b6448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bopCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: .0769230798
+      value: .799120247
+      inSlope: .653771162
+      outSlope: .653771162
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
