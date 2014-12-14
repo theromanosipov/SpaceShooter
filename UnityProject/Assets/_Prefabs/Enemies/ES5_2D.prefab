@@ -351,14 +351,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5122632d83fd11e478b3f9a8b60448e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPoints: 162
+  HitPoints: 200
   ContactDamage: 33
   killScore: 9
   isInvincible: 0
   isDestroyableByCollision: 1
   startingColor: {r: 1, g: .972413898, b: 0, a: 1}
   hitMaterial: {fileID: 2100000, guid: 428c416a914e3584390c46e63b2a48ff, type: 2}
-  hitMaterialDuration: 0
+  hitMaterialDuration: .100000001
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

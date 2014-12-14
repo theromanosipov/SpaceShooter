@@ -133,8 +133,8 @@ MonoBehaviour:
   isInvincible: 0
   isDestroyableByCollision: 1
   startingColor: {r: 1, g: 1, b: 1, a: 1}
-  hitMaterial: {fileID: 0}
-  hitMaterialDuration: 0
+  hitMaterial: {fileID: 2100000, guid: 428c416a914e3584390c46e63b2a48ff, type: 2}
+  hitMaterialDuration: .100000001
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

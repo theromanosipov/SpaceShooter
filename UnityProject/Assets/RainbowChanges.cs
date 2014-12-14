@@ -17,7 +17,6 @@ public class RainbowChanges : MonoBehaviour {
         int previousColor = currentSample / duration;
         int nextColor = (previousColor + 1) % rainbow.Length;
         float lerpValue = (currentSample % duration) * (1f / (float)duration) + (float)RythmUtility.getBeatProgress() / (float)duration;
-        Debug.Log((float)RythmUtility.getCurrentBeat() / (float)duration);
         assignColor (Color.Lerp(rainbow[previousColor], rainbow[nextColor], lerpValue));
 	}
 
