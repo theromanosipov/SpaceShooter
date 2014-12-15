@@ -2993,9 +2993,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 99999999
   shipsToSpawnAtStart:
-  - shipGameObject: {fileID: 100004, guid: fe1c0a4614ca57b4c9afd78f34a316c1, type: 2}
+  - shipGameObject: {fileID: 100000, guid: 4b73e309490b043469faf1738dc75f52, type: 2}
     playerNumber: 3
-  respawnPrefab: {fileID: 100004, guid: fe1c0a4614ca57b4c9afd78f34a316c1, type: 2}
+  - shipGameObject: {fileID: 100000, guid: 4b73e309490b043469faf1738dc75f52, type: 2}
+    playerNumber: 1
+  - shipGameObject: {fileID: 100000, guid: 4b73e309490b043469faf1738dc75f52, type: 2}
+    playerNumber: 2
+  respawnPrefab: {fileID: 100000, guid: 4b73e309490b043469faf1738dc75f52, type: 2}
   boundary:
     xMin: -27
     xMax: 27
@@ -3315,6 +3319,10 @@ MonoBehaviour:
   - {fileID: 100000, guid: 932dae5eb43fb8a479068c607bc35483, type: 2}
   - {fileID: 100000, guid: 2e36edbd9e7c58841a577aa018fe28b7, type: 2}
   - {fileID: 100000, guid: 358f550b4d7c8384288c9465526f048c, type: 2}
+  - {fileID: 100000, guid: c4675b6149d76e143bd48f6dd8855ccf, type: 2}
+  - {fileID: 100000, guid: 932dae5eb43fb8a479068c607bc35483, type: 2}
+  - {fileID: 100000, guid: 358f550b4d7c8384288c9465526f048c, type: 2}
+  - {fileID: 100000, guid: 2e36edbd9e7c58841a577aa018fe28b7, type: 2}
   - {fileID: 100000, guid: c4675b6149d76e143bd48f6dd8855ccf, type: 2}
   spawnX: 26
 --- !u!82 &1484604817
