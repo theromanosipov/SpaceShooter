@@ -14,7 +14,7 @@ GameObject:
   - 50: {fileID: 5000000}
   - 212: {fileID: 21200000}
   m_Layer: 0
-  m_Name: SpriteShot_1
+  m_Name: SpriteHomingShot_1
   m_TagString: Shot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5.58174801, z: 0}
-  m_LocalScale: {x: .5, y: .5, z: .5}
+  m_LocalScale: {x: .400000006, y: .800000012, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -124,11 +124,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce8240348e1309746afd11a3e678c418, type: 3}
+  m_Script: {fileID: 11500000, guid: 344c3fd0515fdaa479faf12ed7d3c359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed1: 10
+  speed2: 10
+  range: 15
   damage: 20
+  delay: .5
+  inertia: 8
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
