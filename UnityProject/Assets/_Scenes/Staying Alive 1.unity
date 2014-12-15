@@ -3044,7 +3044,7 @@ MonoBehaviour:
   - timer: 1
     waveMethodName: SpawnWall2
     isEnabled: 1
-  - timer: 7
+  - timer: 10
     waveMethodName: SpawnRandom
     isEnabled: 1
   - timer: 30
@@ -3062,25 +3062,55 @@ MonoBehaviour:
   - timer: 65
     waveMethodName: SpawnWall4
     isEnabled: 1
-  - timer: 115
+  - timer: 80
     waveMethodName: SpawnRandom
     isEnabled: 1
-  - timer: 165
+  - timer: 120
+    waveMethodName: SpawnWall7
+    isEnabled: 1
+  - timer: 120
+    waveMethodName: SpawnWall8
+    isEnabled: 1
+  - timer: 130
     waveMethodName: SpawnRandom
     isEnabled: 1
-  - timer: 215
+  - timer: 150
     waveMethodName: SpawnRandom
     isEnabled: 1
-  - timer: 265
+  - timer: 180
+    waveMethodName: SpawnWall1
+    isEnabled: 1
+  - timer: 180
+    waveMethodName: SpawnWall1
+    isEnabled: 1
+  - timer: 200
     waveMethodName: SpawnRandom
     isEnabled: 1
-  - timer: 315
+  - timer: 220
     waveMethodName: SpawnRandom
     isEnabled: 1
-  - timer: 365
+  - timer: 240
+    waveMethodName: SpawnWall3
+    isEnabled: 1
+  - timer: 240
+    waveMethodName: SpawnWall4
+    isEnabled: 1
+  - timer: 260
     waveMethodName: SpawnRandom
     isEnabled: 1
-  - timer: 415
+  - timer: 280
+    waveMethodName: SpawnRandom
+    isEnabled: 1
+  - timer: 300
+    waveMethodName: SpawnRandom
+    isEnabled: 1
+  - timer: 320
+    waveMethodName: SpawnRandom
+    isEnabled: 1
+  - timer: 340
+    waveMethodName: SpawnRandom
+    isEnabled: 1
+  - timer: 360
     waveMethodName: SpawnRandom
     isEnabled: 1
   Wall1:
