@@ -53,7 +53,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Dock1_
+    m_Name: Dock1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -117,7 +117,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Dock2_
+    m_Name: Dock2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -181,7 +181,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Dock3_
+    m_Name: Dock3
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -245,7 +245,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Dock4_
+    m_Name: Dock4
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
