@@ -103,8 +103,8 @@ public class LevelSpawnerV2Level1 : LevelSpawnerV2 {
         Debug.Log("SpawnRandom");
         int k = 0;
         while (k < 10) {
-            int j = Mathf.FloorToInt(Random.Range(0f, spawnRandomPrefabs.Length - 0.1f));
-            for (int i = 0; i < Random.Range(2f, 6.99f); i++) {
+            int j = Mathf.FloorToInt(Random.Range(0f, spawnRandomPrefabs.Length));
+            for (int i = 0; i < Random.Range(0f, 3.99f); i++) {
                 float x = Random.Range(-spawnX, spawnX);
                 GameObject spawnedNow = Instantiate(spawnRandomPrefabs[j], new Vector3(x, spawnY, 0), Quaternion.identity) as GameObject;
             }

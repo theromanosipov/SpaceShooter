@@ -108,9 +108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c6268bcc478feb4090f93c078235602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meeleDamage: 700
+  meeleDamage: 0
   swingTime: .200000003
-  cooldown: 0
+  cooldown: .400000006
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

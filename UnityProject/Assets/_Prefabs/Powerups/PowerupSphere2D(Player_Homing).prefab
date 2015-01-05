@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a6c5765b40a914780b72d35958480d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newShip: {fileID: 100000, guid: 22a824cc47843b64880b3305aa0709d4, type: 2}
+  newShip: {fileID: 100000, guid: df883043e877b8c439235c1f1d2724da, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
