@@ -53,6 +53,11 @@ public class LevelSpawnerV2Level1 : LevelSpawnerV2 {
         StartCoroutine(SpawnDeathWall(currentBeat, Wall8));
     }
 
+    public GameObject apology;
+    void SpawnApology(int currentBeat) {
+        Instantiate(apology);
+    }
+
     IEnumerator SpawnDeathWall(int currentBeat, WallInfo wallInfo) {
 
         int wallToSpawn = 0;                            // Iteratorius, kurį didinam iki wallPosition.Length ir tada nustojam spawnint sienas

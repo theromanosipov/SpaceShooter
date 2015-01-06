@@ -149,7 +149,7 @@ MonoBehaviour:
     yMin: -15
     yMax: 15
   meele: {fileID: 100002, guid: 6d179c2aa289c364692b4d8189f2a57c, type: 2}
-  hitPointsText: {fileID: 100000, guid: 8fe53cd8bf9cf4c4292d62eae29fe5e5, type: 2}
+  hitPointsText: {fileID: 0}
   tilt: .800000012
 --- !u!114 &11400004
 MonoBehaviour:
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a08c230503ad74194e9a4152b1ea19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerExplosion: {fileID: 0}
+  playerExplosion: {fileID: 100008, guid: a93496017806b7740910df5fd946f306, type: 2}
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1

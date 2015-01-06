@@ -1468,6 +1468,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d926092000c8e341845dd0b0a44700f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &225723382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 225723385}
+  - 212: {fileID: 225723384}
+  - 61: {fileID: 225723383}
+  - 114: {fileID: 225723386}
+  m_Layer: 0
+  m_Name: Shoot this sign
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &225723383
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 225723382}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 29.5, y: 8.5}
+  m_Center: {x: 0, y: 0}
+--- !u!212 &225723384
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 225723382}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 3215efba5a4658540aacfab20036abcd, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &225723385
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 225723382}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+--- !u!114 &225723386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 225723382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b07fb9d640e7ae43a2d4f7ac9502fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &277662242
 GameObject:
   m_ObjectHideFlags: 0
@@ -2994,7 +3068,7 @@ MonoBehaviour:
   lives: 99999999
   shipsToSpawnAtStart:
   - shipGameObject: {fileID: 100004, guid: fe1c0a4614ca57b4c9afd78f34a316c1, type: 2}
-    playerNumber: 3
+    playerNumber: 1
   respawnPrefab: {fileID: 100004, guid: fe1c0a4614ca57b4c9afd78f34a316c1, type: 2}
   boundary:
     xMin: -27
@@ -3047,71 +3121,44 @@ MonoBehaviour:
   - timer: 10
     waveMethodName: SpawnRandom
     isEnabled: 1
-  - timer: 30
+  - timer: 55
     waveMethodName: SpawnWall5
     isEnabled: 1
-  - timer: 30
+  - timer: 55
     waveMethodName: SpawnWall6
     isEnabled: 1
-  - timer: 45
-    waveMethodName: SpawnRandom
-    isEnabled: 1
-  - timer: 65
-    waveMethodName: SpawnWall3
-    isEnabled: 1
-  - timer: 65
-    waveMethodName: SpawnWall4
-    isEnabled: 1
-  - timer: 80
+  - timer: 75
     waveMethodName: SpawnRandom
     isEnabled: 1
   - timer: 120
+    waveMethodName: SpawnWall3
+    isEnabled: 1
+  - timer: 120
+    waveMethodName: SpawnWall4
+    isEnabled: 1
+  - timer: 140
+    waveMethodName: SpawnRandom
+    isEnabled: 1
+  - timer: 165
     waveMethodName: SpawnWall7
     isEnabled: 1
-  - timer: 120
+  - timer: 165
     waveMethodName: SpawnWall8
     isEnabled: 1
-  - timer: 130
+  - timer: 185
     waveMethodName: SpawnRandom
     isEnabled: 1
-  - timer: 150
-    waveMethodName: SpawnRandom
-    isEnabled: 1
-  - timer: 180
-    waveMethodName: SpawnWall1
-    isEnabled: 1
-  - timer: 180
-    waveMethodName: SpawnWall1
-    isEnabled: 1
-  - timer: 200
-    waveMethodName: SpawnRandom
-    isEnabled: 1
-  - timer: 220
-    waveMethodName: SpawnRandom
-    isEnabled: 1
-  - timer: 240
+  - timer: 230
     waveMethodName: SpawnWall3
     isEnabled: 1
-  - timer: 240
+  - timer: 230
     waveMethodName: SpawnWall4
     isEnabled: 1
-  - timer: 260
-    waveMethodName: SpawnRandom
-    isEnabled: 1
-  - timer: 280
+  - timer: 250
     waveMethodName: SpawnRandom
     isEnabled: 1
   - timer: 300
-    waveMethodName: SpawnRandom
-    isEnabled: 1
-  - timer: 320
-    waveMethodName: SpawnRandom
-    isEnabled: 1
-  - timer: 340
-    waveMethodName: SpawnRandom
-    isEnabled: 1
-  - timer: 360
-    waveMethodName: SpawnRandom
+    waveMethodName: SpawnApology
     isEnabled: 1
   Wall1:
     wallSpeedX: -6
@@ -3295,6 +3342,7 @@ MonoBehaviour:
     - {r: 0, g: .419607848, b: 1, a: 1}
     - {r: .698039234, g: 0, b: 1, a: 1}
     delay: 1
+  apology: {fileID: 177360, guid: 06c2f8a6e3bf5344b901a52e4ad38e97, type: 2}
   pointInfo1:
     pointArray:
     - {x: -15, y: 16}
@@ -3312,10 +3360,6 @@ MonoBehaviour:
   - {fileID: 100022, guid: cb55fdd82c60cd549acc3ebce10c3cae, type: 2}
   - {fileID: 100010, guid: 39b46ec9a55bff94cb262b6aae040350, type: 2}
   - {fileID: 100012, guid: 8cbe954226e8046469b6b63639fb6dea, type: 2}
-  - {fileID: 100000, guid: 932dae5eb43fb8a479068c607bc35483, type: 2}
-  - {fileID: 100000, guid: 2e36edbd9e7c58841a577aa018fe28b7, type: 2}
-  - {fileID: 100000, guid: 358f550b4d7c8384288c9465526f048c, type: 2}
-  - {fileID: 100000, guid: c4675b6149d76e143bd48f6dd8855ccf, type: 2}
   spawnX: 26
 --- !u!82 &1484604817
 AudioSource:
@@ -3327,7 +3371,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 14d57a1f8fecbc64abf34bfc69fc59c9, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

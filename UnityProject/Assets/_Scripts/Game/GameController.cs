@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
 
         // Spawninami laivai
 	    for (int i = 0; i < shipsToSpawnAtStart.Length; i++) 
-			SpawnPlayerShip (player [i], shipsToSpawnAtStart [i].shipGameObject, new Vector2 (-8 + i * 16 / (shipsToSpawnAtStart.Length), boundary.yMin*5/6));
+			SpawnPlayerShip (player [i], shipsToSpawnAtStart [i].shipGameObject, new Vector2 (0, 10));
 	}
 
     // Respawninamas sunaikintas laivas
@@ -42,8 +42,7 @@ public class GameController : MonoBehaviour
 	{
 		if (lives > 0) 
 		{
-			lives--;
-			SpawnPlayerShip(deadPlayer, respawnPrefab, new Vector2(0, boundary.yMin*5/6));
+			SpawnPlayerShip(deadPlayer, respawnPrefab, new Vector2(0, 0));
 		}
 	}
 
